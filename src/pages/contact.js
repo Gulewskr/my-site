@@ -73,17 +73,17 @@ const Layout = ({ pageTitle, children }) => {
         <div className="form-sec"><Trans>contH</Trans></div>
         <div className="form-sec">
           <div>
-            <label><Trans>contN</Trans></label>
-            <input type="text"/>
+            <label htmlFor="n" ><Trans>contN</Trans></label>
+            <input id="n" type="text"/>
           </div>
           <div>
-            <label><Trans>contK</Trans></label>
-            <input type="text"/>
+            <label htmlFor="k" ><Trans>contK</Trans></label>
+            <input id="k" type="text"/>
           </div>
         </div>
         <div className="form-sec form-b">
-          <label><Trans>contW</Trans></label>
-          <textarea name="message"/>
+          <label htmlFor="t" ><Trans>contW</Trans></label>
+          <textarea id="t" name="message"/>
         </div>
         <input type="submit" value={sendButton[language]} />
       </form>

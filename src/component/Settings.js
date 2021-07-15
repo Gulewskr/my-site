@@ -2,7 +2,7 @@ import * as React from 'react'
 import '../styles/neonStyle.css'
 import '../styles/settings.css'
 
-import {Trans, Link, useI18next} from 'gatsby-plugin-react-i18next';
+import {Trans, useI18next} from 'gatsby-plugin-react-i18next';
 import {CircleIcon} from './CircleIcon';
 import {Square} from './';
 import { Colors, useColor } from './neonColor';
@@ -20,13 +20,13 @@ const LanguageSettings = () => {
     const [menuV, setV] = React.useState(false);
     
     return(
-        <div className="Lang" onClick={() => setV(!menuV)}>
+        <div className="Lang" role="button" tabIndex="0" onClick={() => setV(!menuV)} onKeyDown={() => setV(!menuV)}>
             <div className={ menuV ? "activeM" : "" }>
-                <img src={flags[language]} ></img>
+                <img src={flags[language]} alt={language} ></img>
                 <div className="crcl-s"><CircleIcon /></div>
                 <div className="crcl-bg"/>
             </div>
-            { menuV && <div className="fullscreen" onClick={ () => setV(false) } />}
+            { menuV && <div className="fullscreen" role="button" tabIndex="0" onClick={ () => setV(false) } onKeyDown={ () => setV(false) }> </div>}
             <div className={ menuV ? "languages activeM" : "languages" }>
                 <div className="menu-bg"><Square /></div>
                 <div className="menu-m">
@@ -34,15 +34,19 @@ const LanguageSettings = () => {
                     <ul>
                     {languages.map((lng) => (
                     <li key={lng}>
-                        <a
-                        href="#"
+                        <div role="button" tabIndex="0"
                         onClick={(e) => {
+                            e.preventDefault();
+                            changeLanguage(lng);
+                            setV(false);
+                        }}
+                        onKeyDown={(e) => {
                             e.preventDefault();
                             changeLanguage(lng);
                             setV(false);
                         }}>
                             <img src={flags[lng]} alt={lng}/>
-                        </a>
+                        </div>
                     </li>
                     ))}
                     </ul>
@@ -57,20 +61,20 @@ const ColorSettings = () => {
     const {c, setColor} = useColor();
     return (
     <div className="Setg">
-        <div className={ menuV ? "activeM SetIc" : "SetIc" } onClick={() => setV(!menuV)}>
+        <div className={ menuV ? "activeM SetIc" : "SetIc" } role="button" tabIndex="0" onClick={() => setV(!menuV)} onKeyDown={() => setV(!menuV)}>
             <div className="Set-col-circl" style={{backgroundColor: c}} />
             <div className="crcl-s"><CircleIcon /></div>
             <div className="crcl-bg"/>
         </div>
-        { menuV && <div className="fullscreen" onClick={ () => setV(false) } />}
+        { menuV && <div className="fullscreen" role="button" tabIndex="0" onClick={ () => setV(false) } onKeyDown={() => setV(false)}> </div>}
         <div className={ menuV ? "languages activeM" : "languages" }>
             <div className="menu-bg"><Square /></div>
             <div className="menu-m">
                     <Trans>SetCol</Trans>
                     <ul>
                     {Object.keys(Colors).map((c) => (
-                    <li key={c} onClick={() => {setColor(c); setV(false)}}> 
-                        <div className="Set-col-circl" style={{backgroundColor: Colors[c]}} />
+                    <li key={c} > 
+                        <div className="Set-col-circl" role="button" tabIndex="0" onClick={() => {setColor(c); setV(false)}} onKeyDown={() => {setColor(c); setV(false)}} style={{backgroundColor: Colors[c]}}> </div>
                     </li>
                     ))}
                     </ul>

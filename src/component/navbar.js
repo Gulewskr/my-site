@@ -1,13 +1,9 @@
 import * as React from 'react'
-//import { Link } from 'gatsby'
 
 import '../styles/navbar.css'
 import '../styles/icons.css'
 
-//import '../scripts/navbar.js'
-
 import { Logo, Menu, NeonTextON } from './'
-//<Link to="/"></Link>
 import {Trans, Link} from 'gatsby-plugin-react-i18next';
 
 const Navbar = (props) => {

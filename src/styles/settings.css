@@ -102,6 +102,7 @@
 }
 .languages li{
     display: inline-flex;
+    cursor: pointer;
 }
 .languages img,
 .languages .Set-col-circl{

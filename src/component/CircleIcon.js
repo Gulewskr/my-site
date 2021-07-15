@@ -1,10 +1,9 @@
 import * as React from 'react'
 import '../styles/neonStyle.css'
 import '../styles/circleIcons.css'
-import { Link } from 'gatsby'
 import { Styles } from '../styles/neonStyles'
 
-import {Trans} from 'gatsby-plugin-react-i18next';
+import {Trans, Link} from 'gatsby-plugin-react-i18next';
 
 
 const About = () => (

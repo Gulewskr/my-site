@@ -14,41 +14,33 @@ const Colors = {
 
 export const ThemeContext = React.createContext();
 
-function getColorFromCookies(){
-  if (typeof window !== `undefined`) {
-    let cookies = document.cookie
-        .split(';')
-        .map(cookie => cookie.split('='))
-        .reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
-    return cookies['color'] === undefined ? "blue" : cookies['color'];
-  }else{
-    return "blue";
-  }
-}
-
-function ThemeContextProvider({ children }){
-    const [color, changeColor] = React.useState(getColorFromCookies());
-    
-    const setColor = (v) => {
-      changeColor(v);
-      if (typeof window !== `undefined`) {
-        document.cookie = "color=" + v;
-      }
+const  ThemeContextProvider = ({ children }) => {
+  const getColorFromCookies = () => {
+    if (typeof window !== `undefined`) {
+      let cookies = document.cookie
+          .split(';')
+          .map(cookie => cookie.split('='))
+          .reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
+      return cookies['color'] === undefined ? "blue" : cookies['color'];
+    }else{
+      return "blue";
     }
+  }
 
-    const value = React.useMemo(
-      () => ({
-        color,
-        setColor
-      }),
-      [color, setColor],
-    );
+  const [color, changeColor] = React.useState(getColorFromCookies());
+    
+  const setColor = (v) => {
+    changeColor(v);
+    if (typeof window !== `undefined`) {
+      document.cookie = "color=" + v +";path=/";
+    }
+  }
 
-    return (
-      <ThemeContext.Provider value={value}>
-        {children}
-      </ThemeContext.Provider>
-    );
+  return (
+    <ThemeContext.Provider value={{color, setColor}}>
+      {children}
+    </ThemeContext.Provider>
+  );
 };
 
 

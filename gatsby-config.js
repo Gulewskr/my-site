@@ -18,7 +18,7 @@ module.exports = {
         languages: [`en`, `pl`],
         transKeepBasicHtmlNodesFor: ['br', 'b'],
         defaultLanguage: `en`,
-        siteUrl: `https://gulewskr.github.io`,
+        siteUrl: `https://gulewskr.github.io/my-site`,
         i18nextOptions: {
           interpolation: {
             escapeValue: false 
