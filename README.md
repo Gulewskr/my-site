@@ -9,7 +9,7 @@
 
   😎 Click link below to check my site 😎
 
-  //PLACEHOLDER
+  https://gulewskr.github.io/my-site
 
   🚨 Site still under development 🚨
 ## 👋 Cześć
@@ -19,6 +19,6 @@
   
   😎 Aby przejść na stronę kliknij w poniższy link 😎
   
-  //PLACEHOLDER
+  https://gulewskr.github.io/my-site/pl/
 
   🚨 Site still under development 🚨
