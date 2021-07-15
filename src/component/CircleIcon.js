@@ -170,10 +170,10 @@ const CircleAbout = () => {
 
 const CircleIcons = () => {
     return <>
-        <div className="i-col"><Link to="/my-site/contact"><CircleContact /></Link></div>
-        <div className="i-col"><Link to="/my-site/skills"><CircleSkills /></Link></div>
-        <div className="i-col"><Link to="/my-site/projects"><CircleProject /></Link></div>
-        <div className="i-col"><Link to="/my-site/about"><CircleAbout /></Link></div>
+        <div className="i-col"><Link to="/contact"><CircleContact /></Link></div>
+        <div className="i-col"><Link to="/skills"><CircleSkills /></Link></div>
+        <div className="i-col"><Link to="/projects"><CircleProject /></Link></div>
+        <div className="i-col"><Link to="/about"><CircleAbout /></Link></div>
     </>
 }
 

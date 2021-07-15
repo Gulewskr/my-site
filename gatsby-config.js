@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/my-site",
   siteMetadata: {
     title: "CV SITE RAFAL GULEWSKI",
   },
@@ -17,7 +18,7 @@ module.exports = {
         languages: [`en`, `pl`],
         transKeepBasicHtmlNodesFor: ['br', 'b'],
         defaultLanguage: `en`,
-        siteUrl: `http://localhost:8000`,
+        siteUrl: `https://gulewskr.github.io`,
         i18nextOptions: {
           interpolation: {
             escapeValue: false 
