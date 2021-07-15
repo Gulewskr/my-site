@@ -36,10 +36,10 @@ const Navbar = (props) => {
                         <div className='nav-button' role="button" tabIndex="0" onKeyPress={changeMenuVisibility} onClick={changeMenuVisibility}>
                                 <Menu />
                         </div>
-                        <NavbarLink a={props.s === "Umiejętności"} c={<Trans>skills</Trans>} nav="/skills" />
-                        <NavbarLink a={props.s === "Projekty"} c={<Trans>proj</Trans>} nav="/projects" />
-                        <NavbarLink a={props.s === "O mnie"} c={<Trans>about</Trans>} nav="/about" />
-                        <NavbarLink a={props.s === "Kontakt"} c={<Trans>contact</Trans>} nav="/contact" />
+                        <NavbarLink a={props.s === "Umiejętności"} c={<Trans>skills</Trans>} nav="./skills" />
+                        <NavbarLink a={props.s === "Projekty"} c={<Trans>proj</Trans>} nav="./projects" />
+                        <NavbarLink a={props.s === "O mnie"} c={<Trans>about</Trans>} nav="./about" />
+                        <NavbarLink a={props.s === "Kontakt"} c={<Trans>contact</Trans>} nav="./contact" />
                 </div>
         </div>
         )
