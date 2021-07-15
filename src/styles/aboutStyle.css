@@ -1,0 +1,55 @@
+.hobby-sec li{
+    height: 60px;
+    list-style: none;
+}
+
+.hobby-sec{
+    text-align: center;
+    margin-top: 30px;
+}
+.hobby-sec t1{
+    margin-right: 40%;
+}
+
+.timeline{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.tl-line{
+    position: absolute;
+    top: -50px;
+    bottom: -50px;
+    width: 40px;
+}
+.tl-main{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tl-cont{
+    width: 30%;
+    margin-top: -50px;
+    transition: transform 0.8s ease-in, opacity 400ms ease-in;
+}
+.tl-r+.tl-r, .tl-l+.tl-l{
+    margin-top: 25px;
+}
+.tl-r{
+    margin-left: 40%;
+    transform: translate(50%, 0);
+    opacity: 0;
+}
+.tl-l{
+    margin-right: 40%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+
+}
+.tl-active{
+    transform: translate(0, 0);
+    opacity: 1;
+}

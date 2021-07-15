@@ -1,0 +1,135 @@
+html {
+    padding-bottom: 60px;
+    box-sizing: border-box;
+    background-color: rgb(32, 5, 44);
+}
+*{
+    color: rgb(253, 250, 243);
+}
+@keyframes faddingSlideFromBottom {
+    0% {
+      transform: translateY(+100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+.background-image {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: block;
+    background-image: url('../images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(5px);
+}
+.content{
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.info-h{
+    font-size: 26;
+    font-weight: bold;  
+}
+
+.info-t{
+    font-size: 24;
+}
+.sec{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 50px;
+}
+.rightCollumn{
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.leftCollumn{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.profilePicture{
+    width: 210px;
+    height: 230px;
+    background-color: white;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+.fontNF{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 36px;
+    justify-content: center;
+    align-items: center;
+}
+ /* Small devices (portrait tablets and large phones, 600px and up) */
+ @media only screen and (min-width: 600px) {
+    html {
+        margin-top: 80px;
+    }
+ }
+
+ /* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .profilePicture{
+        width: 420px;
+        height: 460px;
+        background-color: white;
+    }
+}
+ 
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+ 
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .rightCollumn{
+        width: 65%;
+        display: inline-flex;
+        margin-top: none;
+    }
+    .leftCollumn{
+        display: inline-flex;
+        width: 35%;
+    }
+    .profilePicture{
+        margin-top: 100px;
+        margin-left: 10%;
+    }
+}
+
+.languages{
+    position: absolute;
+    display: block;
+    width: 100px;
+    height: 50px;
+    bottom: 1%;
+    left: 50%;
+}

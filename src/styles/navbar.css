@@ -1,0 +1,95 @@
+ /* Extra small devices (phones, 600px and down) */
+ .nav{ 
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: #140b20;
+    z-index: 10;
+    border-bottom: solid 2px black;
+}
+.nav-s{
+    display: flex;
+    box-sizing: border-box;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #1D1030;
+    cursor: pointer;
+    border-bottom: solid 1px black;
+}
+.nav-logo{
+    width: 100%;
+}
+.nav-sl{
+    display: none;
+    width: 100%;
+    border-bottom: solid 2px black;
+}
+.s{
+    width: 25%;
+    display: none;
+}
+
+.nav-button{
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 40px;
+    width: 40px;
+}
+
+ /* Small devices (portrait tablets and large phones, 600px and up) */
+ @media only screen and (min-width: 600px) {
+    .nav{
+        height: 80px;
+    }
+    .nav-button{
+        height: 60px;
+        width: 60px;
+    }
+ }
+ 
+ /* Medium devices (landscape tablets, 768px and up) */
+ @media only screen and (min-width: 768px) {
+    .nav{
+        white-space: nowrap;
+        padding-left: 2.5%;
+        padding-right: 2.5%;
+    }
+    .nav-logo{
+        width: 200px;
+    }
+    .nav-s{
+        background: none;
+        display: inline-flex;
+    }
+    .nav-sl{
+        width: 10%;
+        border: none;
+    }
+    .s{
+        display: inline-flex;
+    }
+    .nav-button{
+        display: none;
+    }
+ }
+ 
+ /* Large devices (laptops/desktops, 992px and up) */
+ @media only screen and (min-width: 992px) {
+
+ }
+ 
+ /* Extra large devices (large laptops and desktops, 1200px and up) */
+ @media only screen and (min-width: 1200px) {
+    .nav-sl{
+        width: 14%;
+    }
+    .s{
+        width: 30%;
+    }
+ } 

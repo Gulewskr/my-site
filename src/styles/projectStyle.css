@@ -1,0 +1,26 @@
+.projects-ctl{
+    display: flex;
+    margin-top: 60px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.projects-ctl>div{
+    display: flex;
+}
+.ctl-m{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.ctl-wind{
+    width: 300px;
+    padding: 20px;
+    height: 300px;
+    display: flex;
+    position: relative;
+}
+/*.ctl-wind+.ctl-wind{
+    margin-left: 100px;
+}*/

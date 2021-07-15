@@ -1,0 +1,29 @@
+{
+  "name": "cv-site-rafal-gulewski",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CV SITE RAFAL GULEWSKI",
+  "author": "Rafał",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "emailjs-com": "^3.1.0",
+    "gatsby": "^3.6.2",
+    "gatsby-plugin-react-i18next": "^1.1.1",
+    "gatsby-source-filesystem": "^3.9.0",
+    "i18next": "^20.3.2",
+    "i18next-browser-languagedetector": "^6.1.2",
+    "i18next-xhr-backend": "^3.2.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-i18next": "^11.11.1"
+  }
+}

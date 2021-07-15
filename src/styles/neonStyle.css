@@ -1,0 +1,115 @@
+.cls-1, .cls-9 {
+    font-size: 26px;
+    font-family: MyriadPro-Regular, Myriad Pro;
+}
+/* Domyślne kolory:
+neon - #a3195b
+linia - #eecee3;
+*/
+@keyframes neonColorAnimate-F {
+    0% { fill: #a3195b }
+    10% { fill: #3719a3 }
+    20% { fill: #19a36e }
+    30% { fill: #7aa319 }
+    40% { fill: #19a3a3 }
+    50% { fill: #9e19a3 }
+    60% { fill: #4ca319 }
+    70% { fill: #a31919 }
+    80% { fill: #a39519 }
+    90% { fill: #3219a3 }
+    100% { fill: #a3195b }
+}
+@keyframes neonColorAnimate-S {
+    0% { stroke: #fc499f }
+    10% { stroke: #3719a3 }
+    20% { stroke: #adcabf }
+    30% { stroke: #7aa319 }
+    40% { stroke: #a8a8a8 }
+    50% { stroke: #9110db }
+    60% { stroke: #49af0d }
+    70% { stroke: #f30101 }
+    80% { stroke: #b6a614 }
+    90% { stroke: #372c68 }
+    100% { stroke: #a3195b }
+}
+.cls-1, .cls-8, .cls-9 {
+    fill: #eecee3;
+}
+.cls-10 {
+    stroke: #eecee3;
+    fill: none;
+}
+.cls-1, .cls-11 {
+    /*stroke: #3719a3;
+    filter: blur(4px);*/
+    stroke-miterlimit: 10;
+    /* animacja zmieniania kolorów 
+    animation-name: neonColorAnimate-S;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;*/
+}
+.cls-12{
+    stroke-miterlimit: 10;
+}
+.cls-1{
+    stroke-width: 7px;
+}
+.cls-11{
+    stroke-width: 17px;
+}
+.cls-2 {
+    letter-spacing: 0em;
+}
+
+.cls-3 {
+    letter-spacing: 0em;
+}
+
+.cls-4 {
+    letter-spacing: -0.08em;
+}
+
+.cls-5 {
+    letter-spacing: 0.01em;
+}
+
+.cls-6 {
+    letter-spacing: 0em;
+}
+
+
+
+.cls-T{
+    font-size: 24px;
+    font-family: MyriadPro-Regular, Myriad Pro;
+}
+.cls-B{
+    filter: blur(4px);
+    stroke-miterlimit: 10;
+    stroke-width: 7px;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+ 
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .cls-T{
+        font-size: 14px;
+    }
+}
+ 
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .cls-T{
+        font-size: 16px;
+    }
+}
+ 
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .cls-T{
+        font-size: 28px;
+    }
+}
