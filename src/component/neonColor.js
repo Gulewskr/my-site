@@ -15,11 +15,15 @@ const Colors = {
 export const ThemeContext = React.createContext();
 
 function getColorFromCookies(){
-  let cookies = document.cookie
-      .split(';')
-      .map(cookie => cookie.split('='))
-      .reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
-  return cookies['color'] === undefined ? "blue" : cookies['color'];
+  if (typeof window !== `undefined`) {
+    let cookies = document.cookie
+        .split(';')
+        .map(cookie => cookie.split('='))
+        .reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
+    return cookies['color'] === undefined ? "blue" : cookies['color'];
+  }else{
+    return "blue";
+  }
 }
 
 function ThemeContextProvider({ children }){
@@ -27,7 +31,9 @@ function ThemeContextProvider({ children }){
     
     const setColor = (v) => {
       changeColor(v);
-      document.cookie = "color=" + v; 
+      if (typeof window !== `undefined`) {
+        document.cookie = "color=" + v;
+      }
     }
 
     const value = React.useMemo(
