@@ -24,7 +24,6 @@ html {
     right: 0;
     z-index: -1;
     display: block;
-    background-image: url('../images/bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     -webkit-filter: blur(2px);

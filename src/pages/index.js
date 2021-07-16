@@ -9,6 +9,7 @@ import {Trans} from 'gatsby-plugin-react-i18next';
 import ThemeContextProvider from '../component/neonColor';
 
 import profilePicture from '../images/profile.jpg' 
+import background from '../images/bg.jpg'
 
 // markup
 const Layout = ({ pageTitle, children }) => {
@@ -25,7 +26,7 @@ const Layout = ({ pageTitle, children }) => {
     <ThemeContextProvider>
       <main>
           <title>Rafal Gulewski</title>
-          <div className="background-image" />
+      <div className="background-image" style={{backgroundImage: `url(${background})`}} />
           <Navbar />
           <div className="sec">
             <div className="leftCollumn">

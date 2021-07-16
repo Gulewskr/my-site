@@ -7,6 +7,7 @@ import sendToMe from '../scripts/email.js'
 import {Navbar, NeonAppWindow, ContactList, LanguageSettings, ColorSettings} from '../component/'
 import {Trans, useI18next} from 'gatsby-plugin-react-i18next';
 import ThemeContextProvider from '../component/neonColor';
+import background from '../images/bg.jpg'
 
 // markup
 const Layout = ({ pageTitle, children }) => {
@@ -93,7 +94,7 @@ const Layout = ({ pageTitle, children }) => {
   return (
     <ThemeContextProvider>
     <main>
-        <div className="background-image" />
+      <div className="background-image" style={{backgroundImage: `url(${background})`}} />
         <Navbar s="Kontakt" />
         <title>Rafal Gulewski - Kontakt</title>
         <div className="content">

@@ -5,6 +5,7 @@ import '../styles/projectStyle.css'
 import {NeonProjectWindow, Navbar, LanguageSettings, ColorSettings} from '../component/'
 import {Trans} from 'gatsby-plugin-react-i18next';
 import ThemeContextProvider from '../component/neonColor';
+import background from '../images/bg.jpg'
 
 const TPr = [
   {
@@ -40,7 +41,7 @@ const Layout = ({ pageTitle, children }) => {
   return (
     <ThemeContextProvider>
     <main>
-        <div className="background-image" />
+      <div className="background-image" style={{backgroundImage: `url(${background})`}} />
         <Navbar s="Projekty" />
         <title>Rafal Gulewski - Projekty</title>
         <div className="projects-ctl">

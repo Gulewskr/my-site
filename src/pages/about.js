@@ -7,6 +7,7 @@ import {Trans} from 'gatsby-plugin-react-i18next';
 import ThemeContextProvider from '../component/neonColor';
 
 import debounce from "lodash.debounce";
+import background from '../images/bg.jpg'
 
 // markup
 const Layout = ({ pageTitle, children }) => {
@@ -71,7 +72,7 @@ class TLBlock extends React.Component {
   return (
     <ThemeContextProvider>
     <main>
-        <div className="background-image" />
+      <div className="background-image" style={{backgroundImage: `url(${background})`}} />
         <Navbar s="O mnie" />
         <title>Rafal Gulewski - O mnie</title>
         <div className="timeline">

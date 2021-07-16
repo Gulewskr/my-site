@@ -2,12 +2,13 @@ import * as React from "react"
 import {graphql} from 'gatsby'
 import { Navbar, LanguageSettings, ColorSettings } from "../component"
 import ThemeContextProvider from '../component/neonColor';
+import background from '../images/bg.jpg'
 
 const NotFoundPage = () => {
   return (
     <ThemeContextProvider>
     <main>
-      <div className="background-image" />
+      <div className="background-image" style={{backgroundImage: `url(${background})`}} />
       <Navbar s=""/>
       <title>Not found</title>
       <div className="fontNF" >

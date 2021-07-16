@@ -5,6 +5,7 @@ import { Navbar, TechnologyIcons, NeonSkillWindow, LanguageSettings, ColorSettin
 import {Trans} from 'gatsby-plugin-react-i18next';
 import { Link } from 'gatsby'
 import ThemeContextProvider from '../component/neonColor';
+import background from '../images/bg.jpg'
 
 const progL = [
   {
@@ -62,7 +63,7 @@ const Layout = ({ pageTitle, children }) => {
   return (
     <ThemeContextProvider>
     <main>
-        <div className="background-image" />
+      <div className="background-image" style={{backgroundImage: `url(${background})`}} />
         <Navbar s="Umiejętności" />
         <title>Rafal Gulewski - Umiejętności</title>
         <div className="cont">
