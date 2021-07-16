@@ -3,22 +3,23 @@
 </h1>
 
 ## 👋 Hello
-  ** This is my page **
+  **This is project of my private site**
 
-  You can easily find here information about me and contact with me using form on 'Contact' site.
+  You can easy find here information about me and contact with me using form on 'Contact' page. (Currently disabled)
 
   😎 Click link below to check my site 😎
 
-  //PLACEHOLDER
+  https://gulewskr.github.io/my-site
 
   🚨 Site still under development 🚨
+  
 ## 👋 Cześć
-  ** Tak to po prostu strona o mnie.**
+  **Przed tobą projekt mojej małej strony**
 
-  Możesz znaleźć tam informacje na mój temat związane z informatyką, programowaniem, ale nie tylko 😉. Oprócz tego możesz za pomocą strony skontaktować się ze mną.
+  Możesz znaleźć tu informacje na mój temat związane z informatyką, programowaniem, ale nie tylko 😉. Możesz również za pomocą strony 'Kontakt' napisać do mnie wiadomość. (Chwilowo wyłączone)
   
   😎 Aby przejść na stronę kliknij w poniższy link 😎
   
-  //PLACEHOLDER
+  https://gulewskr.github.io/my-site/pl/
 
-  🚨 Site still under development 🚨
+  🚨 Strona w trakcie tworzenia i rozwoju 🚨
