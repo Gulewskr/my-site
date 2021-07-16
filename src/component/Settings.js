@@ -3,8 +3,7 @@ import '../styles/neonStyle.css'
 import '../styles/settings.css'
 
 import {Trans, useI18next} from 'gatsby-plugin-react-i18next';
-import {CircleIcon} from './CircleIcon';
-import {Square} from './';
+import {Corner, CircleIcon,  VLine, HLine } from './';
 import { Colors, useColor } from './neonColor';
 
 import fUSA from '../images/flagUSA.png'
@@ -28,29 +27,36 @@ const LanguageSettings = () => {
             </div>
             { menuV && <div className="fullscreen" role="button" tabIndex="0" onClick={ () => setV(false) } onKeyDown={ () => setV(false) }> </div>}
             <div className={ menuV ? "languages activeM" : "languages" }>
-                <div className="menu-bg"><Square /></div>
-                <div className="menu-m">
-                    <Trans>SetLang</Trans>
-                    <ul>
-                    {languages.map((lng) => (
-                    <li key={lng}>
-                        <div role="button" tabIndex="0"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            changeLanguage(lng);
-                            setV(false);
-                        }}
-                        onKeyDown={(e) => {
-                            e.preventDefault();
-                            changeLanguage(lng);
-                            setV(false);
-                        }}>
-                            <img src={flags[lng]} alt={lng}/>
-                        </div>
-                    </li>
-                    ))}
-                    </ul>
-                </div>
+                    <div className="s-t"><HLine/></div>
+                    <div className="s-b"><HLine/></div>
+                    <div className="s-l"><VLine/></div>
+                    <div className="s-r"><VLine/></div>
+                    <div className="s-ctl"><Corner/></div>
+                    <div className="s-cbl"><Corner/></div>
+                    <div className="s-ctr"><Corner/></div>
+                    <div className="s-cbr"><Corner/></div>
+                    <div className="menu-m">
+                        <Trans>SetLang</Trans>
+                        <ul>
+                        {languages.map((lng) => (
+                        <li key={lng}>
+                            <div role="button" tabIndex="0"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                changeLanguage(lng);
+                                setV(false);
+                            }}
+                            onKeyDown={(e) => {
+                                e.preventDefault();
+                                changeLanguage(lng);
+                                setV(false);
+                            }}>
+                                <img src={flags[lng]} alt={lng}/>
+                            </div>
+                        </li>
+                        ))}
+                        </ul>
+                    </div>
             </div>
         </div>
     );
@@ -59,6 +65,7 @@ const LanguageSettings = () => {
 const ColorSettings = () => {
     const [menuV, setV] = React.useState(false);
     const {c, setColor} = useColor();
+
     return (
     <div className="Setg">
         <div className={ menuV ? "activeM SetIc" : "SetIc" } role="button" tabIndex="0" onClick={() => setV(!menuV)} onKeyDown={() => setV(!menuV)}>
@@ -68,7 +75,14 @@ const ColorSettings = () => {
         </div>
         { menuV && <div className="fullscreen" role="button" tabIndex="0" onClick={ () => setV(false) } onKeyDown={() => setV(false)}> </div>}
         <div className={ menuV ? "languages activeM" : "languages" }>
-            <div className="menu-bg"><Square /></div>
+            <div className="s-t"><HLine/></div>
+            <div className="s-b"><HLine/></div>
+            <div className="s-l"><VLine/></div>
+            <div className="s-r"><VLine/></div>
+            <div className="s-ctl"><Corner/></div>
+            <div className="s-cbl"><Corner/></div>
+            <div className="s-ctr"><Corner/></div>
+            <div className="s-cbr"><Corner/></div>
             <div className="menu-m">
                     <Trans>SetCol</Trans>
                     <ul>

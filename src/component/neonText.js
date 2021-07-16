@@ -15,7 +15,7 @@ const NeonTextON = (props) => {
     }
 
     if(v === false){
-        sF = "#815E74"; 
+        sF = "#818181"; 
     }
 
     return (

@@ -2,20 +2,36 @@ import * as React from 'react'
 import '../styles/neonStyle.css'
 import '../styles/neonWindows.css'
 import {Link} from 'gatsby'
-import {BLine, HLine, VLine, TechnologyIcons, Square} from './'
+import {Corner, CircleIcon,  VLine, HLine, TechnologyIcons} from './'
 import { Styles } from '../styles/neonStyles'
 
 const NeonAppWindow = (params) => {
     return(
         <div className="neonAppContainer">
-            <div className="w-t"><div className="w-bg"/><HLine/></div>
+            <div className="w-t">
+                <div className="w-bg"/>
+                <div className="t-l"><HLine/></div>
+                <div className="rightc"><Corner /></div>
+                <div className="leftc"><Corner /></div>
+                <div className="t-c">
+                    <div><CircleIcon /></div>
+                    <div><CircleIcon /></div>
+                    <div><CircleIcon /></div>
+                </div>
+                <div className="t-lb"><HLine/></div>
+            </div>
             <div className="w-mid">
                 <div className="w-bg"/>
                 <div className="w-ml"><VLine/></div>
                 <div className="b-m"><div>{params.content}</div></div>
                 <div className="w-mr"><VLine/></div>
             </div>
-            <div className="w-b"> <div className="w-bg"/><BLine/></div>
+            <div className="w-b">
+                <div className="w-bg"/>
+                <div className="b-l"><HLine/></div>
+                <div className="rightc"><Corner /></div>
+                <div className="leftc"><Corner /></div>
+            </div>
         </div>
     );
 }
@@ -84,11 +100,32 @@ const NeonSkillWindow = (params) => {
     }
 
     return(
+
         <div className="sk-w">
-            <div className="sk-bg"><Square /></div>
-            <div className="sk-icon"><params.icon /></div>
-            <div className="sk-name">{params.name}</div>
-            <div className="sk-w-i">{StarsLvl(params.lvl)}</div>
+            <div className="w-t">
+                <div className="w-bg"/>
+                <div className="t-l"><HLine/></div>
+                <div className="rightc"><Corner /></div>
+                <div className="leftc"><Corner /></div>
+            </div>
+            <div className="w-mid">
+                <div className="w-bg"/>
+                <div className="w-ml"><VLine/></div>
+                <div className="b-m2">
+                    <div>
+                        <div className="sk-icon"><params.icon /></div>
+                        <div className="sk-name">{params.name}</div>
+                        <div className="sk-w-i">{StarsLvl(params.lvl)}</div>
+                    </div>
+                </div>
+                <div className="w-mr"><VLine/></div>
+            </div>
+            <div className="w-b">
+                <div className="w-bg"/>
+                <div className="b-l"><HLine/></div>
+                <div className="rightc"><Corner /></div>
+                <div className="leftc"><Corner /></div>
+            </div>
         </div>
     );
 }

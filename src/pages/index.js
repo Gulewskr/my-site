@@ -3,10 +3,12 @@ import {graphql} from 'gatsby';
 
 import '../styles/pageStyle.css'
 import '../styles/mainPage.css'
-import { Navbar, NeonAppWindow, CircleIcons, ContactList, LanguageSettings, ColorSettings } from '../component/'
+import { Corner, VLine, HLine, Navbar, NeonAppWindow, CircleIcons, ContactList, LanguageSettings, ColorSettings } from '../component/'
 
 import {Trans} from 'gatsby-plugin-react-i18next';
 import ThemeContextProvider from '../component/neonColor';
+
+import profilePicture from '../images/profile.jpg' 
 
 // markup
 const Layout = ({ pageTitle, children }) => {
@@ -27,7 +29,19 @@ const Layout = ({ pageTitle, children }) => {
           <Navbar />
           <div className="sec">
             <div className="leftCollumn">
-              <div className="profilePicture"></div>
+              <div className="profilePicture">
+                <div className="pic-border">
+                  <img src={profilePicture} alt="RAFAŁ" />
+                </div>
+                <div className="s-t"><HLine/></div>
+                <div className="s-b"><HLine/></div>
+                <div className="s-l"><VLine/></div>
+                <div className="s-r"><VLine/></div>
+                <div className="s-ctl"><Corner/></div>
+                <div className="s-cbl"><Corner/></div>
+                <div className="s-ctr"><Corner/></div>
+                <div className="s-cbr"><Corner/></div>
+              </div>
             </div>
             <div className="rightCollumn">
               <div className="wdg-info">

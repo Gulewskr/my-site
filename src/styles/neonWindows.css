@@ -29,6 +29,7 @@
 }
 
 .neonAppContainer{
+    min-width: 150px;
     width: 100%;
     height: 100%;
     display: block;
@@ -61,42 +62,92 @@
 }
 
 /* góra i dół okna */
-.w-t{
-    position: absolute;
-    top: 0;
-    width: 100%;
+.w-t,
+.w-b{
     height: 75px;
+    width: 100%;
+    position: relative;
+
+}
+.w-t{
+    top: 0;
+}
+.rightc,
+.leftc{
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    top: 0px;
+    
+}
+.rightc{
+    right: 0px;
+    transform: rotate(90deg);
 }
 .w-b{
-    position: relative;
-    margin-top: 75px;
-    height: 70px;
     width: 100%;
     bottom: 0;
 }
+.w-b .leftc{
+    transform: rotate(-90deg);
+}
+.w-b .rightc{
+    transform: rotate(180deg);
+}
+.t-l,
+.b-l{
+    position: absolute;
+    width: calc(100% - 150px);
+    left: 75px;
+    height: 75px;
+}
+.b-l{
+    transform: rotate(180deg);
+}
+.t-lb{
+    position: absolute;
+    height: 75px;
+    top: -15px;
+    left: 6px;
+    width: calc(100% - 12px);
+    transform: rotate(180deg);
+}
+.t-c{
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    top: 12px;
+    right: 10px;
+}
+.t-c div{
+    height: 35px;
+    width: 35px;
+    margin: 1.25px;
+    display: inline-block;
+}
 /* Środek okna */
 .w-mid{
+    width: 100%;
     display: flex;
     position: relative;
-    top: 75px;
-    width: 100%;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-.w-ml{
-    position: absolute;
-    height: 100%;
-    width: 1.7%;
-    left: -0.26%;
-    top:0;
-}
+.w-ml,
 .w-mr{
     position: absolute;
     height: 100%;
-    width: 1.7%;
-    right: -0.4%;
+    width: 75px;
     top:0;
+}
+.w-ml{
+    left: 0;
+}
+.w-mr{
+    right: 0;
+
+    transform: rotate(180deg);
 }
 .b-m{
     display: block;
@@ -108,6 +159,12 @@
     animation-iteration-count: initial;
     animation-duration: 1s;
 }
+.b-m2{
+    display: block;
+    flex-direction: column;
+    height: fit-content;
+    width: 80%;
+}
 .b-m>div{
     animation-name: slideUP;
     animation-iteration-count: initial;
@@ -116,14 +173,8 @@
 
 /*Umiejętności*/
 .sk-w{
-    background-color: #1D1030;
-    height: 200px;
-    width: 200px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 25px;
+    height: 300px;
+    width: 300px;
     border-radius: 25px;
     margin: 30px;
     animation-name: slideUP-OP;
@@ -139,15 +190,19 @@
 }
 .sk-icon{
     display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -30px;
     height: 150px;
     width: 150px;
 }
 .sk-name{
     color: white;
     font-size: 24px;
+    margin-top: 20px;
 }
 .sk-w-i{
-    margin-bottom: 15px;
+    margin-bottom: -30px;
 }
 .sk-s{
     display: inline-flex;
