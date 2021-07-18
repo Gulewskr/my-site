@@ -18,13 +18,13 @@
 }
 @keyframes changeOVF {
     0% {
-        overflow: hidden;
+        overflow-y: hidden;
     }
     99% {
-        overflow: hidden;
+        overflow-y: hidden;
     }
     100% {
-        overflow: visible;
+        overflow-y: visible;
     }
 }
 
@@ -154,7 +154,6 @@
     flex-direction: column;
     height: fit-content;
     width: 80%;
-
     animation-name: changeOVF;
     animation-iteration-count: initial;
     animation-duration: 1s;

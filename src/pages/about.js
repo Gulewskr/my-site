@@ -46,7 +46,7 @@ class TLBlock extends React.Component {
           });
         }, 100), 
         {
-          rootMargin: "-1% -1% 0px 0px",
+          rootMargin: "0px 0px 0px 0px",
           threshold: 0.75
         });
 

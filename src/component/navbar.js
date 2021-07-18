@@ -18,26 +18,31 @@ const Navbar = (props) => {
                 }
         }
         
+        const script = require('../scripts/navbar.js');
+
         return (
-        <div role="navigation" >
-                <div className='nav'>
-                        <Link to="/">
-                        <div className='nav-s nav-logo'>
-                                <div className="logoStyle">
-                                        <Logo />
+        <>
+                <script>script</script>
+                <div role="navigation" className="navMain" id="navbar">
+                        <div className='nav'>
+                                <Link to="/">
+                                <div className='nav-s nav-logo'>
+                                        <div className="logoStyle">
+                                                <Logo />
+                                        </div>
                                 </div>
+                                </Link>
+                                <div className='s' />
+                                <div className='nav-button' role="button" tabIndex="0" onKeyPress={changeMenuVisibility} onClick={changeMenuVisibility}>
+                                        <Menu />
+                                </div>
+                                <NavbarLink a={props.s === "Umiejętności"} c={<Trans>skills</Trans>} nav="/skills" />
+                                <NavbarLink a={props.s === "Projekty"} c={<Trans>proj</Trans>} nav="/projects" />
+                                <NavbarLink a={props.s === "O mnie"} c={<Trans>about</Trans>} nav="/about" />
+                                <NavbarLink a={props.s === "Kontakt"} c={<Trans>contact</Trans>} nav="/contact" />
                         </div>
-                        </Link>
-                        <div className='s' />
-                        <div className='nav-button' role="button" tabIndex="0" onKeyPress={changeMenuVisibility} onClick={changeMenuVisibility}>
-                                <Menu />
-                        </div>
-                        <NavbarLink a={props.s === "Umiejętności"} c={<Trans>skills</Trans>} nav="/skills" />
-                        <NavbarLink a={props.s === "Projekty"} c={<Trans>proj</Trans>} nav="/projects" />
-                        <NavbarLink a={props.s === "O mnie"} c={<Trans>about</Trans>} nav="/about" />
-                        <NavbarLink a={props.s === "Kontakt"} c={<Trans>contact</Trans>} nav="/contact" />
                 </div>
-        </div>
+        </>
         )
 }
 

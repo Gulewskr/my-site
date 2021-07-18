@@ -2,6 +2,7 @@ html {
     padding-bottom: 60px;
     box-sizing: border-box;
     background-color: rgb(32, 5, 44);
+    margin-top: 70px;
 }
 *{
     color: rgb(253, 250, 243);
@@ -52,7 +53,6 @@ html {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin-top: 50px;
 }
 .rightCollumn{
     display: flex;
