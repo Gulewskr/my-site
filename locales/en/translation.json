@@ -26,9 +26,14 @@
     "aboutHob5": "Chess",
     "cont": "Contact me via:",
     "contH": "Send me a message",
-    "contN": "Sender",
-    "contK": "Contact",
+    "contN": "Name",
+    "contK": "E-mail",
     "contW": "Message",
     "SetLang": "Change Language",
-    "SetCol": "Change color"
+    "SetCol": "Change color",
+    "BadN": "\"Name\" must be at least 2 characters long",
+    "BadK": "Bad format e-mail adress",
+    "BadW": "Message must be at least 20 characters long",
+    "success": "Successful sended :D",
+    "error": "Send error!"
 }
