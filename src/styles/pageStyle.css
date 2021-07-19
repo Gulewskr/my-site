@@ -90,7 +90,6 @@ html {
     left: 7px;
     top: 7px;
     overflow: hidden;
-    background-color: blue;
 
     width: calc(100% - 14px);
     height: calc(100% - 14px);
