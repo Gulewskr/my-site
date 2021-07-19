@@ -27,8 +27,13 @@
     "cont": "Skontaktuj się ze mną przez",
     "contH": "Napisz do mnie wiadomość",
     "contN": "Nadawca",
-    "contK": "Kontakt zwrotny",
+    "contK": "E-mail",
     "contW": "Wiadomość",
     "SetLang": "Zmień język",
-    "SetCol": "Zmień kolor"
+    "SetCol": "Zmień kolor",
+    "BadN": "Nazwa musi składać się z conajmniej 2 znaków.",
+    "BadK": "Błędny format adresu e-mail.",
+    "BadW": "Wiadomość musi składać się z conajmniej 20 znaków.",
+    "success": "Pomyślnie wysłano :D",
+    "error": "Błąd wysyłania!"
 }
