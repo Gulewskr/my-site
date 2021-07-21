@@ -1,6 +1,6 @@
 {
-    "info1": "Hello on my page.",
-    "info2": "My name is <strong>Rafael</strong> and I am a student of <strong>Applied Computer Science</strong> at the Faculty of Electrical Engineering of <strong>the Warsaw University of Technology</strong>. My adventure with a widely understood computer science is relatively short, but if you want to know more about me, you can choose one of heading or the corresponding icon.",
+    "info1": "Hello on my site.",
+    "info2": "My name is <strong>Rafał (Rafael)</strong> and I am a student of <strong>Applied Computer Science</strong> at the Faculty of Electrical Engineering of <strong>the Warsaw University of Technology</strong>. My adventure with a widely understood computer science is relatively short, but if you want to know more about me check out the rest of the website using the navigation bar or by selecting one of the icons.",
     "info3": "You can find me on:",
     "contact": "Contact",
     "about": "About me",
@@ -8,7 +8,7 @@
     "skills": "Skills",
     "skills1": "Programming languages",
     "skills2": "Other technologies and frameworks",
-    "skills3": "Gaming engines",
+    "skills3": "Game engines",
     "skills4": "Check how I used this knowledge in projects",
     "proj": "Projects",
     "aboutH": "Education",
