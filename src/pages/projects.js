@@ -21,7 +21,7 @@ const TPr = [
     "techs": ["Java"], 
     "link": "https://github.com/Gulewskr/Tanki_Offline"
   },{
-    "name": "Algorytmy", 
+    "name": "Algorithms and data structures project", 
     "techs": ["Java"], 
     "link": "/404"
   },{

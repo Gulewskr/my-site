@@ -59,7 +59,7 @@ const NeonProjectWindow = (params) => {
             <div className="prjct-bg"><FolderIcon /></div>
             <div className="prjct-cbg" />
             <div className="prjct-cont">
-                <div>{params.name}</div>
+                <div style={{textAlign:"center"}}>{params.name}</div>
                 <div className="prjct-techs">{techUsed(params.techs)}</div>
             </div>
             </Link>
