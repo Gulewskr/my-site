@@ -1,6 +1,6 @@
 {
     "info1": "Hello on my site.",
-    "info2": "My name is <strong>Rafał</strong> (en. Raphael) and I am a student of <strong>Applied Computer Science</strong> at the Faculty of Electrical Engineering of <strong>the Warsaw University of Technology</strong>. My adventure with a widely understood computer science is relatively short, but if you want to know more about me, choose one of icons, or just use navbar 😉.",
+    "info2": "My name is <strong>Rafał</strong> and I am a student of <strong>Applied Computer Science</strong> at the Faculty of Electrical Engineering of <strong>the Warsaw University of Technology</strong>. My adventure with a widely understood computer science is relatively short, but if you want to know more about me, choose one of icons, or just use navbar 😉.",
     "info3": "You can find me on:",
     "contact": "Contact",
     "about": "About me",
@@ -14,7 +14,7 @@
     "aboutH": "Education",
     "about1": "Primary school, junior high school and high school education.",
     "matura": "high school finals",
-    "about2": "basic level: Polish (60%)<br />advanced  level: maths (94%), physics (77%), English(72%)",
+    "about2": "basic level: Polish<br />advanced  level: maths, physics, English",
     "about3": "Engineering studies<br />university: Warsaw University of Technology<br />faculty: Electrical Engineering<br />major: Applied Computer Science<br />specialization: Software Engineering (from 2021*)",
     "about4": "University exam ACERT (English)<br />level: B2",
     "aboutE": "Today",
@@ -35,5 +35,11 @@
     "BadK": "Bad format e-mail adress",
     "BadW": "Message must be at least 20 characters long",
     "success": "Successful sended :D",
-    "error": "Send error!"
+    "error": "Send error!",
+    "lvl1": "know basics",
+    "lvl2": "several projects",
+    "lvl3": "commercial experience - junior",
+    "lvl4": "commercial experience - mid",
+    "lvl5": "commercial experience - senior",
+    "projInfo": "projects aren't done"
 }
