@@ -1,6 +1,6 @@
 {
     "info1": "Witaj na mojej stronie.",
-    "info2": "Nazywam się <strong>Rafał</strong> i jestem studentem <strong>Informatyki Stosowanej</strong> na wydziale elektrycznym <strong>Politechniki Warszawskiej</strong>. Moja przygoda z szeroko pojętą informatyką jest stosunkowo krótka, ale jeśli chcesz się o mnie więcej dowiedzieć, wybierz jeden z nagłówków powyżej <br />lub kliknij w odpowiadającą mu ikonę poniżej.",
+    "info2": "Nazywam się <strong>Rafał</strong> i jestem studentem <strong>Informatyki Stosowanej</strong> na wydziale elektrycznym <strong>Politechniki Warszawskiej</strong>. Moja przygoda z szeroko pojętą informatyką jest stosunkowo krótka, ale jeśli chcesz się o mnie więcej dowiedzieć, wybierz jeden z nagłówków powyżej lub kliknij w odpowiadającą mu ikonę poniżej.",
     "info3": "Możesz mnie znaleźć na:",
     "contact": "Kontakt",
     "about": "O mnie",
@@ -35,5 +35,11 @@
     "BadK": "Błędny format adresu e-mail.",
     "BadW": "Wiadomość musi składać się z conajmniej 20 znaków.",
     "success": "Pomyślnie wysłano :D",
-    "error": "Błąd wysyłania!"
+    "error": "Błąd wysyłania!",
+    "lvl1": "podstawowa wiedza",
+    "lvl2": "kilka prywatnych projektów",
+    "lvl3": "doświadczenie komercyjne - junior",
+    "lvl4": "doświadczenie komercyjne - mid",
+    "lvl5": "doświadczenie komercyjne - senior",
+    "projInfo": "projekty jeszcze niedokończone"
 }

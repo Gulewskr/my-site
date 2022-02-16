@@ -6,6 +6,7 @@
 
 .list-link{
     display: inline-flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -14,18 +15,10 @@
     margin-left: 10px;
 }
 
-.list-link a{
-    color: white;
-}
-
 .list-ic{
     display: block;
     width: 70px;
     height: 70px;
-}
-
-.list-nm{
-
 }
 
 .list-split{

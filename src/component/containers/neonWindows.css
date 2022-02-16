@@ -28,15 +28,6 @@
     }
 }
 
-.neonAppContainer{
-    min-width: 150px;
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: relative;
-}
-
-/* Tło okna */
 .w-bg{
     position: absolute;
     background-color: #1D1030;
@@ -61,7 +52,6 @@
     border-bottom-right-radius: 20px;
 }
 
-/* góra i dół okna */
 .w-t,
 .w-b{
     height: 75px;
@@ -125,7 +115,6 @@
     margin: 1.25px;
     display: inline-block;
 }
-/* Środek okna */
 .w-mid{
     width: 100%;
     display: flex;
@@ -170,7 +159,6 @@
     animation-duration: 1s;
 }
 
-/*Umiejętności*/
 .sk-w{
     height: 300px;
     width: 300px;
@@ -209,7 +197,6 @@
     height: 30px;
     margin: 3px;
 }
-/* katalogi projektów */
 .prjct-bg{
     position: absolute;
     width: 100%;
@@ -255,4 +242,74 @@
 }
 .prjct-techs div{
     width: 28%;
+}
+
+/*  ----------------------------------------------------- */
+
+.neonAppContainer{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #1D1030;
+    padding: 0;
+    padding-top: 50px;
+    color: white;
+    border-width: 2px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.neonAppContainer .line-neon,
+.neonAppContainer .line{
+    position: absolute;
+    top: 50px;
+    border-width: 1px;
+}
+
+.neonAppContainer .cirle{
+    position: absolute;
+    top: 13px;
+    width: 20px;
+    height: 20px;
+    border-width: 2px;
+    border-radius: 20px;
+}
+
+.line{
+    width: 100%;
+    left: 0px;
+    border: 1px solid rgb(248, 248, 248);
+}
+
+.line-neon{
+    left: 4px;
+    width: calc(100% - 10px);
+}
+
+
+.neonCircle{
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    border-width: 2px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.neonSkillCont{
+    height: 300px;
+    width: 300px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    animation-name: slideUP-OP;
+    animation-iteration-count: initial;
+    animation-duration: 1s;
+    background-color: #1D1030;
 }

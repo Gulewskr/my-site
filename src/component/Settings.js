@@ -3,8 +3,6 @@ import '../styles/neonStyle.css'
 import '../styles/settings.css'
 
 import {Trans, useI18next} from 'gatsby-plugin-react-i18next';
-import {Corner, CircleIcon,  VLine, HLine } from './';
-import { Colors, useColor } from './neonColor';
 
 import fUSA from '../images/flagUSA.png'
 import fPL from '../images/flagPL.png' 
@@ -20,23 +18,13 @@ const LanguageSettings = () => {
     
     return(
         <div className="Lang" role="button" tabIndex="0" onClick={() => setV(!menuV)} onKeyDown={() => setV(!menuV)}>
-            <div className={ menuV ? "activeM" : "" }>
+            <div className={ menuV ? "activeM border-neon border-rad" : "border-neon border-rad" }>
                 <img src={flags[language]} alt={language} ></img>
-                <div className="crcl-s"><CircleIcon /></div>
-                <div className="crcl-bg"/>
             </div>
             { menuV && <div className="fullscreen" role="button" tabIndex="0" onClick={ () => setV(false) } onKeyDown={ () => setV(false) }> </div>}
             <div className={ menuV ? "languages activeM" : "languages" }>
-                    <div className="s-t"><HLine/></div>
-                    <div className="s-b"><HLine/></div>
-                    <div className="s-l"><VLine/></div>
-                    <div className="s-r"><VLine/></div>
-                    <div className="s-ctl"><Corner/></div>
-                    <div className="s-cbl"><Corner/></div>
-                    <div className="s-ctr"><Corner/></div>
-                    <div className="s-cbr"><Corner/></div>
-                    <div className="menu-m">
-                        <Trans>SetLang</Trans>
+                    <div className="menu-m border-neon">
+                        <span className='neon-text-on'><Trans>SetLang</Trans></span>
                         <ul>
                         {languages.map((lng) => (
                         <li key={lng}>
@@ -62,6 +50,7 @@ const LanguageSettings = () => {
     );
 }
 
+/* TODO - to remake
 const ColorSettings = () => {
     const [menuV, setV] = React.useState(false);
     const {c, setColor} = useColor();
@@ -96,6 +85,6 @@ const ColorSettings = () => {
         </div>
     </div>
     )
-}
+}*/
 
-export { LanguageSettings, ColorSettings }
+export { LanguageSettings }

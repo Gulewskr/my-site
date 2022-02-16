@@ -7,9 +7,12 @@ const te = `template_iz6oc6i`;  //templateID
 init("user_lG5W3wj2ZN3A6GrmqidIe");
 
 const sendToMe = (n, c, t, cb) => {
-
-   console.log("???");
-
+   
+   //forTesting
+   //cb(true);
+   //cb(false);
+   //return;
+   
    var form = {
       name: n,
       contact: c,

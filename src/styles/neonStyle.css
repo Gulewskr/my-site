@@ -19,6 +19,7 @@ linia - #eecee3;
     90% { fill: #3219a3 }
     100% { fill: #a3195b }
 }
+
 @keyframes neonColorAnimate-S {
     0% { stroke: #fc499f }
     10% { stroke: #3719a3 }
@@ -40,8 +41,8 @@ linia - #eecee3;
     fill: none;
 }
 .cls-1, .cls-11 {
-    /*stroke: #3719a3;
-    filter: blur(4px);*/
+    stroke: #3719a3;
+    filter: blur(4px);
     stroke-miterlimit: 10;
     /* animacja zmieniania kolorów 
     animation-name: neonColorAnimate-S;

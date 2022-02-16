@@ -1,12 +1,3 @@
-html {
-    padding-bottom: 60px;
-    box-sizing: border-box;
-    background-color: rgb(32, 5, 44);
-    margin-top: 70px;
-}
-*{
-    color: rgb(253, 250, 243);
-}
 @keyframes faddingSlideFromBottom {
     0% {
       transform: translateY(+100%);
@@ -17,22 +8,7 @@ html {
       opacity: 1;
     }
 }
-.background-image {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    display: block;
-    background-repeat: no-repeat;
-    background-size: cover;
-    -webkit-filter: blur(2px);
-    -moz-filter: blur(2px);
-    -o-filter: blur(2px);
-    -ms-filter: blur(2px);
-    filter: blur(5px);
-}
+
 .content{
     margin-top: 30px;
     display: flex;
@@ -40,14 +16,7 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.info-h{
-    font-size: 26;
-    font-weight: bold;  
-}
-
-.info-t{
-    font-size: 24;
+    position: relative;
 }
 .sec{
     display: flex;
@@ -69,21 +38,6 @@ html {
     width: 100%;
 }
 
-.profilePicture{
-    width: 210px;
-    height: 230px;
-    border-radius: 30px;
-    overflow: hidden;
-    position: relative;
-}
-.profilePicture img{
-    height: 120%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -52%);
-    z-index: 0;
-}
 .pic-border{
     position: absolute;
     border-radius: 25px;
@@ -94,9 +48,7 @@ html {
     width: calc(100% - 14px);
     height: calc(100% - 14px);
 }
-.profilePicture div{
-    z-index: 1;
-}
+
 .break {
     flex-basis: 100%;
     height: 0;
@@ -112,18 +64,10 @@ html {
 }
  /* Small devices (portrait tablets and large phones, 600px and up) */
  @media only screen and (min-width: 600px) {
-    html {
-        margin-top: 80px;
-    }
+
  }
 
- /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    .profilePicture{
-        width: 420px;
-        height: 460px;
-    }
-}
+
  
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {}
@@ -139,10 +83,6 @@ html {
         display: inline-flex;
         width: 35%;
     }
-    .profilePicture{
-        margin-top: 100px;
-        margin-left: 10%;
-    }
 }
 
 .languages{
@@ -152,4 +92,129 @@ html {
     height: 50px;
     bottom: 1%;
     left: 50%;
+}
+
+/* ---------------------------------------------------- */
+html{
+    overflow-x: hidden;
+}
+
+main {
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+/*
+.background-image{
+    background: radial-gradient(circle at 75% 130%, #863223, #210c3b 70%);
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+*/
+
+
+.background-image {
+    position: fixed;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+    z-index: -1;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(5px);
+}
+
+/* --------------- NEONS ------------------ */
+
+.neon-blur{
+    fill: rgb(34, 0, 156);
+    filter: blur(2px);
+}
+
+.neon-line{
+    fill: #eecee3;
+}
+
+.text-neon{
+    color: rgb(170, 186, 255);
+    text-shadow: 
+        0 0 11px rgb(100, 154, 255),
+        0 0 10px rgb(34, 0, 156);
+    transition: .25s;
+}
+
+.text-neon:hover{
+    color: rgb(255, 255, 255);
+    text-shadow: 
+        0 0 4px rgb(4, 0, 255),
+        0 0 11px rgb(4, 0, 255),
+        0 0 19px rgb(4, 0, 255),
+        0 0 40px rgb(55, 0, 255),
+        0 0 100px rgb(255, 255, 255),
+        0 0 200px rgb(255, 255, 255);
+}
+
+.text-neon-on{
+    color: rgb(255, 255, 255);
+    text-shadow: 
+        0 0 4px rgb(4, 0, 255),
+        0 0 11px rgb(4, 0, 255),
+        0 0 19px rgb(4, 0, 255),
+        0 0 40px rgb(55, 0, 255),
+        0 0 100px rgb(255, 255, 255),
+        0 0 200px rgb(255, 255, 255);
+}
+
+.border-neon{
+    border: solid rgb(248, 248, 248);
+    transition: box-shadow .25s;
+    box-shadow: 0 0 3px 3px rgb(55, 0, 255),
+        inset 0 0 3px 3px rgb(55, 0, 255);
+}
+
+.border-neon:hover{
+    box-shadow: 0 0 6px 6px rgb(55, 0, 255),
+        inset 0 0 3px 3px rgb(55, 0, 255);
+}
+
+@keyframes flash {
+    78%{
+        color: rgb(232, 236, 255);
+        text-shadow: 
+            0 0 11px rgb(100, 154, 255),
+            0 0 10px rgb(34, 0, 156);
+    }
+
+    0%, 23%, 24%, 74%, 75.5%, 100%{
+        color: rgb(255, 255, 255);
+        text-shadow: 
+            0 0 4px rgb(4, 0, 255),
+            0 0 11px rgb(4, 0, 255),
+            0 0 19px rgb(4, 0, 255),
+            0 0 40px rgb(55, 0, 255),
+            0 0 100px rgb(255, 255, 255),
+            0 0 200px rgb(255, 255, 255);
+    }
+
+     23.2%, 75%, 76%{        
+        color: rgb(197, 197, 197);
+        text-shadow: none;
+    }    
+  }
+
+/* TODO - randomizacja opóźnienia animacji */
+.text-neon-on-blink{
+    animation: flash 10s infinite;
+    animation-fill-mode: both;
+    animation-direction: alternate;
 }

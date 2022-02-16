@@ -1,29 +1,24 @@
 import * as React from "react"
 import {graphql} from 'gatsby'
-import { Navbar, LanguageSettings, ColorSettings } from "../component"
-import ThemeContextProvider from '../component/neonColor';
 import background from '../images/bg.jpg'
 
-const NotFoundPage = () => {
-  return (
-    <ThemeContextProvider>
-    <main>
-      <div className="background-image" style={{backgroundImage: `url(${background})`}} />
-      <Navbar s=""/>
-      <title>Not found</title>
-      <div className="fontNF" >
-        <p>UPS zgubiłeś się? (pracuję nad tym miejscem 😉)</p>
-        <p>ERROR: 404</p>
-      </div>
+import Layout from '../component/Layout';
 
-        <LanguageSettings />
-        <ColorSettings />
-    </main>
-    </ThemeContextProvider>
+export default function NotFoundPage () 
+{
+  return (
+      <Layout>
+        <main>
+          <title>Not found</title>
+          <div className="background-image" style={{backgroundImage: `url(${background})`}} />
+          <div className="fontNF" >
+            <p>UPS zgubiłeś się? (pracuję nad tym miejscem 😉)</p>
+            <p>ERROR: 404</p>
+          </div>
+        </main>
+      </Layout>
   )
 }
-
-export default NotFoundPage
 
 export const query = graphql`
   query($language: String!) {

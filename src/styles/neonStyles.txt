@@ -6,11 +6,11 @@ export const Styles = () => {
     const v = {
         fill: {
             fill: c,
-            filter: 'blur(2px)'
+            filter: 'blur(1px)'
         },
         stroke: {
             stroke: c,
-            filter: 'blur(4px)'
+            filter: 'blur(1px)'
         }
     }
     return v

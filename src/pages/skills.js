@@ -1,11 +1,12 @@
-import * as React from 'react'
+import React, {useState} from 'react'
 import {graphql} from 'gatsby';
 import '../styles/skillsPage.css'
-import { Navbar, TechnologyIcons, NeonSkillWindow, LanguageSettings, ColorSettings } from '../component/'
+import { TechnologyIcons, StarIconON, NeonSkillWindow } from '../component/'
 import {Trans} from 'gatsby-plugin-react-i18next';
 import { Link } from 'gatsby'
-import ThemeContextProvider from '../component/neonColor';
 import background from '../images/bg.jpg'
+
+import Layout from '../component/Layout';
 
 const progL = [
   {
@@ -19,7 +20,7 @@ const progL = [
   },{
     "icon": TechnologyIcons["C Sharp"],
     "name": "C Sharp",
-    "lvl": 1
+    "lvl": 2
   }
 ]
 
@@ -35,7 +36,7 @@ const TiF = [
   },{
     "icon": TechnologyIcons["Node.js"],
     "name": "Node.js",
-    "lvl": 1
+    "lvl": 2
   },{
     "icon": TechnologyIcons["Git"],
     "name": "Git",
@@ -58,47 +59,61 @@ const GE = [
 const renderSkillList = (t) => t.map((v) => 
   <NeonSkillWindow icon={v["icon"]} name={v["name"]} lvl={v["lvl"]} />)
 
-// markup
-const Layout = ({ pageTitle, children }) => {
-  return (
-    <ThemeContextProvider>
-    <main>
-      <div className="background-image" style={{backgroundImage: `url(${background})`}} />
-        <Navbar s="Umiejętności" />
-        <title>Rafal Gulewski - Umiejętności</title>
-        <div className="cont">
-          <div className="sec sec1">
-            <t1><Trans>skills1</Trans></t1>
-            <div className="secIco">{renderSkillList(progL)}</div>
-          </div>
-          <div className="sec sec1">
-            <t1><Trans>skills2</Trans></t1>
-            <div className="secIco">{renderSkillList(TiF)}</div>
-          </div>
-          <div className="sec sec1">
-            <t1><Trans>skills3</Trans></t1>
-            <div className="secIco">{renderSkillList(GE)}</div>
-          </div>
-          <div className="sec sec1">
-            <div className="s">
-              <Link to="/projects" >
-                  <span><Trans>skills4</Trans></span>
-                  <div className="animatedArrow">
-                    <div className="arrow"/>
-                  </div>
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        <LanguageSettings />
-        <ColorSettings />
-    </main>
-    </ThemeContextProvider>
-  )
+const StatInfo = () => {
+    const [toggled, setToggled] = useState(false);
+    return(
+      <>
+      <div id="statinfo-toggle" role="button" tabIndex="0" className="border-neon" onKeyPress={() => setToggled(true)} onClick={() => setToggled(true)}>
+        Info <div className='star'><StarIconON /></div>
+      </div>
+      <div id="statinfo" role="button" tabIndex="0" className="border-neon" onKeyPress={() => setToggled(true)}   onClick={() => setToggled(false)} style={toggled ? {"transform" : "translate(-100%, 0)"} : {}}>
+        <div>1 <div className='star'><StarIconON /></div><Trans>lvl1</Trans></div>
+        <div>2 <div className='star'><StarIconON /></div><Trans>lvl2</Trans></div>
+        <div>3 <div className='star'><StarIconON /></div><Trans>lvl3</Trans></div>
+        <div>4 <div className='star'><StarIconON /></div><Trans>lvl4</Trans></div>
+        <div>5 <div className='star'><StarIconON /></div><Trans>lvl5</Trans></div>
+      </div>
+    </>
+    );
 }
 
-export default Layout
+// markup
+export default function Skills ({ pageTitle, children }) 
+{
+  return (
+      <Layout>
+      <title>Rafal Gulewski - Umiejętności</title>
+      <div className="background-image" style={{backgroundImage: `url(${background})`}} />
+      <main>
+          <StatInfo />
+          <div className="cont">
+            <div className="sec sec1">
+              <t1 className="text-neon-on-blink"><Trans>skills1</Trans></t1>
+              <div className="secIco">{renderSkillList(progL)}</div>
+            </div>
+            <div className="sec sec1">
+              <t1 className="text-neon-on-blink"><Trans>skills2</Trans></t1>
+              <div className="secIco">{renderSkillList(TiF)}</div>
+            </div>
+            <div className="sec sec1">
+              <t1 className="text-neon-on-blink"><Trans>skills3</Trans></t1>
+              <div className="secIco">{renderSkillList(GE)}</div>
+            </div>
+            <div className="sec sec1">
+              <div className="s text-neon">
+                <Link to="/projects" >
+                    <span><Trans>skills4</Trans></span>
+                    <div className="animatedArrow">
+                      <div className="arrow"/>
+                    </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+      </main>
+    </Layout>
+  )
+}
 
 export const query = graphql`
   query($language: String!) {

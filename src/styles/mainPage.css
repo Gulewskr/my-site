@@ -1,41 +1,95 @@
+.profilePicture{
+    width: 210px;
+    height: 230px;
+    position: relative;
+    overflow: show;
+    border-radius: 20px;
+}
+
+.pic-border{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-width: 2px;
+    width: 100%;
+    height: 100%;
+}
+
+.profilePicture-c {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.profilePicture-c img
+{
+    height: 100%;
+    transform: translate(-4%, 0);
+}
+
+.profilePicture div{
+    z-index: 1;
+}
+
 .wdg-info{
-    display: flex;
     font-family: 'Trebuchet MS', sans-serif;
-    color: white;
 }
-.floatIcons{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    height: 120px;
-}
-.wdg-c{
+
+.content-window{
     display: flex;
-    font-family: 'Trebuchet MS', sans-serif;
-    color: white;
-    width: 90%;
+    flex-direction: column;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    color: rgb(200, 199, 255);
 }
 
- /* Small devices (portrait tablets and large phones, 600px and up) */
- @media only screen and (min-width: 600px) {
+.info-h{
+    font-size: 24px;
+    font-weight: bold;  
+}
 
- }
+.info-t{
+    font-size: 20px;
+    margin: 20px;
+    word-spacing: 5px;
+}
 
- /* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 600px) {
+}
+
 @media only screen and (min-width: 768px) {
     .wdg-info{
-        width: 700px;
-    }
-    .wdg-c{
-        width: 600px;
+        max-width: 700px;
     }
     .floatIcons{
         margin-top: none;
     }
+
+    .profilePicture{
+        width: 420px;
+        height: 460px;
+    }
 }
  
-/* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {}
  
-/* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+    .profilePicture{
+        margin-top: 100px;
+        margin-left: 10%;
+    }
+}
+
+.floatIcons{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 120px;
+    display: flex;
 }

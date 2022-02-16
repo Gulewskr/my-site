@@ -1,0 +1,68 @@
+.i-col{
+    display: flex;
+}
+
+.i-col+.i-col{
+    margin-left: 30px;
+}
+
+.i-col:hover .circle-info{
+    opacity: 1;
+    visibility: visible;
+}
+
+.circle-info{
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    white-space: nowrap;
+    top: 0;
+    right: 50%;
+    transform: translate(+50%, -100%);
+    background-color: #1D1030;
+    color: white;
+    padding: 10px;
+    padding-right: 15px;
+    border-radius: 10px;
+    transition: .75s;
+
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ /* Medium devices (landscape tablets, 768px and up) */
+ @media only screen and (min-width: 768px) {
+    .i-col+.i-col{
+        margin-left: 70px;
+    }
+
+    .circle-info{
+        top: 30px;
+        right: 63px;
+        transform: translate(0, -50%);
+        border-top-right-radius: 60px;
+        border-bottom-right-radius: 60px;
+    }
+}
+
+.circle-content{
+    width: 70%;
+    height: 70%;
+}
+
+@keyframes circleAnimation {
+    0% {padding-top: 0;}
+    50% {padding-top: 50px;}
+    100% {padding-top: 0;}
+}
+
+.circle-float{
+    animation-name: circleAnimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;   
+}
+
+.delay{
+    animation-delay: 2.5s;
+}
+

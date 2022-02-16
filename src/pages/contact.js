@@ -1,17 +1,17 @@
-import * as React from 'react'
+import React, { useState } from 'react'
 import {graphql} from 'gatsby';
 import '../styles/pageStyle.css'
 import '../styles/contactForm.css'
 import '../scripts/email.js'
 import sendToMe from '../scripts/email.js'
-import {Navbar, NeonAppWindow, ContactList, LanguageSettings, ColorSettings} from '../component/'
+import {Navbar, NeonAppWindow, ContactList} from '../component/'
 import {Trans, useI18next} from 'gatsby-plugin-react-i18next';
-import ThemeContextProvider from '../component/neonColor';
 import background from '../images/bg.jpg'
-import { useColor } from "../component/neonColor";
 
-// markup
-const Layout = ({ pageTitle, children }) => {
+import Layout from '../component/Layout';
+
+export default function Contact ({ pageTitle, children })
+{
 
   const {language} = useI18next();
   const sendButton = {
@@ -19,48 +19,31 @@ const Layout = ({ pageTitle, children }) => {
     "en": "send"
   }
 
-  const contact = <>
-    <span className="info-t"><Trans>cont</Trans><br /><br /></span>
+  const contact = <div className='content-window'>
+    <span className="info-t text-neon-on"><Trans>cont</Trans><br /><br /></span>
     <ContactList />
-  </> 
+  </div> 
 
   const ContactForm = () => {
 
-    const {c} = useColor();
-    const [badN, setBadN] = React.useState(false);
-    const [badK, setBadK] = React.useState(false);
-    const [badW, setBadW] = React.useState(false);
+    const c = 'rgb(34, 0, 156)';
 
-    const [e, setE] = React.useState(false);
-    const [eb, setEB] = React.useState(true);
-
+    //focus
+    const [sf, setSF] = useState(false);
+    const [ef, setEF] = useState(false);
+    const [mf, setMF] = useState(false);
+    //bad values
+    const [badN, setBadN] = useState(false);
+    const [badK, setBadK] = useState(false);
+    const [badW, setBadW] = useState(false);
+    //respond
+    const [e, setE] = useState(false);
+    const [eb, setEB] = useState(true);
+    //styles
     const styleBlured = {borderColor : c}
     const styleFocused = {borderColor : c, boxShadow : "0px 0px 3px 3px " + c}
     const styleBadBlured = {borderColor : "#e70404"}
     const styleBadFocused = {borderColor : "#e70404", boxShadow : "0px 0px 3px 3px #e70404"}
-
-    const styleBut = {backgroundColor: c, boxShadow: "0px 0px 2px 2px " + c}
-    const styleButH = {color: "#000000", backgroundColor: "#dfdfdf", boxShadow: "0px 0px 6px 6px " + c}
-
-    const [styleN, SetStyleN] = React.useState(styleBlured);
-    const [styleK, SetStyleK] = React.useState(styleBlured);
-    const [styleW, SetStyleW] = React.useState(styleBlured);
-    const [styleB, SetStyleB] = React.useState(styleBut);
-
-    const changeStyleElement = (f = SetStyleN, blured = true, bad) => {
-      if(blured){
-        f(bad ? styleBadBlured : styleBlured );
-      }else{
-        f(bad ? styleBadFocused : styleFocused );
-      }
-    }
-
-    React.useEffect(() => {
-      changeStyleElement(SetStyleN, undefined, badN);
-      changeStyleElement(SetStyleK, undefined, badK);
-      changeStyleElement(SetStyleW, undefined, badW);
-      SetStyleB(styleBut);
-    }, [c, badK, badN, badW])
 
     const checkEmailAdr = (v) => {
       if(v === undefined) return false;
@@ -89,31 +72,25 @@ const Layout = ({ pageTitle, children }) => {
       if(n.length < 2){
         console.log('bad name');
         setBadN(true);
-        SetStyleN(styleBadBlured);
         approver = false;
       }else{
         setBadN(false);
-        SetStyleN(styleBlured);
       }
 
       if(!checkEmailAdr(c)){
         console.log("bad email");
         setBadK(true);
-        SetStyleK(styleBadBlured);
         approver = false;
       }else{
         setBadK(false);
-        SetStyleK(styleBlured);
       }
 
       if(t.length < 20){
         console.log('bad message');
         setBadW(true);
-        SetStyleW(styleBadBlured);
         approver = false;
       }else{
         setBadW(false);
-        SetStyleW(styleBlured);
       }
 
       if(approver){
@@ -126,66 +103,68 @@ const Layout = ({ pageTitle, children }) => {
 
     return(
       <>
-      <div className="form-msg" style={{top: e ? "50%" : "120%"}}>
-        <NeonAppWindow content={
-          <>
-            <div className="exit" 
-              onClick={() => setE(false)}
-              onKeyPress={() => setE(false)}
-              role="button" tabIndex={0}>
-              x
+        <div className="form-msg" style={{top: e ? "50%" : "120%"}}>
+          <NeonAppWindow>
+            <div className='content-window'>
+              <div className="exit text-neon" 
+                onClick={() => setE(false)}
+                onKeyPress={() => setE(false)}
+                role="button" tabIndex={0}>
+                x
+              </div>
+              <Trans>{eb ? "success" : "error"}</Trans>
             </div>
-            <Trans>{eb ? "success" : "error"}</Trans></>
-          } />
-      </div>
+          </NeonAppWindow>
+        </div>
       <form className="formCont" onSubmit={sendEmail}>
-        <div className="form-sec"><Trans>contH</Trans></div>
+        <div className="form-sec text-neon-on-blink"><Trans>contH</Trans></div>
         <div className="form-sec">
           <div>
-            <label htmlFor="n" ><Trans>contN</Trans></label>
-            <input id="n" type="text" onBlur= {() => changeStyleElement(SetStyleN, true, badN)} onFocus={ () => changeStyleElement(SetStyleN, false, badN)} style={styleN}/>
+            <label htmlFor="sender" className={sf ? 'text-neon-on' : '' } ><Trans>contN</Trans></label>
+            <input id="sender" type="text" onBlur={() => setSF(false)} onFocus={ () => setSF(true)} style={badN ? sf ? styleBadFocused : styleBadBlured : sf ? styleFocused : styleBlured}/>
             {badN && <div className="form-bad"><Trans>BadN</Trans></div>}
           </div>
           <div>
-            <label htmlFor="k" ><Trans>contK</Trans></label>
-            <input id="k" type="text" onBlur= {() => changeStyleElement(SetStyleK, true, badK)} onFocus={ () => changeStyleElement(SetStyleK, false, badK)} style={styleK}/>
+            <label htmlFor="email" className={ef ? 'text-neon-on' : '' } ><Trans>contK</Trans></label>
+            <input id="email" type="email" onBlur={() => setEF(false)} onFocus={ () => setEF(true)} style={badK ? ef ? styleBadFocused : styleBadBlured : ef ? styleFocused : styleBlured}/>
             {badK && <div className="form-bad"><Trans>BadK</Trans></div>}
           </div>
         </div>
         <div className="form-sec form-b">
-          <label htmlFor="t" ><Trans>contW</Trans></label>
-          <textarea id="t" name="message" onBlur= {() => changeStyleElement(SetStyleW, true, badW)} onFocus={ () => changeStyleElement(SetStyleW, false, badW)} style={styleW}/>
+          <label htmlFor="message" className={mf ? 'text-neon-on' : '' } ><Trans>contW</Trans></label>
+          <textarea id="message" name="message" onBlur={() => setMF(false)} onFocus={ () => setMF(true)} style={badW ? mf ? styleBadFocused : styleBadBlured : mf ? styleFocused : styleBlured}/>
           {badW && <div className="form-bad"><Trans>BadW</Trans></div>}
         </div>
-        <input type="submit" onMouseEnter={() => SetStyleB(styleButH)} onMouseLeave={() => SetStyleB(styleBut)} value={sendButton[language]} style={styleB} />
+        <input type="submit" id='submitButton' value={sendButton[language]} />
       </form>
       </>
     )
   }
 
   return (
-    <ThemeContextProvider>
-    <main>
-      <div className="background-image" style={{backgroundImage: `url(${background})`}} />
-        <Navbar s="Kontakt" />
-        <title>Rafal Gulewski - Kontakt</title>
-        <div className="content">
-          <div className="wdg-c">
-            <NeonAppWindow content={contact}/>
-          </div>
-          <div className="wdg-contactForm">
-            <NeonAppWindow content={<ContactForm />}/>
-          </div>
-        </div>
-        
-        <LanguageSettings />
-        <ColorSettings />
-    </main>
-    </ThemeContextProvider>
+      <Layout>
+        <main>
+          <div className="background-image" style={{backgroundImage: `url(${background})`}} />
+            <Navbar s="Kontakt" />
+            <title>Rafal Gulewski - Kontakt</title>
+            <div className="content">
+              <div className="wdg-c">
+                <NeonAppWindow>
+                  {contact}
+                </NeonAppWindow>
+              </div>
+              <div className="wdg-contactForm">
+                <NeonAppWindow>
+                  <div className='content-window'>
+                    <ContactForm />
+                  </div>
+                </NeonAppWindow>
+              </div>
+            </div>
+        </main>
+      </Layout>
   )
 }
-
-export default Layout
 
 export const query = graphql`
   query($language: String!) {
