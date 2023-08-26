@@ -1,26 +1,26 @@
 import React, { useState } from 'react'
-import {graphql} from 'gatsby';
+//import {graphql} from 'gatsby';
 import '../styles/pageStyle.css'
 import '../styles/contactForm.css'
 import '../scripts/email.js'
 import sendToMe from '../scripts/email.js'
-import {Navbar, NeonAppWindow, ContactList} from '../component/'
-import {Trans, useI18next} from 'gatsby-plugin-react-i18next';
-import background from '../images/bg.jpg'
+import { NeonAppWindow, ContactList} from '../component/'
+//import {, useI18next} from 'gatsby-plugin-react-i18next';
 
 import Layout from '../component/Layout';
+
 
 export default function Contact ({ pageTitle, children })
 {
 
-  const {language} = useI18next();
+  //const {language} = useI18next();
   const sendButton = {
     "pl": "wyślij",
     "en": "send"
   }
 
   const contact = <div className='content-window'>
-    <span className="info-t text-neon-on"><Trans>cont</Trans><br /><br /></span>
+    <span className="info-t text-neon-on"><>cont</><br /><br /></span>
     <ContactList />
   </div> 
 
@@ -112,30 +112,30 @@ export default function Contact ({ pageTitle, children })
                 role="button" tabIndex={0}>
                 x
               </div>
-              <Trans>{eb ? "success" : "error"}</Trans>
+              <>{eb ? "success" : "error"}</>
             </div>
           </NeonAppWindow>
         </div>
       <form className="formCont" onSubmit={sendEmail}>
-        <div className="form-sec text-neon-on-blink"><Trans>contH</Trans></div>
+        <div className="form-sec text-neon-on-blink"><>contH</></div>
         <div className="form-sec">
           <div>
-            <label htmlFor="sender" className={sf ? 'text-neon-on' : '' } ><Trans>contN</Trans></label>
+            <label htmlFor="sender" className={sf ? 'text-neon-on' : '' } ><>contN</></label>
             <input id="sender" type="text" onBlur={() => setSF(false)} onFocus={ () => setSF(true)} style={badN ? sf ? styleBadFocused : styleBadBlured : sf ? styleFocused : styleBlured}/>
-            {badN && <div className="form-bad"><Trans>BadN</Trans></div>}
+            {badN && <div className="form-bad"><>BadN</></div>}
           </div>
           <div>
-            <label htmlFor="email" className={ef ? 'text-neon-on' : '' } ><Trans>contK</Trans></label>
+            <label htmlFor="email" className={ef ? 'text-neon-on' : '' } ><>contK</></label>
             <input id="email" type="email" onBlur={() => setEF(false)} onFocus={ () => setEF(true)} style={badK ? ef ? styleBadFocused : styleBadBlured : ef ? styleFocused : styleBlured}/>
-            {badK && <div className="form-bad"><Trans>BadK</Trans></div>}
+            {badK && <div className="form-bad"><>BadK</></div>}
           </div>
         </div>
         <div className="form-sec form-b">
-          <label htmlFor="message" className={mf ? 'text-neon-on' : '' } ><Trans>contW</Trans></label>
+          <label htmlFor="message" className={mf ? 'text-neon-on' : '' } ><>contW</></label>
           <textarea id="message" name="message" onBlur={() => setMF(false)} onFocus={ () => setMF(true)} style={badW ? mf ? styleBadFocused : styleBadBlured : mf ? styleFocused : styleBlured}/>
-          {badW && <div className="form-bad"><Trans>BadW</Trans></div>}
+          {badW && <div className="form-bad"><>BadW</></div>}
         </div>
-        <input type="submit" id='submitButton' value={sendButton[language]} />
+        <input type="submit" id='submitButton' value={sendButton['en']} />
       </form>
       </>
     )
@@ -144,8 +144,6 @@ export default function Contact ({ pageTitle, children })
   return (
       <Layout>
         <main>
-          <div className="background-image" style={{backgroundImage: `url(${background})`}} />
-            <Navbar s="Kontakt" />
             <title>Rafal Gulewski - Kontakt</title>
             <div className="content">
               <div className="wdg-c">
@@ -166,6 +164,8 @@ export default function Contact ({ pageTitle, children })
   )
 }
 
+
+/*
 export const query = graphql`
   query($language: String!) {
     locales: allLocale(filter: {language: {eq: $language}}) {
@@ -179,3 +179,4 @@ export const query = graphql`
     }
   }
 `;
+*/

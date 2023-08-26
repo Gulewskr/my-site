@@ -1,17 +1,30 @@
-import * as React from 'react';
+import React from 'react';
 import {graphql} from 'gatsby';
 
 import '../styles/pageStyle.css';
 import '../styles/mainPage.css';
 import { NeonAppWindow, CircleIcons, ContactList } from '../component/';
+import { Trans } from 'gatsby-plugin-react-i18next';
 import Layout from '../component/Layout';
+import profilePicture from '../images/339982884_210878608218440_4044470635753148789_n.png' 
 
-import {Trans} from 'gatsby-plugin-react-i18next';
 
-import profilePicture from '../images/profile.jpg' 
-import background from '../images/bg.jpg'
+export const query = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`
 
-const Home = ({ pageTitle, children }) => {
+export default function Home({ pageTitle, children })
+{
 
   const info = 
     <div className='content-window'>
@@ -30,13 +43,12 @@ const Home = ({ pageTitle, children }) => {
   return (
       <Layout>
           <title>Rafal Gulewski</title>
-          <div className="background-image" style={{backgroundImage: `url(${background})`}} />
         <main>
           <div className="sec">
             <div className="leftCollumn">
               <div className="profilePicture">
                   <div className='profilePicture-c'><img src={profilePicture} alt="Profile" /></div>
-                  <div class="pic-border border-neon" />
+                  <div className="pic-border border-neon" />
               </div>
             </div>
             <div className="rightCollumn">
@@ -59,19 +71,3 @@ const Home = ({ pageTitle, children }) => {
       </Layout>
   )
 }
-
-export default Home
-
-export const query = graphql`
-  query($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
-  }
-`

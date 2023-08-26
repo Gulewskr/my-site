@@ -1,10 +1,9 @@
 import React, {useState} from 'react'
-import {graphql} from 'gatsby';
+//import {graphql} from 'gatsby';
 import '../styles/skillsPage.css'
 import { TechnologyIcons, StarIconON, NeonSkillWindow } from '../component/'
-import {Trans} from 'gatsby-plugin-react-i18next';
 import { Link } from 'gatsby'
-import background from '../images/bg.jpg'
+
 
 import Layout from '../component/Layout';
 
@@ -66,12 +65,12 @@ const StatInfo = () => {
       <div id="statinfo-toggle" role="button" tabIndex="0" className="border-neon" onKeyPress={() => setToggled(true)} onClick={() => setToggled(true)}>
         Info <div className='star'><StarIconON /></div>
       </div>
-      <div id="statinfo" role="button" tabIndex="0" className="border-neon" onKeyPress={() => setToggled(true)}   onClick={() => setToggled(false)} style={toggled ? {"transform" : "translate(-100%, 0)"} : {}}>
-        <div>1 <div className='star'><StarIconON /></div><Trans>lvl1</Trans></div>
-        <div>2 <div className='star'><StarIconON /></div><Trans>lvl2</Trans></div>
-        <div>3 <div className='star'><StarIconON /></div><Trans>lvl3</Trans></div>
-        <div>4 <div className='star'><StarIconON /></div><Trans>lvl4</Trans></div>
-        <div>5 <div className='star'><StarIconON /></div><Trans>lvl5</Trans></div>
+      <div id="statinfo" role="button" tabIndex="0" className="border-neon" onKeyPress={() => setToggled(true)}   onClick={() => setToggled(false)} style={toggled ? {"form" : "late(-100%, 0)"} : {}}>
+        <div>1 <div className='star'><StarIconON /></div><>lvl1</></div>
+        <div>2 <div className='star'><StarIconON /></div><>lvl2</></div>
+        <div>3 <div className='star'><StarIconON /></div><>lvl3</></div>
+        <div>4 <div className='star'><StarIconON /></div><>lvl4</></div>
+        <div>5 <div className='star'><StarIconON /></div><>lvl5</></div>
       </div>
     </>
     );
@@ -81,28 +80,27 @@ const StatInfo = () => {
 export default function Skills ({ pageTitle, children }) 
 {
   return (
-      <Layout>
+     <Layout>
       <title>Rafal Gulewski - Umiejętności</title>
-      <div className="background-image" style={{backgroundImage: `url(${background})`}} />
       <main>
           <StatInfo />
           <div className="cont">
             <div className="sec sec1">
-              <t1 className="text-neon-on-blink"><Trans>skills1</Trans></t1>
+              <t1 className="text-neon-on-blink"><>skills1</></t1>
               <div className="secIco">{renderSkillList(progL)}</div>
             </div>
             <div className="sec sec1">
-              <t1 className="text-neon-on-blink"><Trans>skills2</Trans></t1>
+              <t1 className="text-neon-on-blink"><>skills2</></t1>
               <div className="secIco">{renderSkillList(TiF)}</div>
             </div>
             <div className="sec sec1">
-              <t1 className="text-neon-on-blink"><Trans>skills3</Trans></t1>
+              <t1 className="text-neon-on-blink"><>skills3</></t1>
               <div className="secIco">{renderSkillList(GE)}</div>
             </div>
             <div className="sec sec1">
               <div className="s text-neon">
                 <Link to="/projects" >
-                    <span><Trans>skills4</Trans></span>
+                    <span><>skills4</></span>
                     <div className="animatedArrow">
                       <div className="arrow"/>
                     </div>
@@ -114,17 +112,3 @@ export default function Skills ({ pageTitle, children })
     </Layout>
   )
 }
-
-export const query = graphql`
-  query($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
-  }
-`;

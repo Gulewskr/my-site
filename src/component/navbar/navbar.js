@@ -1,13 +1,15 @@
 import React, {useState} from 'react'
+import { Trans, useTranslation } from "react-i18next"
 
 import './navbar.css'
 import '../../styles/icons.css'
-
-import {Trans, Link} from 'gatsby-plugin-react-i18next';
+//import {div} from 'react-dom';
+//import {, div} from 'gatsby-plugin-react-i18next';
 
 const Navbar = () => {
         const [toogledNavbar, setTN] = useState(false);
-   
+        const { t } = useTranslation();
+
         /*
         TODO - dodać chowanie paska na scrool
 
@@ -37,9 +39,9 @@ const Navbar = () => {
                 <nav role="navigation" className="navMain" id="navbar">
                         <ul>
                                 <li>
-                                        <Link to="/">
+                                        <div to="/">
                                                 <div id="nav-logo" className='text-neon-on'>{"<RAFAŁ GULEWSKI/>"}</div>
-                                        </Link>
+                                        </div>
                                 </li>
                                         <button id='nav-toogle' className='border-neon' onClick={() => setTN(!toogledNavbar)} >
                                                 <svg xmlns="http://www.w3.org/2000/svg" style={toogledNavbar ?  {'rotate': '90deg'} : {} } width="100%" height="100%" viewBox="0 0 50 50" overflow="visible">
@@ -49,10 +51,10 @@ const Navbar = () => {
                                                 </svg>
                                         </button>
                                 <li />
-                                <li className='nav-item' style={toogledNavbar ? {display: 'block'} : {}}><Link to="/skills"><span className='text-neon'><Trans>skills</Trans> </span></ Link></li>
-                                <li className='nav-item' style={toogledNavbar ? {display: 'block'} : {}}><Link to="/projects"><span className='text-neon'><Trans>proj</Trans> </span></ Link></li>
-                                <li className='nav-item' style={toogledNavbar ? {display: 'block'} : {}}><Link to="/about"><span className='text-neon'><Trans>about</Trans> </span></ Link></li>
-                                <li className='nav-item' style={toogledNavbar ? {display: 'block'} : {}}><Link to="/contact"><span className='text-neon'><Trans>contact</Trans> </span></ Link></li>
+                                <li className='nav-item' style={toogledNavbar ? {display: 'block'} : {}}><div to="/skills"><span className='text-neon'><Trans i18nKey="skills">skills</Trans> </span></ div></li>
+                                <li className='nav-item' style={toogledNavbar ? {display: 'block'} : {}}><div to="/projects"><span className='text-neon'>{t('proj')}</span></ div></li>
+                                <li className='nav-item' style={toogledNavbar ? {display: 'block'} : {}}><div to="/about"><span className='text-neon'>{t('about')}</span></ div></li>
+                                <li className='nav-item' style={toogledNavbar ? {display: 'block'} : {}}><div to="/contact"><span className='text-neon'><Trans i18nKey="contact">contact</Trans> </span></ div></li>
                         </ul>
                 </nav>
           );

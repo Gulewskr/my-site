@@ -8,10 +8,10 @@ export default function Layout ({ children }) {
             <Navbar />
         </header>
         <div>
-        {children}
+          {children}
         </div>
         <footer>
-            <LanguageSettings />
+            <LanguageSettings/>
         </footer>
     </>
   )

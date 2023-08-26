@@ -97,6 +97,7 @@
 /* ---------------------------------------------------- */
 html{
     overflow-x: hidden;
+    background: radial-gradient(circle at 75% 130%, rgb(34, 0, 156), #210c3b 70%);
 }
 
 main {
@@ -105,18 +106,6 @@ main {
 }
 
 /*
-.background-image{
-    background: radial-gradient(circle at 75% 130%, #863223, #210c3b 70%);
-    z-index: -1;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-*/
-
-
 .background-image {
     position: fixed;
     top: -10px;
@@ -125,7 +114,6 @@ main {
     right: -10px;
     z-index: -1;
     display: block;
-    background-repeat: no-repeat;
     background-size: cover;
     -webkit-filter: blur(2px);
     -moz-filter: blur(2px);
@@ -133,6 +121,7 @@ main {
     -ms-filter: blur(2px);
     filter: blur(5px);
 }
+*/
 
 /* --------------- NEONS ------------------ */
 

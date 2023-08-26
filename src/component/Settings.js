@@ -1,8 +1,8 @@
-import * as React from 'react'
+import React from 'react'
 import '../styles/neonStyle.css'
 import '../styles/settings.css'
 
-import {Trans, useI18next} from 'gatsby-plugin-react-i18next';
+//import i18n from 'i18next';
 
 import fUSA from '../images/flagUSA.png'
 import fPL from '../images/flagPL.png' 
@@ -13,7 +13,10 @@ const flags = {
 }
 
 const LanguageSettings = () => {
-    const {languages, language, changeLanguage} = useI18next();
+    const languages = [ 'en', 'pl' ];
+    const language = 'pl';
+    //const {languages, language, changeLanguage} = useI18next();
+    const changeLanguage = (v) => console.log(v);
     const [menuV, setV] = React.useState(false);
     
     return(
@@ -24,7 +27,7 @@ const LanguageSettings = () => {
             { menuV && <div className="fullscreen" role="button" tabIndex="0" onClick={ () => setV(false) } onKeyDown={ () => setV(false) }> </div>}
             <div className={ menuV ? "languages activeM" : "languages" }>
                     <div className="menu-m border-neon">
-                        <span className='neon-text-on'><Trans>SetLang</Trans></span>
+                        <span className='neon-text-on'><>SetLang</></span>
                         <ul>
                         {languages.map((lng) => (
                         <li key={lng}>
@@ -73,7 +76,7 @@ const ColorSettings = () => {
             <div className="s-ctr"><Corner/></div>
             <div className="s-cbr"><Corner/></div>
             <div className="menu-m">
-                    <Trans>SetCol</Trans>
+                    <>SetCol</>
                     <ul>
                     {Object.keys(Colors).map((c) => (
                     <li key={c} > 

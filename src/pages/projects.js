@@ -1,12 +1,10 @@
-import * as React from 'react'
-import {graphql} from 'gatsby';
+import React from 'react'
 import '../styles/pageStyle.css'
 import '../styles/projectStyle.css'
 import {NeonProjectWindow} from '../component/'
-import {Trans} from 'gatsby-plugin-react-i18next';
-import background from '../images/bg.jpg'
 
 import Layout from '../component/Layout';
+
 
 const TPr = [
   {
@@ -64,14 +62,13 @@ export default function Projects ({ pageTitle, children })
       <Layout>
         <title>Rafal Gulewski - Projekty</title>
         <main>
-          <div className="background-image" style={{backgroundImage: `url(${background})`}} />
             <div className="projects-ctl">
-              <t1 className="text-neon-on-blink"><Trans>proj</Trans></t1> 
+              <t1 className="text-neon-on-blink"><>proj</></t1> 
               <div className="ctl-m">
                 {renderProjectList(TPr)}
               </div>
               <div className='text-neon' style={{'fontSize': '20px'}}>
-                👷‍♂️ - <Trans>projInfo</Trans>
+                👷‍♂️ - <>projInfo</>
               </div>
             </div>
         </main>
@@ -79,6 +76,7 @@ export default function Projects ({ pageTitle, children })
   )
 }
 
+/*
 export const query = graphql`
   query($language: String!) {
     locales: allLocale(filter: {language: {eq: $language}}) {
@@ -92,3 +90,4 @@ export const query = graphql`
     }
   }
 `;
+*/
