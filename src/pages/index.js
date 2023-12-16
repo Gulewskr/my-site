@@ -45,12 +45,14 @@ export default function Home({ pageTitle, children })
           <title>Rafal Gulewski</title>
         <main>
           <div className="sec">
+            {/*
             <div className="leftCollumn">
               <div className="profilePicture">
                   <div className='profilePicture-c'><img src={profilePicture} alt="Profile" /></div>
                   <div className="pic-border border-neon" />
               </div>
             </div>
+            */}
             <div className="rightCollumn">
               <div className="wdg-info">
                 <NeonAppWindow>
