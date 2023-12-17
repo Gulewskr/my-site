@@ -1,15 +1,4 @@
-@keyframes faddingSlideFromBottom {
-    0% {
-      transform: translateY(+100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-}
-
-.content{
+.content {
     margin-top: 30px;
     display: flex;
     width: 100%;
@@ -18,27 +7,14 @@
     align-items: center;
     position: relative;
 }
-.sec{
+
+.sec {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-}
-.rightCollumn{
-    display: flex;
-    width: 100%;
-    margin-top: 30px;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-.leftCollumn{
-    display: flex;
-    justify-content: center;
     width: 100%;
 }
 
-.pic-border{
+.pic-border {
     position: absolute;
     border-radius: 25px;
     left: 7px;
@@ -54,7 +30,7 @@
     height: 0;
 }
 
-.fontNF{
+.fontNF {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -62,30 +38,8 @@
     justify-content: center;
     align-items: center;
 }
- /* Small devices (portrait tablets and large phones, 600px and up) */
- @media only screen and (min-width: 600px) {
 
- }
-
-
- 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
- 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    .rightCollumn{
-        width: 65%;
-        display: inline-flex;
-        margin-top: none;
-    }
-    .leftCollumn{
-        display: inline-flex;
-        width: 35%;
-    }
-}
-
-.languages{
+.languages {
     position: absolute;
     display: block;
     width: 100px;
@@ -95,9 +49,13 @@
 }
 
 /* ---------------------------------------------------- */
-html{
+html {
     overflow-x: hidden;
-    background: radial-gradient(circle at 75% 130%, rgb(34, 0, 156), #210c3b 70%);
+    height: 100%;
+}
+
+body {
+    height: auto;
 }
 
 main {
@@ -125,85 +83,93 @@ main {
 
 /* --------------- NEONS ------------------ */
 
-.neon-blur{
-    fill: rgb(34, 0, 156);
+.neon-blur {
+    fill: #22009c;
     filter: blur(2px);
 }
 
-.neon-line{
+.neon-line {
     fill: #eecee3;
 }
 
-.text-neon{
+.text-neon {
     color: rgb(170, 186, 255);
-    text-shadow: 
-        0 0 11px rgb(100, 154, 255),
-        0 0 10px rgb(34, 0, 156);
+    text-shadow:
+        0 0 11px #649aff,
+        0 0 10px #22009c;
     transition: .25s;
 }
 
-.text-neon:hover{
-    color: rgb(255, 255, 255);
-    text-shadow: 
-        0 0 4px rgb(4, 0, 255),
-        0 0 11px rgb(4, 0, 255),
-        0 0 19px rgb(4, 0, 255),
-        0 0 40px rgb(55, 0, 255),
-        0 0 100px rgb(255, 255, 255),
-        0 0 200px rgb(255, 255, 255);
+.text-neon:hover {
+    color: #ffffff;
+    /*text-shadow:
+        0 0 4px #0400ff,
+        0 0 11px #0400ff,
+        0 0 19px #0400ff,
+        0 0 40px #3700ff,
+        0 0 100px #ffffff,
+        0 0 200px #ffffff;*/
 }
 
-.text-neon-on{
-    color: rgb(255, 255, 255);
-    text-shadow: 
-        0 0 4px rgb(4, 0, 255),
-        0 0 11px rgb(4, 0, 255),
-        0 0 19px rgb(4, 0, 255),
-        0 0 40px rgb(55, 0, 255),
-        0 0 100px rgb(255, 255, 255),
-        0 0 200px rgb(255, 255, 255);
+.text-neon-on {
+    color: #ffffff;
+    /*text-shadow:
+    0 0 4px #0400ff,
+    0 0 11px #0400ff,
+        0 0 19px #0400ff,
+        0 0 40px #3700ff,
+        0 0 100px #ffffff,
+        0 0 200px #ffffff;*/
 }
 
-.border-neon{
+.border-neon {
     border: solid rgb(248, 248, 248);
     transition: box-shadow .25s;
-    box-shadow: 0 0 3px 3px rgb(55, 0, 255),
-        inset 0 0 3px 3px rgb(55, 0, 255);
+    box-shadow: 0 0 3px 3px #3700ff,
+        inset 0 0 3px 3px #3700ff;
 }
 
-.border-neon:hover{
-    box-shadow: 0 0 6px 6px rgb(55, 0, 255),
-        inset 0 0 3px 3px rgb(55, 0, 255);
+.border-neon:hover {
+    box-shadow: 0 0 6px 6px #3700ff,
+        inset 0 0 3px 3px #3700ff;
 }
 
+/*
 @keyframes flash {
-    78%{
+    78% {
         color: rgb(232, 236, 255);
-        text-shadow: 
-            0 0 11px rgb(100, 154, 255),
-            0 0 10px rgb(34, 0, 156);
+        text-shadow:
+            0 0 11px #649aff,
+            0 0 10px #22009c;
     }
 
-    0%, 23%, 24%, 74%, 75.5%, 100%{
-        color: rgb(255, 255, 255);
-        text-shadow: 
-            0 0 4px rgb(4, 0, 255),
-            0 0 11px rgb(4, 0, 255),
-            0 0 19px rgb(4, 0, 255),
-            0 0 40px rgb(55, 0, 255),
-            0 0 100px rgb(255, 255, 255),
-            0 0 200px rgb(255, 255, 255);
+    0%,
+    23%,
+    24%,
+    74%,
+    75.5%,
+    100% {
+        color: #ffffff;
+        text-shadow:
+            0 0 4px #0400ff,
+            0 0 11px #0400ff,
+            0 0 19px #0400ff,
+            0 0 40px #3700ff,
+            0 0 100px #ffffff,
+            0 0 200px #ffffff;
     }
 
-     23.2%, 75%, 76%{        
+    23.2%,
+    75%,
+    76% {
         color: rgb(197, 197, 197);
         text-shadow: none;
-    }    
-  }
+    }
+}
 
-/* TODO - randomizacja opóźnienia animacji */
-.text-neon-on-blink{
+.text-neon-on-blink {
     animation: flash 10s infinite;
     animation-fill-mode: both;
     animation-direction: alternate;
 }
+*/

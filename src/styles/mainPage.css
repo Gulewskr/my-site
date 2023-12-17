@@ -1,4 +1,4 @@
-.profilePicture{
+.profilePicture {
     width: 210px;
     height: 230px;
     position: relative;
@@ -6,7 +6,7 @@
     border-radius: 20px;
 }
 
-.pic-border{
+.pic-border {
     top: 0;
     left: 0;
     right: 0;
@@ -27,20 +27,19 @@
     overflow: hidden;
 }
 
-.profilePicture-c img
-{
+.profilePicture-c img {
     height: 100%;
 }
 
-.profilePicture div{
+.profilePicture div {
     z-index: 1;
 }
 
-.wdg-info{
+.wdg-info {
     font-family: 'Trebuchet MS', sans-serif;
 }
 
-.content-window{
+.content-window {
     display: flex;
     flex-direction: column;
     margin: 20px;
@@ -49,44 +48,18 @@
     color: rgb(200, 199, 255);
 }
 
-.info-h{
+.info-h {
     font-size: 24px;
-    font-weight: bold;  
+    font-weight: bold;
 }
 
-.info-t{
+.info-t {
     font-size: 20px;
     margin: 20px;
     word-spacing: 5px;
 }
 
-@media only screen and (min-width: 600px) {
-}
-
-@media only screen and (min-width: 768px) {
-    .wdg-info{
-        max-width: 700px;
-    }
-    .floatIcons{
-        margin-top: none;
-    }
-
-    .profilePicture{
-        width: 420px;
-        height: 460px;
-    }
-}
- 
-@media only screen and (min-width: 992px) {}
- 
-@media only screen and (min-width: 1200px) {
-    .profilePicture{
-        margin-top: 100px;
-        margin-left: 10%;
-    }
-}
-
-.floatIcons{
+.floatIcons {
     margin-top: 20px;
     margin-bottom: 20px;
     height: 120px;

@@ -38,7 +38,7 @@ export default function Contact ({ pageTitle, children })
     const [badW, setBadW] = useState(false);
     //respond
     const [e, setE] = useState(false);
-    const [eb, setEB] = useState(true);
+    const [, setEB] = useState(true);
     //styles
     const styleBlured = {borderColor : c}
     const styleFocused = {borderColor : c, boxShadow : "0px 0px 3px 3px " + c}
@@ -54,10 +54,8 @@ export default function Contact ({ pageTitle, children })
     const emailCB = (res) => {
       setE(true);
       if(res){
-        console.log("sended");
         setEB(true);
       }else{
-        console.log("error");
         setEB(false);
       }
     }
@@ -112,7 +110,7 @@ export default function Contact ({ pageTitle, children })
                 role="button" tabIndex={0}>
                 x
               </div>
-              <>{eb ? "success" : "error"}</>
+              <>{"Emailing temporarily removed"}</>
             </div>
           </NeonAppWindow>
         </div>

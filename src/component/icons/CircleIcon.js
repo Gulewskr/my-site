@@ -1,6 +1,6 @@
 import * as React from 'react'
 import '../../styles/neonStyle.css'
-import './circleIcons.css'
+//import './circleIcons.css'
 //import { Styles } from '../../styles/neonStyles'
 
 //import {div className='Link'} from 'react-dom';

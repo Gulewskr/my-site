@@ -39,9 +39,9 @@ const Navbar = () => {
                 <nav role="navigation" className="navMain" id="navbar">
                         <ul>
                                 <li>
-                                        <div to="/">
+                                        <a href="/">
                                                 <div id="nav-logo" className='text-neon-on'>{"<RAFAŁ GULEWSKI/>"}</div>
-                                        </div>
+                                        </a>
                                 </li>
                                         <button id='nav-toogle' className='border-neon' onClick={() => setTN(!toogledNavbar)} >
                                                 <svg xmlns="http://www.w3.org/2000/svg" style={toogledNavbar ?  {'rotate': '90deg'} : {} } width="100%" height="100%" viewBox="0 0 50 50" overflow="visible">
@@ -51,10 +51,10 @@ const Navbar = () => {
                                                 </svg>
                                         </button>
                                 <li />
-                                <li className='nav-item' style={toogledNavbar ? {display: 'block'} : {}}><div to="/skills"><span className='text-neon'><Trans i18nKey="skills">skills</Trans> </span></ div></li>
-                                <li className='nav-item' style={toogledNavbar ? {display: 'block'} : {}}><div to="/projects"><span className='text-neon'>{t('proj')}</span></ div></li>
-                                <li className='nav-item' style={toogledNavbar ? {display: 'block'} : {}}><div to="/about"><span className='text-neon'>{t('about')}</span></ div></li>
-                                <li className='nav-item' style={toogledNavbar ? {display: 'block'} : {}}><div to="/contact"><span className='text-neon'><Trans i18nKey="contact">contact</Trans> </span></ div></li>
+                                <li className='nav-item' style={toogledNavbar ? {display: 'block'} : {}}><a href="/skills"><span className='text-neon'><Trans i18nKey="skills">skills</Trans> </span></ a></li>
+                                <li className='nav-item' style={toogledNavbar ? {display: 'block'} : {}}><a href="/projects"><span className='text-neon'>{t('proj')}</span></ a></li>
+                                <li className='nav-item' style={toogledNavbar ? {display: 'block'} : {}}><a href="/about"><span className='text-neon'>{t('about')}</span></ a></li>
+                                <li className='nav-item' style={toogledNavbar ? {display: 'block'} : {}}><a href="/contact"><span className='text-neon'><Trans i18nKey="contact">contact</Trans> </span></ a></li>
                         </ul>
                 </nav>
           );

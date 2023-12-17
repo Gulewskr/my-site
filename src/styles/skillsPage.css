@@ -1,4 +1,4 @@
-t1{
+t1 {
     font-size: 28px;
     margin-top: 30px;
 }
@@ -7,38 +7,44 @@ t1{
     color: white;
     font-size: 28px;
 }
-.cont{
+
+.cont {
     display: flex;
     width: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.sec1{
+
+.sec1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
-.secIco{
+
+.secIco {
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
-.s{
+
+.s {
     display: block;
     position: relative;
     text-align: center;
 }
 
+/*
 @keyframes left-right {
     0% {right: 0;}
     50% {right: -50px;}
     100% {right: 0;}
 }
-.animatedArrow{
+*/
+.animatedArrow {
     position: absolute;
     top: 50%;
     right: 0;
@@ -51,7 +57,7 @@ t1{
     animation-duration: 8s;
 }
 
-#statinfo-toggle{
+#statinfo-toggle {
     position: fixed;
     top: 100px;
     right: -8px;
@@ -65,7 +71,7 @@ t1{
     border-width: 1px;
 }
 
-#statinfo{
+#statinfo {
     position: fixed;
     top: 100px;
     left: calc(100% + 8px);
@@ -80,13 +86,14 @@ t1{
     border-width: 1px;
     transition: .5s;
 }
-#statinfo div{
+
+#statinfo div {
     display: flex;
     align-items: center;
     margin: 5px;
 }
 
-.star{
+.star {
     width: 20px;
     height: 20px;
 }
