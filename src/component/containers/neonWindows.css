@@ -1,32 +1,74 @@
-/*@keyframes slideUP {
-    0% {
-        transform: translateY(150%);
+.neonAppContainer {
+    background-color: var(--bg-primary-color);
+    color: white;
+    border-width: 2px;
+    border-radius: 10px;
+}
+
+.neonAppContainer .line-neon,
+.neonAppContainer .line {
+    position: absolute;
+    top: 50px;
+    border-width: 1px;
+}
+
+.neonAppContainer .cirle {
+    position: absolute;
+    top: 13px;
+    width: 20px;
+    height: 20px;
+    border-width: 2px;
+    border-radius: 20px;
+
+}
+
+.cirle.right_1 {
+    right: 12px
+}
+
+.cirle.right_2 {
+    right: 47px
+}
+
+.cirle.right_3 {
+    right: 82px
+}
+
+.neonAppContainer .bar-container {
+    height: 50px;
+}
+
+@media (max-width: 768px) {
+
+    .neonAppContainer .line-neon,
+    .neonAppContainer .line {
+        top: 25px;
     }
-    100%{
-        transform: translateY(0);
+
+    .neonAppContainer .cirle {
+        position: absolute;
+        top: 6px;
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+    }
+
+    .neonAppContainer .bar-container {
+        height: 25px;
+    }
+
+    .cirle.right_1 {
+        right: 6px
+    }
+
+    .cirle.right_2 {
+        right: 24px
+    }
+
+    .cirle.right_3 {
+        right: 42px
     }
 }
-@keyframes slideUP-OP {
-    0% {
-        transform: translateY(50%);
-        opacity: 0;
-    }
-    100%{
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-@keyframes changeOVF {
-    0% {
-        overflow-y: hidden;
-    }
-    99% {
-        overflow-y: hidden;
-    }
-    100% {
-        overflow-y: visible;
-    }
-}*/
 
 .w-bg {
     position: absolute;
@@ -276,36 +318,6 @@
     width: 28%;
 }
 
-.neonAppContainer {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    /* previously #1D1030 */
-    background-color: var(--bg-primary-color);
-    padding: 0;
-    padding-top: 50px;
-    color: white;
-    border-width: 2px;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center;
-}
-
-.neonAppContainer .line-neon,
-.neonAppContainer .line {
-    position: absolute;
-    top: 50px;
-    border-width: 1px;
-}
-
-.neonAppContainer .cirle {
-    position: absolute;
-    top: 13px;
-    width: 20px;
-    height: 20px;
-    border-width: 2px;
-    border-radius: 20px;
-}
 
 .line {
     width: 100%;

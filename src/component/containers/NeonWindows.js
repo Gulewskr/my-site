@@ -7,12 +7,14 @@ import {TechnologyIcons} from '..'
 
 const NeonAppWindow = ({ children }) => {
     return(
-        <div className='neonAppContainer border-neon'>
-            <div className='line-neon border-neon' />
-            <div className='line' />
-            <div className='cirle border-neon' style={{'right' :'12px'}} />
-            <div className='cirle border-neon' style={{'right' :'47px'}} />
-            <div className='cirle border-neon' style={{'right' :'82px'}} />
+        <div className='neonAppContainer border-neon relative p-7'>
+            <div className='bar-container'>
+                <div className='line-neon border-neon' />
+                <div className='line' />
+                <div className='cirle border-neon right_1' />
+                <div className='cirle border-neon right_2' />
+                <div className='cirle border-neon right_3' />
+            </div>
             {children}
         </div>
     );

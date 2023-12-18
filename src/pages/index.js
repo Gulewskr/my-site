@@ -1,8 +1,6 @@
 import React, { useMemo } from 'react';
 import {graphql} from 'gatsby';
 
-import '../styles/pageStyle.css';
-import '../styles/mainPage.css';
 import { NeonAppWindow, ContactList } from '../component/';
 import { Trans } from 'gatsby-plugin-react-i18next';
 import Layout from '../component/Layout';
@@ -43,29 +41,16 @@ export default function Home({ pageTitle, children })
 
   return (
     <>
-        <title className='bg-gradient-to-br from-dark-purple-start to-dark-purple-end to-80'>Rafal Gulewski</title>
-        <main>
+        <title className='bg-gradient-to-br from-dark-purple-start to-dark-purple-end from-50%'>Rafal Gulewski</title>
+        <main  className="mx-auto max-w-full">
           <Layout>
               <div className="container mx-auto">
-                {/*
-                <div className="leftCollumn">
-                  <div className="profilePicture">
-                      <div className='profilePicture-c'><img src={profilePicture} alt="Profile" /></div>
-                      <div className="pic-border border-neon" />
-                  </div>
-                </div>
-                */}
                 <div className="grid grid-cols-2 gap-x-8">
                     <div className="w-full wdg-info">
                       <NeonAppWindow>
                         {info}
                       </NeonAppWindow>
                     </div>
-                    {/*
-                      <div className="floatIcons">
-                        <CircleIcons />
-                      </div>
-                    */}
                     <div className="w-full self-center wdg-c">
                       <NeonAppWindow>
                         {contact}

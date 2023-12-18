@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 export default function HTML(props) {
   return (
     <html
-      className="bg-gradient-to-br from-dark-purple-start to-dark-purple-end to-80"
+      className="bg-gradient-to-br from-dark-purple-start to-dark-purple-end from-50%"
      {...props.htmlAttributes} >
       <head>
         <meta charSet="utf-8" />

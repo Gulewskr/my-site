@@ -1,12 +1,9 @@
  #navbar {
      position: fixed;
-     top: -15px;
-     left: 0;
-     right: 0;
 
      box-sizing: border-box;
      padding-top: 15px;
-
+     top: -15px;
      border: 2px solid white;
      border-top: none;
      border-bottom-right-radius: 10px;
@@ -14,40 +11,11 @@
 
      color: white;
      background-color: var(--bg-primary-color);
-     box-shadow: rgb(4, 0, 255) 0 0 10px 6px,
+     box-shadow: rgb(4, 0, 255) 0 0 15px 6px,
          inset rgb(4, 0, 255) 0 0 6px 6px;
 
      z-index: 10;
      transition: 1s;
- }
-
- #navbar ul {
-     display: flex;
-     flex-wrap: wrap;
-     position: relative;
-     list-style-type: none;
-     margin: 0;
-     padding: 0;
-     justify-content: center;
-     align-items: center;
-     margin-top: 10px;
- }
-
- #navbar li {
-     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     font-size: 22px;
-     width: 100%;
-     margin-bottom: 10px;
-     text-align: center;
-     cursor: pointer;
- }
-
- #navbar li a {
-     text-decoration: none;
- }
-
- #navbar li a:hover {
-     text-decoration: none;
  }
 
  #nav-toogle {
@@ -66,52 +34,4 @@
 
  #nav-toogle:hover {
      background-color: #201233;
- }
-
- #nav-toogle svg {
-     stroke: white;
-     stroke-width: 2;
-     stroke-linecap: round;
-     transition: .5s;
- }
-
- #nav-logo {
-     font-family: Georgia, 'Times New Roman', Times, serif;
-
-     text-decoration: none;
-     white-space: nowrap;
- }
-
- .nav-item {
-     display: none;
- }
-
- @media only screen and (min-width: 900px) {
-     #navbar {
-         left: 20px;
-         right: 20px;
-         margin-top: 0;
-         min-height: 95px;
-     }
-
-     #navbar ul {
-         min-height: 60px;
-     }
-
-     #navbar li {
-         width: 15%;
-         margin-bottom: 0;
-     }
-
-     .nav-item {
-         display: block;
-     }
-
-     #nav-logo {
-         margin-top: 0;
-     }
-
-     #navbar button {
-         display: none;
-     }
  }

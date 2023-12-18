@@ -10,7 +10,7 @@ const Colors = {
     "green" : "#49af0d",
     "glb": "#19a36e",
     "rd": "#a3195b",
-    "dark" : "#000000",
+    "dark" : "#var(--color-black)0",
 }
 
 export const ThemeContext = React.createContext();
