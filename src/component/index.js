@@ -1,4 +1,5 @@
 import Navbar from './navbar/navbar';
+import Footer from './footer/.';
 import { Menu, Corner, BLine,  VLine, HLine, AppWindowIcon, Square } from './SvgIcons';
 //import NeonTextON, { NeonTextSimple } from './neonText';
 import {NeonAppWindow, NeonCircle, NeonSkillWindow, StarIconON, NeonProjectWindow} from './containers/NeonWindows';
@@ -8,12 +9,11 @@ import TechnologyIcons from './TechnologyIcons';
 import { LanguageSettings /*, ColorSettings*/ } from './Settings';
 
 export { 
-    Navbar,
+    Navbar, Footer,
     Menu, Corner, BLine,  VLine, HLine, AppWindowIcon, Square,
-    //NeonTextON, NeonTextSimple,
     NeonAppWindow, NeonCircle, NeonSkillWindow, StarIconON, NeonProjectWindow,
     CircleIcons, CircleIcon,
     ContactList,
     TechnologyIcons,
-    LanguageSettings//, ColorSettings 
+    LanguageSettings
 };

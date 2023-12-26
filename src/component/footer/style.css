@@ -1,0 +1,18 @@
+ #footer {
+     position: fixed;
+
+     box-sizing: border-box;
+     bottom: -15px;
+     border: 2px solid white;
+     border-bottom: none;
+     border-top-right-radius: 10px;
+     border-top-left-radius: 10px;
+
+     color: white;
+     background-color: var(--bg-primary-color);
+     box-shadow: rgb(4, 0, 255) 0 0 15px 6px,
+         inset rgb(4, 0, 255) 0 0 6px 6px;
+
+     z-index: 10;
+     transition: 1s;
+ }

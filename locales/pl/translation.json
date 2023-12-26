@@ -41,5 +41,7 @@
     "lvl3": "doświadczenie komercyjne - junior",
     "lvl4": "doświadczenie komercyjne - mid",
     "lvl5": "doświadczenie komercyjne - senior",
-    "projInfo": "projekty jeszcze niedokończone"
+    "projInfo": "projekty jeszcze niedokończone",
+    "pageDisabledInfo": "Strona jest aktualnie tworzona na nowo. Niektóre ze starszych funkcjonalność nie będą działać poprawnie m. in. wysyłanie e-maili.",
+    "pageDisabledInfo-mobile": "Strona jest tworzona na nowo. Niektóre funkcjonalność nie będą działać poprawnie."
 }

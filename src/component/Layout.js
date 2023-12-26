@@ -1,17 +1,17 @@
 import React from "react"
-import { Navbar, LanguageSettings } from "."
+import { Navbar, Footer } from "."
 
 export default function Layout ({ children }) {
   return (
     <>
-        <header className="grid min-h-24 h-24">
+        <header className="grid">
             <Navbar />
         </header>
-        <div className="container mx-auto">
+        <div className="container mx-auto px-3 pt-16 md:pt-28 pb-16">
           {children}
         </div>
-        <footer>
-            <LanguageSettings/>
+        <footer className="grid text-xs	md:text-base">
+            <Footer/>
         </footer>
     </>
   )

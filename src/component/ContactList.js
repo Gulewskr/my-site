@@ -108,11 +108,10 @@ const SingleLink = (props) => {
 }
 
 const ContactList = () => (
-    <div className="list">
+    <div className="grid grid-rows-3 md:grid-rows-2 grid-flow-col gap-4">
         <SingleLink link="https://github.com/Gulewskr" icon={GHIcon} name="Github" />
         <SingleLink link="https://www.facebook.com/profile.php?id=100004371061552" icon={FBIcon} name="Facebook" />
         <SingleLink link="https://www.linkedin.com/in/rafał-gulewski-29141b230" icon={LIIcon} name="Linkedin" />
-        <div className="list-split" />
         <SingleLink link="https://www.upwork.com/freelancers/~01a337f0c1bb6f8fa5" icon={UWIcon} name="Upwork" />
         <SingleLink link="404" icon={IGIcon} name="Instagram" />
         <SingleLink link="https://www.codewars.com/users/Gulewskr" icon={CWIcon} name="Codewars" />

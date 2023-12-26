@@ -41,5 +41,7 @@
     "lvl3": "commercial experience - junior",
     "lvl4": "commercial experience - mid",
     "lvl5": "commercial experience - senior",
-    "projInfo": "projects aren't done"
+    "projInfo": "projects aren't done",
+    "pageDisabledInfo": "The website currently is being created all over again. Some old features like email sending do not work properly.",
+    "pageDisabledInfo-mobile": "Some features like email sending do not work properly."
 }

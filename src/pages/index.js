@@ -32,9 +32,11 @@ export default function Home({ pageTitle, children })
   ), []);
 
   const contact = useMemo(() => (
-    <div className='content-window'>
+    <div className='content-window flex flex-col items-center w-full'>
       <span className="info-t text-neon-on"><Trans>info3</Trans><br /><br /></span>
-      <ContactList />
+      <div>
+        <ContactList />
+      </div>
     </div>
   ), []);
   
@@ -45,7 +47,7 @@ export default function Home({ pageTitle, children })
         <main  className="mx-auto max-w-full">
           <Layout>
               <div className="container mx-auto">
-                <div className="grid grid-cols-2 gap-x-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-2 items-center">
                     <div className="w-full wdg-info">
                       <NeonAppWindow>
                         {info}

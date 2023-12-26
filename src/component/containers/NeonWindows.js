@@ -15,7 +15,9 @@ const NeonAppWindow = ({ children }) => {
                 <div className='cirle border-neon right_2' />
                 <div className='cirle border-neon right_3' />
             </div>
+            <div className='flex'>
             {children}
+            </div>
         </div>
     );
 }
