@@ -13,6 +13,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "pretty": "prettier --write \"./src/**/*.{js,jsx,mjs,cjs,ts,tsx,json}\"",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {

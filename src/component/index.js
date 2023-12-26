@@ -1,19 +1,45 @@
-import Navbar from './navbar/navbar';
-import Footer from './footer/.';
-import { Menu, Corner, BLine,  VLine, HLine, AppWindowIcon, Square } from './SvgIcons';
+import Navbar from "./navbar/navbar";
+import Footer from "./footer/.";
+import {
+  Menu,
+  Corner,
+  BLine,
+  VLine,
+  HLine,
+  AppWindowIcon,
+  Square,
+} from "./SvgIcons";
 //import NeonTextON, { NeonTextSimple } from './neonText';
-import {NeonAppWindow, NeonCircle, NeonSkillWindow, StarIconON, NeonProjectWindow} from './containers/NeonWindows';
-import CircleIcons, { CircleIcon } from './icons/CircleIcon';
-import ContactList from './ContactList';
-import TechnologyIcons from './TechnologyIcons';
-import { LanguageSettings /*, ColorSettings*/ } from './Settings';
+import {
+  NeonAppWindow,
+  NeonCircle,
+  NeonSkillWindow,
+  StarIconON,
+  NeonProjectWindow,
+} from "./containers/NeonWindows";
+import CircleIcons, { CircleIcon } from "./icons/CircleIcon";
+import ContactList from "./ContactList";
+import TechnologyIcons from "./TechnologyIcons";
+import { LanguageSettings /*, ColorSettings*/ } from "./Settings";
 
-export { 
-    Navbar, Footer,
-    Menu, Corner, BLine,  VLine, HLine, AppWindowIcon, Square,
-    NeonAppWindow, NeonCircle, NeonSkillWindow, StarIconON, NeonProjectWindow,
-    CircleIcons, CircleIcon,
-    ContactList,
-    TechnologyIcons,
-    LanguageSettings
+export {
+  Navbar,
+  Footer,
+  Menu,
+  Corner,
+  BLine,
+  VLine,
+  HLine,
+  AppWindowIcon,
+  Square,
+  NeonAppWindow,
+  NeonCircle,
+  NeonSkillWindow,
+  StarIconON,
+  NeonProjectWindow,
+  CircleIcons,
+  CircleIcon,
+  ContactList,
+  TechnologyIcons,
+  LanguageSettings,
 };
