@@ -53,24 +53,17 @@ export default function Home({ pageTitle, children }) {
   );
 
   return (
-    <>
-      <title className="bg-gradient-to-br from-dark-purple-start to-dark-purple-end from-50%">
-        Rafal Gulewski
-      </title>
-      <main className="mx-auto max-w-full">
-        <Layout>
-          <div className="container mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-2 items-center">
-              <div className="w-full wdg-info">
-                <NeonAppWindow>{info}</NeonAppWindow>
-              </div>
-              <div className="w-full self-center wdg-c">
-                <NeonAppWindow>{contact}</NeonAppWindow>
-              </div>
+      <Layout pageTitle={"Rafal Gulewski"}>
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-2 items-center">
+            <div className="w-full wdg-info">
+              <NeonAppWindow>{info}</NeonAppWindow>
+            </div>
+            <div className="w-full self-center wdg-c">
+              <NeonAppWindow>{contact}</NeonAppWindow>
             </div>
           </div>
-        </Layout>
-      </main>
-    </>
+        </div>
+      </Layout>
   );
 }

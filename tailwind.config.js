@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         'dark-purple-start': 'var(--bg-dark-purple-start)',
         'dark-purple-end': 'var(--bg-dark-purple-end)',
+        'white': 'var(--color-white)',
       },
       width: {
         '19/20': '95%',

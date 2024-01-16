@@ -1,13 +1,29 @@
 import React, { useState } from "react";
-//import {graphql} from 'gatsby';
+import {graphql} from 'gatsby';
+import { Trans } from "gatsby-plugin-react-i18next";
+
+import { NeonAppWindow, ContactList } from "../component/";
+import Layout from "../component/Layout";
+
 import "../styles/pageStyle.css";
 import "../styles/contactForm.css";
+
 import "../scripts/email.js";
 import sendToMe from "../scripts/email.js";
-import { NeonAppWindow, ContactList } from "../component/";
-//import {, useI18next} from 'gatsby-plugin-react-i18next';
 
-import Layout from "../component/Layout";
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
 
 export default function Contact({ pageTitle, children }) {
   //const {language} = useI18next();
@@ -19,7 +35,7 @@ export default function Contact({ pageTitle, children }) {
   const contact = (
     <div className="content-window">
       <span className="info-t text-neon-on">
-        <>cont</>
+        <Trans>cont</Trans>
         <br />
         <br />
       </span>
@@ -125,12 +141,12 @@ export default function Contact({ pageTitle, children }) {
         </div>
         <form className="formCont" onSubmit={sendEmail}>
           <div className="form-sec text-neon-on-blink">
-            <>contH</>
+            <Trans>contH</Trans>
           </div>
           <div className="form-sec">
             <div>
               <label htmlFor="sender" className={sf ? "text-neon-on" : ""}>
-                <>contN</>
+                <Trans>contN</Trans>
               </label>
               <input
                 id="sender"
@@ -149,13 +165,13 @@ export default function Contact({ pageTitle, children }) {
               />
               {badN && (
                 <div className="form-bad">
-                  <>BadN</>
+                  <Trans>BadN</Trans>
                 </div>
               )}
             </div>
             <div>
               <label htmlFor="email" className={ef ? "text-neon-on" : ""}>
-                <>contK</>
+                <Trans>contK</Trans>
               </label>
               <input
                 id="email"
@@ -174,14 +190,14 @@ export default function Contact({ pageTitle, children }) {
               />
               {badK && (
                 <div className="form-bad">
-                  <>BadK</>
+                  <Trans>BadK</Trans>
                 </div>
               )}
             </div>
           </div>
           <div className="form-sec form-b">
             <label htmlFor="message" className={mf ? "text-neon-on" : ""}>
-              <>contW</>
+              <Trans>contW</Trans>
             </label>
             <textarea
               id="message"
@@ -200,7 +216,7 @@ export default function Contact({ pageTitle, children }) {
             />
             {badW && (
               <div className="form-bad">
-                <>BadW</>
+                <Trans>BadW</Trans>
               </div>
             )}
           </div>
@@ -211,38 +227,19 @@ export default function Contact({ pageTitle, children }) {
   };
 
   return (
-    <Layout>
-      <main>
-        <title>Rafal Gulewski - Kontakt</title>
-        <div className="content">
-          <div className="wdg-c">
-            <NeonAppWindow>{contact}</NeonAppWindow>
-          </div>
-          <div className="wdg-contactForm">
-            <NeonAppWindow>
-              <div className="content-window">
-                <ContactForm />
-              </div>
-            </NeonAppWindow>
-          </div>
+    <Layout pageTitle={"Rafal Gulewski - Kontakt"}>
+      <div className="content">
+        <div className="wdg-c">
+          <NeonAppWindow>{contact}</NeonAppWindow>
         </div>
-      </main>
+        <div className="wdg-contactForm">
+          <NeonAppWindow>
+            <div className="content-window">
+              <ContactForm />
+            </div>
+          </NeonAppWindow>
+        </div>
+      </div>
     </Layout>
   );
 }
-
-/*
-export const query = graphql`
-  query($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
-  }
-`;
-*/

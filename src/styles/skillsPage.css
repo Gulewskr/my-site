@@ -74,7 +74,8 @@ t1 {
 #statinfo {
     position: fixed;
     top: 100px;
-    left: calc(100% + 8px);
+    width: 400px;
+    right: -100%;
     background-color: #150627;
     cursor: pointer;
     color: white;
@@ -84,7 +85,7 @@ t1 {
     padding: 10px;
     border-radius: 10px;
     border-width: 1px;
-    transition: .5s;
+    transition: 1s;
 }
 
 #statinfo div {

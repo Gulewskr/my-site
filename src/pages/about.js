@@ -1,12 +1,25 @@
 import React from "react";
-//import {graphql} from 'gatsby';
+import { graphql } from "gatsby";
+import debounce from "lodash.debounce";
+import { NeonAppWindow } from "../component/";
+import Layout from "../component/Layout";
+
 import "../styles/pageStyle.css";
 import "../styles/aboutStyle.css";
-import { NeonAppWindow } from "../component/";
 
-import debounce from "lodash.debounce";
-
-import Layout from "../component/Layout";
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
 
 // markup
 export default function About({ pageTitle, children }) {
@@ -108,9 +121,7 @@ export default function About({ pageTitle, children }) {
   }
 
   return (
-    <Layout>
-      <title>Rafal Gulewski - O mnie</title>
-      <main>
+      <Layout pageTitle={"Rafal Gulewski - O mnie"}>
         <div className="timeline">
           <t1 className="text-neon-on-blink">
             <>aboutH</>
@@ -148,25 +159,6 @@ export default function About({ pageTitle, children }) {
             </li>
           </ul>
         </div>
-      </main>
     </Layout>
   );
 }
-
-/*
-
-export const query = graphql`
-  query($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
-  }
-`;
-
-*/

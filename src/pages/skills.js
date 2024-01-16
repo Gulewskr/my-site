@@ -1,10 +1,25 @@
 import React, { useState } from "react";
-//import {graphql} from 'gatsby';
+import {graphql} from 'gatsby';
 import "../styles/skillsPage.css";
 import { TechnologyIcons, StarIconON, NeonSkillWindow } from "../component/";
 import { Link } from "gatsby";
+import { Trans } from "gatsby-plugin-react-i18next";
 
 import Layout from "../component/Layout";
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
 
 const progL = [
   {
@@ -60,6 +75,25 @@ const GE = [
   },
 ];
 
+const LevelsInfoData = [
+  {
+    lvl: 1,
+    transKey: 'lvl1'
+  }, {
+    lvl: 2,
+    transKey: 'lvl2'
+  }, {
+    lvl: 3,
+    transKey: 'lvl3'
+  }, {
+    lvl: 4,
+    transKey: 'lvl4'
+  }, {
+    lvl: 5,
+    transKey: 'lvl5'
+  }
+]
+
 const renderSkillList = (t) =>
   t.map((v) => (
     <NeonSkillWindow icon={v["icon"]} name={v["name"]} lvl={v["lvl"]} />
@@ -89,43 +123,15 @@ const StatInfo = () => {
         className="border-neon"
         onKeyPress={() => setToggled(true)}
         onClick={() => setToggled(false)}
-        style={toggled ? { form: "late(-100%, 0)" } : {}}
+        style={toggled ? { right: '0'} : {}}
       >
-        <div>
-          1{" "}
+        {LevelsInfoData.map(levelData => <div>
+          {`${levelData.lvl} `}
           <div className="star">
             <StarIconON />
           </div>
-          <>lvl1</>
-        </div>
-        <div>
-          2{" "}
-          <div className="star">
-            <StarIconON />
-          </div>
-          <>lvl2</>
-        </div>
-        <div>
-          3{" "}
-          <div className="star">
-            <StarIconON />
-          </div>
-          <>lvl3</>
-        </div>
-        <div>
-          4{" "}
-          <div className="star">
-            <StarIconON />
-          </div>
-          <>lvl4</>
-        </div>
-        <div>
-          5{" "}
-          <div className="star">
-            <StarIconON />
-          </div>
-          <>lvl5</>
-        </div>
+          <Trans>{levelData.transKey}</Trans>
+        </div>)}
       </div>
     </>
   );
@@ -134,43 +140,40 @@ const StatInfo = () => {
 // markup
 export default function Skills({ pageTitle, children }) {
   return (
-    <Layout>
-      <title>Rafal Gulewski - Umiejętności</title>
-      <main>
-        <StatInfo />
-        <div className="cont">
-          <div className="sec sec1">
-            <t1 className="text-neon-on-blink">
-              <>skills1</>
-            </t1>
-            <div className="secIco">{renderSkillList(progL)}</div>
-          </div>
-          <div className="sec sec1">
-            <t1 className="text-neon-on-blink">
-              <>skills2</>
-            </t1>
-            <div className="secIco">{renderSkillList(TiF)}</div>
-          </div>
-          <div className="sec sec1">
-            <t1 className="text-neon-on-blink">
-              <>skills3</>
-            </t1>
-            <div className="secIco">{renderSkillList(GE)}</div>
-          </div>
-          <div className="sec sec1">
-            <div className="s text-neon">
-              <Link to="/projects">
-                <span>
-                  <>skills4</>
-                </span>
-                <div className="animatedArrow">
-                  <div className="arrow" />
-                </div>
-              </Link>
-            </div>
+    <Layout pageTitle={"Rafal Gulewski - Umiejętności"}>
+      <StatInfo />
+      <div className="cont">
+        <div className="sec sec1">
+          <t1 className="text-neon-on-blink">
+              <Trans>skills1</Trans>
+          </t1>
+          <div className="secIco">{renderSkillList(progL)}</div>
+        </div>
+        <div className="sec sec1">
+          <t1 className="text-neon-on-blink">
+              <Trans>skills2</Trans>
+          </t1>
+          <div className="secIco">{renderSkillList(TiF)}</div>
+        </div>
+        <div className="sec sec1">
+          <t1 className="text-neon-on-blink">
+              <Trans>skills3</Trans>
+          </t1>
+          <div className="secIco">{renderSkillList(GE)}</div>
+        </div>
+        <div className="sec sec1">
+          <div className="s text-neon">
+            <Link to="/projects">
+              <span>
+                <Trans>skills4</Trans>
+              </span>
+              <div className="animatedArrow">
+                <div className="arrow" />
+              </div>
+            </Link>
           </div>
         </div>
-      </main>
+      </div>
     </Layout>
   );
 }

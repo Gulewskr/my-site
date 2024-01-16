@@ -38,9 +38,9 @@
     "error": "Send error!",
     "lvl1": "know basics",
     "lvl2": "several projects",
-    "lvl3": "commercial experience - junior",
-    "lvl4": "commercial experience - mid",
-    "lvl5": "commercial experience - senior",
+    "lvl3": "commercial experience - junior (<3 years)",
+    "lvl4": "commercial experience - mid (3-7 years)",
+    "lvl5": "commercial experience - senior (7+ years)",
     "projInfo": "projects aren't done",
     "pageDisabledInfo": "The website currently is being created all over again. Some old features like email sending do not work properly.",
     "pageDisabledInfo-mobile": "Some features like email sending do not work properly."

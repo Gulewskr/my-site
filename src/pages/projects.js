@@ -1,9 +1,24 @@
 import React from "react";
+import { graphql } from "gatsby";
+import { NeonProjectWindow } from "../component/";
+import Layout from "../component/Layout";
+
 import "../styles/pageStyle.css";
 import "../styles/projectStyle.css";
-import { NeonProjectWindow } from "../component/";
 
-import Layout from "../component/Layout";
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
 
 const TPr = [
   {
@@ -67,35 +82,17 @@ const renderProjectList = (t) =>
 
 export default function Projects({ pageTitle, children }) {
   return (
-    <Layout>
-      <title>Rafal Gulewski - Projekty</title>
-      <main>
-        <div className="projects-ctl">
-          <t1 className="text-neon-on-blink">
-            <>proj</>
-          </t1>
-          <div className="ctl-m">{renderProjectList(TPr)}</div>
-          <div className="text-neon" style={{ fontSize: "20px" }}>
-            👷‍♂️ - <>projInfo</>
-          </div>
+    <Layout pageTitle={"Rafal Gulewski - Projekty"}>
+      <div className="projects-ctl">
+        <t1 className="text-neon-on-blink">
+          <>proj</>
+        </t1>
+        <div className="ctl-m">{renderProjectList(TPr)}</div>
+        <div className="text-neon" style={{ fontSize: "20px" }}>
+          👷‍♂️ - <>projInfo</>
         </div>
-      </main>
+      </div>
     </Layout>
   );
 }
 
-/*
-export const query = graphql`
-  query($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
-  }
-`;
-*/
