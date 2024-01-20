@@ -25,12 +25,12 @@ const progL = [
   {
     icon: TechnologyIcons["JavaScript"],
     name: "JavaScript",
-    lvl: 2,
+    lvl: 3,
   },
   {
     icon: TechnologyIcons["Java"],
     name: "Java",
-    lvl: 2,
+    lvl: 3,
   },
   {
     icon: TechnologyIcons["C Sharp"],
@@ -43,7 +43,7 @@ const TiF = [
   {
     icon: TechnologyIcons["React"],
     name: "React",
-    lvl: 2,
+    lvl: 3,
   },
   {
     icon: TechnologyIcons["React"],
@@ -53,12 +53,12 @@ const TiF = [
   {
     icon: TechnologyIcons["Node.js"],
     name: "Node.js",
-    lvl: 2,
+    lvl: 3,
   },
   {
     icon: TechnologyIcons["Git"],
     name: "Git",
-    lvl: 2,
+    lvl: 3,
   },
 ];
 
@@ -95,8 +95,10 @@ const LevelsInfoData = [
 ]
 
 const renderSkillList = (t) =>
-  t.map((v) => (
-    <NeonSkillWindow icon={v["icon"]} name={v["name"]} lvl={v["lvl"]} />
+  t.map((v, i) => (
+    <div>
+      <NeonSkillWindow id={`${i}-${v["name"]}`} icon={v["icon"]} name={v["name"]} lvl={v["lvl"]} />
+    </div>
   ));
 
 const StatInfo = () => {
@@ -147,19 +149,25 @@ export default function Skills({ pageTitle, children }) {
           <t1 className="text-neon-on-blink">
               <Trans>skills1</Trans>
           </t1>
-          <div className="secIco">{renderSkillList(progL)}</div>
+          <div className="container">
+            <div className="neon-skills-grid">{renderSkillList(progL)}</div>
+          </div>
         </div>
         <div className="sec sec1">
           <t1 className="text-neon-on-blink">
               <Trans>skills2</Trans>
           </t1>
-          <div className="secIco">{renderSkillList(TiF)}</div>
+          <div className="container">
+            <div className="neon-skills-grid">{renderSkillList(TiF)}</div>
+          </div>
         </div>
         <div className="sec sec1">
           <t1 className="text-neon-on-blink">
               <Trans>skills3</Trans>
           </t1>
-          <div className="secIco">{renderSkillList(GE)}</div>
+          <div className="container">
+            <div className="neon-skills-grid">{renderSkillList(GE)}</div>
+          </div>
         </div>
         <div className="sec sec1">
           <div className="s text-neon">

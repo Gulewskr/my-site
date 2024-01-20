@@ -48,37 +48,17 @@
     left: 50%;
 }
 
-/*
-.background-image {
-    position: fixed;
-    top: -10px;
-    bottom: -10px;
-    left: -10px;
-    right: -10px;
-    z-index: -1;
-    display: block;
-    background-size: cover;
-    -webkit-filter: blur(2px);
-    -moz-filter: blur(2px);
-    -o-filter: blur(2px);
-    -ms-filter: blur(2px);
-    filter: blur(5px);
-}
-*/
-
-/* --------------- NEONS ------------------ */
-
 .neon-blur {
     fill: #22009c;
     filter: blur(2px);
 }
 
 .neon-line {
-    fill: #eecee3;
+    fill: var(--color-white);
 }
 
 .text-neon {
-    color: rgb(170, 186, 255);
+    color: var(--color-white);
     text-shadow:
         0 0 11px #649aff,
         0 0 10px #22009c;
@@ -87,74 +67,40 @@
 
 .text-neon:hover {
     color: var(--color-white);
-    /*text-shadow:
-        0 0 4px #0400ff,
-        0 0 11px #0400ff,
-        0 0 19px #0400ff,
-        0 0 40px #3700ff,
-        0 0 100px var(--color-white),
-        0 0 200px var(--color-white);*/
 }
 
 .text-neon-on {
     color: var(--color-white);
-    /*text-shadow:
-    0 0 4px #0400ff,
-    0 0 11px #0400ff,
-        0 0 19px #0400ff,
-        0 0 40px #3700ff,
-        0 0 100px var(--color-white),
-        0 0 200px var(--color-white);*/
 }
 
-.border-neon {
-    border: solid var(--color-white);
-    transition: box-shadow .25s;
-    box-shadow: 0 0 0.25rem 0.25rem #3700ff,
-        inset 0 0 0.25rem 0.25rem #3700ff;
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: help;
 }
 
-.border-neon:hover {
-    box-shadow: 0 0 0.5rem 0.5rem #3700ff,
-        inset 0 0 0.4rem 0.4rem #3700ff;
+.tooltip .tooltip-text {
+    visibility: hidden;
+    background-color: var(--bg-primary-color);
+    color: var(--color-white);
+    text-align: center;
+    border-radius: 1rem;
+    padding: 1rem;
+    position: absolute;
+    z-index: 1;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    opacity: 0;
+    transition: opacity 0.5s;
 }
 
-/*
-@keyframes flash {
-    78% {
-        color: rgb(232, 236, 255);
-        text-shadow:
-            0 0 11px #649aff,
-            0 0 10px #22009c;
-    }
-
-    0%,
-    23%,
-    24%,
-    74%,
-    75.5%,
-    100% {
-        color: var(--color-white);
-        text-shadow:
-            0 0 4px #0400ff,
-            0 0 11px #0400ff,
-            0 0 19px #0400ff,
-            0 0 40px #3700ff,
-            0 0 100px var(--color-white),
-            0 0 200px var(--color-white);
-    }
-
-    23.2%,
-    75%,
-    76% {
-        color: rgb(197, 197, 197);
-        text-shadow: none;
-    }
+.tooltip .tooltip-icon {
+    font-size: 14px;
+    position: absolute;
 }
 
-.text-neon-on-blink {
-    animation: flash 10s infinite;
-    animation-fill-mode: both;
-    animation-direction: alternate;
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
 }
-*/

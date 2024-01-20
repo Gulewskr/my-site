@@ -98,3 +98,11 @@ t1 {
     width: 20px;
     height: 20px;
 }
+
+.neon-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, max-content));
+    justify-content: center;
+    grid-gap: 5rem;
+    padding: 2rem;
+}
