@@ -53,17 +53,17 @@ export default function Home({ pageTitle, children }) {
   );
 
   return (
-      <Layout pageTitle={"Rafal Gulewski"}>
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-2 items-center">
-            <div className="w-full wdg-info">
-              <NeonAppWindow>{info}</NeonAppWindow>
-            </div>
-            <div className="w-full self-center wdg-c">
-              <NeonAppWindow>{contact}</NeonAppWindow>
-            </div>
+    <Layout pageTitle={"Rafal Gulewski"}>
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-2 items-center">
+          <div className="w-full wdg-info">
+            <NeonAppWindow>{info}</NeonAppWindow>
+          </div>
+          <div className="w-full self-center wdg-c">
+            <NeonAppWindow>{contact}</NeonAppWindow>
           </div>
         </div>
-      </Layout>
+      </div>
+    </Layout>
   );
 }

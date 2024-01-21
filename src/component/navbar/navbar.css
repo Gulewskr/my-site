@@ -28,7 +28,7 @@
      cursor: pointer;
      border-width: 1px;
 
-     background-color: #150627;
+     background-color: var(--bg-primary-color);
      border-radius: 10px;
  }
 

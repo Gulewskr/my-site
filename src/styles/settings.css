@@ -135,7 +135,7 @@
     display: inline-flex;
     width: max-content;
     flex-direction: column;
-    background-color: #150627;
+    background-color: var(--bg-primary-color);
     color: white;
 }
 

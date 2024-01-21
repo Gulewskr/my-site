@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import {graphql} from 'gatsby';
+import { graphql } from "gatsby";
 import "../styles/skillsPage.css";
+import "../styles/arrow.css";
 import { TechnologyIcons, StarIconON, NeonSkillWindow } from "../component/";
 import { Link } from "gatsby";
 import { Trans } from "gatsby-plugin-react-i18next";
 
 import Layout from "../component/Layout";
+import classcat from "classcat";
 
 export const query = graphql`
   query ($language: String!) {
@@ -21,6 +23,12 @@ export const query = graphql`
   }
 `;
 
+/**
+ * @type {Array<{
+ * icon: JSX.Element,
+ * name: string,
+ * lvl: number}}
+ */
 const progL = [
   {
     icon: TechnologyIcons["JavaScript"],
@@ -78,40 +86,81 @@ const GE = [
 const LevelsInfoData = [
   {
     lvl: 1,
-    transKey: 'lvl1'
-  }, {
+    transKey: "lvl1",
+  },
+  {
     lvl: 2,
-    transKey: 'lvl2'
-  }, {
+    transKey: "lvl2",
+  },
+  {
     lvl: 3,
-    transKey: 'lvl3'
-  }, {
+    transKey: "lvl3",
+  },
+  {
     lvl: 4,
-    transKey: 'lvl4'
-  }, {
+    transKey: "lvl4",
+  },
+  {
     lvl: 5,
-    transKey: 'lvl5'
-  }
-]
+    transKey: "lvl5",
+  },
+];
 
-const renderSkillList = (t) =>
-  t.map((v, i) => (
-    <div>
-      <NeonSkillWindow id={`${i}-${v["name"]}`} icon={v["icon"]} name={v["name"]} lvl={v["lvl"]} />
-    </div>
-  ));
+const normalStyle = {
+    position: 'fixed',
+    top: '100px',
+    width: '450px',
+    'background-color': 'var(--bg-primary-color)',
+    cursor: 'pointer',
+    display: 'flex',
+    'flex-direction': 'column',
+    gap: '0.5rem',
+    padding: '1rem',
+    'border-radius': '1rem',
+    right: '0',
+    opacity: '1',
+    //transform: 'translate(500px, 0)',
+    transform: 'translate(50px, 0)',
+    transition: '2s',
+}
 
-const StatInfo = () => {
+const toggledStyle = {
+  ...normalStyle,
+    opacity: '0',
+}
+
+
+
+export default function Skills({ pageTitle, children }) {
   const [toggled, setToggled] = useState(false);
-  return (
+
+  /**
+   * @type {(t: Array<{
+   * icon: JSX.Element,
+   * name: string,
+   * lvl: number}) => JSX.Element}
+   */
+  const renderSkillList = (t) =>
+    t.map((v, i) => (
+      <div>
+        <NeonSkillWindow
+          id={`${i}-${v["name"]}`}
+          icon={v["icon"]}
+          name={v["name"]}
+          lvl={v["lvl"]}
+          cb={() => setToggled(!toggled)}
+        />
+      </div>
+    ));
+
+  const StatInfo = () => (
     <>
       <div
-        id="statinfo-toggle"
         role="button"
-        tabIndex="0"
+        tabIndex={1}
+        id="statinfo-toggle"
         className="border-neon"
-        onKeyPress={() => setToggled(true)}
-        onClick={() => setToggled(true)}
+        onClick={() => setToggled(!toggled)}
       >
         Info{" "}
         <div className="star">
@@ -119,35 +168,31 @@ const StatInfo = () => {
         </div>
       </div>
       <div
-        id="statinfo"
-        role="button"
-        tabIndex="0"
+        id='statinfo'
         className="border-neon"
-        onKeyPress={() => setToggled(true)}
+        style={toggled ? toggledStyle : normalStyle}
         onClick={() => setToggled(false)}
-        style={toggled ? { right: '0'} : {}}
       >
-        {LevelsInfoData.map(levelData => <div>
-          {`${levelData.lvl} `}
-          <div className="star">
-            <StarIconON />
+        {LevelsInfoData.map((levelData) => (
+          <div>
+            {`${levelData.lvl} `}
+            <div className="star">
+              <StarIconON />
+            </div>
+            <Trans>{levelData.transKey}</Trans>
           </div>
-          <Trans>{levelData.transKey}</Trans>
-        </div>)}
+        ))}
       </div>
     </>
   );
-};
 
-// markup
-export default function Skills({ pageTitle, children }) {
   return (
     <Layout pageTitle={"Rafal Gulewski - Umiejętności"}>
       <StatInfo />
       <div className="cont">
         <div className="sec sec1">
           <t1 className="text-neon-on-blink">
-              <Trans>skills1</Trans>
+            <Trans>skills1</Trans>
           </t1>
           <div className="container">
             <div className="neon-skills-grid">{renderSkillList(progL)}</div>
@@ -155,7 +200,7 @@ export default function Skills({ pageTitle, children }) {
         </div>
         <div className="sec sec1">
           <t1 className="text-neon-on-blink">
-              <Trans>skills2</Trans>
+            <Trans>skills2</Trans>
           </t1>
           <div className="container">
             <div className="neon-skills-grid">{renderSkillList(TiF)}</div>
@@ -163,20 +208,26 @@ export default function Skills({ pageTitle, children }) {
         </div>
         <div className="sec sec1">
           <t1 className="text-neon-on-blink">
-              <Trans>skills3</Trans>
+            <Trans>skills3</Trans>
           </t1>
           <div className="container">
             <div className="neon-skills-grid">{renderSkillList(GE)}</div>
           </div>
         </div>
         <div className="sec sec1">
-          <div className="s text-neon">
+          <div className="text-neon">
             <Link to="/projects">
-              <span>
-                <Trans>skills4</Trans>
-              </span>
-              <div className="animatedArrow">
-                <div className="arrow" />
+              <div className="flex flex-row gap-1">
+                <span>
+                  <Trans>skills4</Trans>
+                </span>
+                <div className="animatedArrow">
+                  <div class="arrow">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
               </div>
             </Link>
           </div>

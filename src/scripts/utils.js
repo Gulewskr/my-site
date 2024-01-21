@@ -8,8 +8,8 @@
 export const createShourtcut = (inputString) => {
   const matches = inputString.match(/[A-Z0-9]/g);
   if (matches) {
-    const res = matches.join('');
+    const res = matches.join("");
     if (res.length > 3) return res;
-  } 
+  }
   return inputString.substring(0, 5);
-}
+};

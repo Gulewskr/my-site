@@ -95,4 +95,3 @@ export default function Projects({ pageTitle, children }) {
     </Layout>
   );
 }
-

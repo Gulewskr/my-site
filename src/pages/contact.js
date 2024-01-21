@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {graphql} from 'gatsby';
+import { graphql } from "gatsby";
 import { Trans } from "gatsby-plugin-react-i18next";
 
 import { NeonAppWindow, ContactList } from "../component/";

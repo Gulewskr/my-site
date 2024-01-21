@@ -344,6 +344,7 @@
 }
 
 .neonSkillCont .sk-w-i {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 0.3rem;

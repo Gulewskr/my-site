@@ -2,9 +2,8 @@ import * as React from "react";
 import "../styles/neonStyle.css";
 //import { Styles } from '../styles/neonStyles'
 
-const Menu = () =>
-  null;
-  /* <svg xmlns="http://www.w3.org/2000/svg" width="95%" height="95%" viewBox="0 0 60 60">
+const Menu = () => null;
+/* <svg xmlns="http://www.w3.org/2000/svg" width="95%" height="95%" viewBox="0 0 60 60">
             <line className="cls-1" x1="0" y1="25%" x2="100%" y2="25%"/>
             <line className="cls-10" x1="2%" y1="25%" x2="98%" y2="25%"/>
             <line className="cls-1" x1="0" y1="50%" x2="100%" y2="50%"/>
@@ -13,9 +12,8 @@ const Menu = () =>
             <line className="cls-10" x1="2%" y1="75%" x2="98%" y2="75%"/>
         </svg> */
 
-const AppWindowIcon = () =>
-  null;
-  /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -8 591 326" preserveAspectRatio="none"  width="100%" height="100%">
+const AppWindowIcon = () => null;
+/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -8 591 326" preserveAspectRatio="none"  width="100%" height="100%">
         <g id="Warstwa_1" data-name="Warstwa 1">
             <path className="cls-1" d="M547.35,313.06H58.23c-3.39,0-6.79,0-10.18,0a26.19,26.19,0,0,1-22.21-12.33A28.3,28.3,0,0,1,22,285.52V64.59c0-6.59-.83-14.19,1-20.61a26.21,26.21,0,0,1,25-18.92H547.26a26.24,26.24,0,0,1,22.91,13.6c4,7.2,3.12,15.6,3.12,23.52V284.52a35.15,35.15,0,0,1-.86,9.25,26.21,26.21,0,0,1-25.08,19.29c-6.43.08-6.45,10.08,0,10,13.67-.17,26.65-8,32.45-20.53a40.16,40.16,0,0,0,3.49-17.17V62.57c0-9,.57-17.82-3.19-26.31a36.21,36.21,0,0,0-32-21.19c-1,0-1.92,0-2.88,0H49.93c-1.19,0-2.38,0-3.57,0A36.29,36.29,0,0,0,14.77,37.2C11.36,45.35,12,54.08,12,62.7V285.46a39.9,39.9,0,0,0,3.65,17.41c5.84,12.34,18.78,20.05,32.29,20.19,2.85,0,5.7,0,8.54,0H547.35C553.79,323.06,553.8,313.06,547.35,313.06Z" transform="translate(-11.94 -15.05)"/>
             <path className="cls-1" d="M17,61.65H578.29v-7.5q-109.81.14-219.63.17-109.23,0-218.45,0-61.62,0-123.23-.12c-4.82,0-4.83,7.49,0,7.5q109.79.14,219.57.17,109.23,0,218.48,0,61.63,0,123.26-.12c4.83,0,4.84-7.5,0-7.5H17C12.16,54.15,12.15,61.65,17,61.65Z" transform="translate(-11.94 -15.05)"/>
@@ -32,9 +30,8 @@ const AppWindowIcon = () =>
         </g>
     </svg> */
 
-const BLine = () =>
-  null;
-  /* <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"  viewBox="-1 10 894.5 99" width="100%" height="100%">
+const BLine = () => null;
+/* <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"  viewBox="-1 10 894.5 99" width="100%" height="100%">
         <g id="Warstwa_2" data-name="Warstwa 2">
             <path  d="M888.84-18.53c0,17,0,34.06,0,51.09-.05,17.28-9.84,36.08-29.11,36.16-13.9.06-27.81,0-41.72,0H45.3c-5.5,0-10.77.27-16-2.17C16.41,60.49,11.2,45.77,11.16,32.39c0-9.63,0-19.25,0-28.88V-17.95c0-4.83-7.5-4.84-7.5,0,0,17-.07,34,0,51,.1,20.83,13.15,43,36,43.16,13.2.09,26.39,0,39.59,0h777.1c9.07,0,17.46-1.52,24.81-7.63,19-15.81,15.15-42.93,15.15-64.93V-18.53c0-4.83-7.5-4.83-7.5,0Z" transform="translate(-3.5 22.15)"/>
         </g>
@@ -43,9 +40,8 @@ const BLine = () =>
         </g>
     </svg> */
 
-const Square = () =>
-  null;
-  /* <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="100%" viewBox="-5 -5 79.26 79.25">
+const Square = () => null;
+/* <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="100%" viewBox="-5 -5 79.26 79.25">
         <g id="Warstwa_2" data-name="Warstwa 2">
             <path  d="M68.26,67.11H13.41a10.33,10.33,0,0,0-1.67,0c.09-.25.9.42.93.44-.78-.59.66.57.22.71,0,0,0-.1,0-.11a3.29,3.29,0,0,0,0-.83V14.22a9.72,9.72,0,0,0,0-2.35.56.56,0,0,0,0-.13c.25.09-.42.9-.44.93.59-.78-.56.66-.71.22a2.05,2.05,0,0,0,.43,0c1,0,2,0,3,0H59.34c2.82,0,5.65.06,8.47,0,.07,0,.39,0,.45,0-.23.19-.76-.32-.93-.44.63.46-.53-.33-.22-.71,0,0,0,.09,0,.11a11,11,0,0,0,0,2.37v53.1a4.28,4.28,0,0,0,0,.8s0,.12,0,.14c-.14-.18.24-.67.32-.8.27-.43-.4.24,0,0a1.53,1.53,0,0,1,.8-.32,3.75,3.75,0,0,0,0,7.5,6.53,6.53,0,0,0,6.35-6.71c0-1,0-2.05,0-3.07V19.38c0-2.51.08-5,0-7.54a6.49,6.49,0,0,0-6.44-6.45c-.79,0-1.59,0-2.39,0h-29c-8.2,0-16.41-.06-24.61,0a6.52,6.52,0,0,0-6.74,6c0,.63,0,1.28,0,1.91v54a7.23,7.23,0,0,0,1.86,5.39,7.23,7.23,0,0,0,5.39,1.86H68.26a3.75,3.75,0,0,0,0-7.5Z" transform="translate(-5.38 -5.36)"/>
         </g>
@@ -54,9 +50,8 @@ const Square = () =>
         </g>
     </svg> */
 
-const Corner = () =>
-  null;
-  /* <svg version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="100%" viewBox="-2 -1 74 74">
+const Corner = () => null;
+/* <svg version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="100%" viewBox="-2 -1 74 74">
     <g id="Warstwa_2">
         <g>
             <g>
@@ -87,9 +82,8 @@ const Corner = () =>
     </g>
     </svg> */
 
-const VLine = () =>
-  null;
-  /* <svg version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="100%" viewBox="-2 38 74 34">
+const VLine = () => null;
+/* <svg version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="100%" viewBox="-2 38 74 34">
     <g id="Warstwa_2">
         <g>
             <g>
@@ -120,9 +114,8 @@ const VLine = () =>
     </g>
     </svg> */
 
-const HLine = () =>
-  null;
-  /* <svg version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="100%" viewBox="38 -1 34 74">
+const HLine = () => null;
+/* <svg version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="100%" viewBox="38 -1 34 74">
     <g id="Warstwa_2" className="neon-blur">
         <g>
             <g>

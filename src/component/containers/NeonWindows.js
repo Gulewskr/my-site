@@ -3,7 +3,7 @@ import "../../styles/neonStyle.css";
 import "./neonWindows.css";
 import { Link } from "gatsby";
 import { TechnologyIcons } from "..";
-import { createShourtcut } from '../../scripts/utils';
+import { createShourtcut } from "../../scripts/utils";
 //import { Styles } from '../../styles/neonStyles'
 
 const NeonAppWindow = ({ children }) => {
@@ -121,10 +121,11 @@ const StarIconON = () => (
 /**
  * @type {(params: {
  * name: string,
- * icon: JSX.Element
+ * icon: JSX.Element,
+ * cb: () => void
  * }) => JSX.Element}
  */
-const NeonSkillWindow = (params) => {
+const NeonSkillWindow = (params, ) => {
   const StarIconOFF = () => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -146,13 +147,13 @@ const NeonSkillWindow = (params) => {
   const StarsLvl = (lvl) => {
     const stars = [1, 2, 3, 4, 5];
     return stars.map((v) => {
-      const fillStar = (lvl > 0);
+      const fillStar = lvl > 0;
       lvl--;
-      return (
-        fillStar ? 
-          <div className="sk-s">{StarIconON()}</div> :
-          <div className="sk-s">{StarIconOFF()}</div>
-      )
+      return fillStar ? (
+        <div className="sk-s">{StarIconON()}</div>
+      ) : (
+        <div className="sk-s">{StarIconOFF()}</div>
+      );
     });
   };
   const longName = params.name.length > 12;
@@ -162,8 +163,15 @@ const NeonSkillWindow = (params) => {
       <div className="sk-icon">
         <params.icon />
       </div>
-      <div className="sk-name tooltip">{ longName && <span className="tooltip-text">{params.name}</span>}{displayedName}{ longName &&<span class="tooltip-icon">?</span>}</div>
-      <div className="sk-w-i">{StarsLvl(params.lvl)}</div>
+      <div className="sk-name tooltip">
+        {longName && <span className="tooltip-text">{params.name}</span>}
+        {displayedName}
+        {longName && <span class="tooltip-icon">?</span>}
+      </div>
+      <div className="sk-w-i">
+        {StarsLvl(params.lvl)}
+        <span class="questionmark-icon" onClick={() => params.cb()}>?</span>
+      </div>
     </div>
   );
 };

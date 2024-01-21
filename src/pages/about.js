@@ -121,44 +121,44 @@ export default function About({ pageTitle, children }) {
   }
 
   return (
-      <Layout pageTitle={"Rafal Gulewski - O mnie"}>
-        <div className="timeline">
-          <t1 className="text-neon-on-blink">
-            <>aboutH</>
-          </t1>
-          <div className="tl-main">
-            <div className="tl-line border-neon" />
-            <TLBlock content={t1} left={false} />
-            <TLBlock content={t2} left={false} />
-            <TLBlock content={t3} left={true} />
-            <TLBlock content={t4} left={false} />
-          </div>
-          <t1 className="text-neon">
-            <>aboutE</>
-          </t1>
+    <Layout pageTitle={"Rafal Gulewski - O mnie"}>
+      <div className="timeline">
+        <t1 className="text-neon-on-blink">
+          <>aboutH</>
+        </t1>
+        <div className="tl-main">
+          <div className="tl-line border-neon" />
+          <TLBlock content={t1} left={false} />
+          <TLBlock content={t2} left={false} />
+          <TLBlock content={t3} left={true} />
+          <TLBlock content={t4} left={false} />
         </div>
-        <div className="hobby-sec">
-          <t1 className="text-neon-on-blink">
-            <>aboutHob</>
-          </t1>
-          <ul>
-            <li className="text-neon">
-              <>aboutHob1</>
-            </li>
-            <li className="text-neon">
-              <>aboutHob2</>
-            </li>
-            <li className="text-neon">
-              <>aboutHob3</>
-            </li>
-            <li className="text-neon">
-              <>aboutHob4</>
-            </li>
-            <li className="text-neon">
-              <>aboutHob5</>
-            </li>
-          </ul>
-        </div>
+        <t1 className="text-neon">
+          <>aboutE</>
+        </t1>
+      </div>
+      <div className="hobby-sec">
+        <t1 className="text-neon-on-blink">
+          <>aboutHob</>
+        </t1>
+        <ul>
+          <li className="text-neon">
+            <>aboutHob1</>
+          </li>
+          <li className="text-neon">
+            <>aboutHob2</>
+          </li>
+          <li className="text-neon">
+            <>aboutHob3</>
+          </li>
+          <li className="text-neon">
+            <>aboutHob4</>
+          </li>
+          <li className="text-neon">
+            <>aboutHob5</>
+          </li>
+        </ul>
+      </div>
     </Layout>
   );
 }

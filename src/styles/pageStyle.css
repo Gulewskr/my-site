@@ -104,3 +104,16 @@
     visibility: visible;
     opacity: 1;
 }
+
+.questionmark-icon {
+    position: absolute;
+    display: flex;
+    right: 0;
+    top: 0;
+    transform: translate(50%, -50%);
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    justify-content: center;
+    align-items: center;
+}
