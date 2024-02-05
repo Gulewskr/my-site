@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { graphql } from "gatsby";
 import "../styles/skillsPage.css";
 import "../styles/arrow.css";
@@ -22,6 +22,8 @@ export const query = graphql`
     }
   }
 `;
+
+const STAT_INFO_DIV_ID = 'statinfo';
 
 /**
  * @type {Array<{
@@ -107,32 +109,37 @@ const LevelsInfoData = [
 ];
 
 const normalStyle = {
-    position: 'fixed',
-    top: '100px',
-    width: '450px',
-    'background-color': 'var(--bg-primary-color)',
-    cursor: 'pointer',
-    display: 'flex',
-    'flex-direction': 'column',
-    gap: '0.5rem',
-    padding: '1rem',
-    'border-radius': '1rem',
-    right: '0',
-    opacity: '1',
-    //transform: 'translate(500px, 0)',
-    transform: 'translate(50px, 0)',
-    transition: '2s',
-}
+  position: "fixed",
+  top: "100px",
+  width: "450px",
+  "background-color": "var(--bg-primary-color)",
+  cursor: "pointer",
+  display: "flex",
+  "flex-direction": "column",
+  gap: "0.5rem",
+  padding: "1rem",
+  "border-radius": "1rem",
+  right: "0",
+  opacity: "1",
+  //transform: 'translate(500px, 0)',
+  transform: "translate(50px, 0)",
+  transition: "2s",
+};
 
 const toggledStyle = {
   ...normalStyle,
-    opacity: '0',
-}
-
-
+  opacity: "0",
+};
 
 export default function Skills({ pageTitle, children }) {
   const [toggled, setToggled] = useState(false);
+
+  useEffect(() => {
+     const element = document.getElementById(STAT_INFO_DIV_ID);
+     if(!!element){
+      element.setAttribute('toggled', toggled);
+     }
+  }, [toggled]);
 
   /**
    * @type {(t: Array<{
@@ -153,8 +160,8 @@ export default function Skills({ pageTitle, children }) {
       </div>
     ));
 
-  const StatInfo = () => (
-    <>
+  return (
+    <Layout pageTitle={"Rafal Gulewski - Umiejętności"}>
       <div
         role="button"
         tabIndex={1}
@@ -168,13 +175,15 @@ export default function Skills({ pageTitle, children }) {
         </div>
       </div>
       <div
-        id='statinfo'
-        className="border-neon"
-        style={toggled ? toggledStyle : normalStyle}
+        id={STAT_INFO_DIV_ID}
+        className={classcat({
+            "border-neon": true,
+            "statinfo-container": true
+          })}
         onClick={() => setToggled(false)}
       >
         {LevelsInfoData.map((levelData) => (
-          <div>
+          <div className='statinfo-row'>
             {`${levelData.lvl} `}
             <div className="star">
               <StarIconON />
@@ -183,12 +192,6 @@ export default function Skills({ pageTitle, children }) {
           </div>
         ))}
       </div>
-    </>
-  );
-
-  return (
-    <Layout pageTitle={"Rafal Gulewski - Umiejętności"}>
-      <StatInfo />
       <div className="cont">
         <div className="sec sec1">
           <t1 className="text-neon-on-blink">

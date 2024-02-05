@@ -125,7 +125,7 @@ const StarIconON = () => (
  * cb: () => void
  * }) => JSX.Element}
  */
-const NeonSkillWindow = (params, ) => {
+const NeonSkillWindow = (params) => {
   const StarIconOFF = () => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -170,7 +170,9 @@ const NeonSkillWindow = (params, ) => {
       </div>
       <div className="sk-w-i">
         {StarsLvl(params.lvl)}
-        <span class="questionmark-icon" onClick={() => params.cb()}>?</span>
+        <span class="questionmark-icon" onClick={() => params.cb()}>
+          ?
+        </span>
       </div>
     </div>
   );
