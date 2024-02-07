@@ -4,4 +4,5 @@
     --color-black: #010b13;
     --bg-dark-purple-start: #0c0127;
     --bg-dark-purple-end: #1500a0;
+    --border-shadow-transition: box-shadow .25s;
 }

@@ -6,6 +6,7 @@ import Layout from "../component/Layout";
 
 import "../styles/pageStyle.css";
 import "../styles/aboutStyle.css";
+import { Trans } from "gatsby-plugin-react-i18next";
 
 export const query = graphql`
   query ($language: String!) {
@@ -21,6 +22,13 @@ export const query = graphql`
   }
 `;
 
+/*
+//TODO japierdole co tu się odjebało XDDD
+// utworzyć obiekt przechowujący klucze i daty
+// może dodać jakieś ikony odpowiadające tematyką
+// dodatkowy opis co się robiło w ramach danego timeline-u
+// REFACTOR KODU
+*/
 // markup
 export default function About({ pageTitle, children }) {
   var t1 = (
@@ -29,7 +37,7 @@ export default function About({ pageTitle, children }) {
         2007-2019
         <br />
         <br />
-        <>about1</>
+        <Trans>about1</Trans>
       </span>
     </div>
   );
@@ -39,7 +47,7 @@ export default function About({ pageTitle, children }) {
         2019 - <>matura</>
         <br />
         <br />
-        <>about2</>
+        <Trans>about2</Trans>
       </span>
     </div>
   );

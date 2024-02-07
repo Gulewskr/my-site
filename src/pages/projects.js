@@ -5,6 +5,7 @@ import Layout from "../component/Layout";
 
 import "../styles/pageStyle.css";
 import "../styles/projectStyle.css";
+import { Trans } from "gatsby-plugin-react-i18next";
 
 export const query = graphql`
   query ($language: String!) {
@@ -20,6 +21,8 @@ export const query = graphql`
   }
 `;
 
+//TODO dodać opisy
+// + modal do wyświetlania
 const TPr = [
   {
     name: "Mobile-organizer - React Native",
@@ -75,7 +78,7 @@ const TPr = [
 
 const renderProjectList = (t) =>
   t.map((v) => (
-    <div className="ctl-wind">
+    <div className="container-folder">
       <NeonProjectWindow name={v["name"]} techs={v["techs"]} link={v["link"]} />
     </div>
   ));
@@ -84,13 +87,19 @@ export default function Projects({ pageTitle, children }) {
   return (
     <Layout pageTitle={"Rafal Gulewski - Projekty"}>
       <div className="projects-ctl">
-        <t1 className="text-neon-on-blink">
-          <>proj</>
+        <t1 className="text-neon-on-blink mb-4">
+          <Trans>proj</Trans>
         </t1>
-        <div className="ctl-m">{renderProjectList(TPr)}</div>
-        <div className="text-neon" style={{ fontSize: "20px" }}>
-          👷‍♂️ - <>projInfo</>
+        <div className="flex flex-col gap-1">
+          <div className="text-neon" style={{ fontSize: "20px" }}>
+            {/* TODO - zmienić emotki na coś normalnego XD */}
+            👷‍♂️ - <Trans>projInfo-developement</Trans>
+          </div>
+          <div className="text-neon" style={{ fontSize: "20px" }}>
+            👷‍♂️ - <Trans>projInfo-developement-current</Trans>
+          </div>
         </div>
+        <div className="ctl-m">{renderProjectList(TPr)}</div>
       </div>
     </Layout>
   );

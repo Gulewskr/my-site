@@ -65,6 +65,12 @@ t1 {
     padding: 10px;
     border-radius: 10px;
     border-width: 1px;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#statinfo-toggle[collapsed=true] {
+    opacity: 0;
 }
 
 .statinfo {
@@ -110,7 +116,7 @@ t1 {
     position: fixed;
     top: 100px;
     width: 450px;
-    background-color: var(--bg-primary-colo);
+    background-color: var(--bg-primary-color);
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -118,13 +124,13 @@ t1 {
     padding: 1rem;
     border-radius: 1rem;
     right: 0;
-    opacity: 0;
-    transform: translate(50px, 0);
-    transition: 2s;
+    opacity: 1;
+    transform: translate(120%, 0);
+    transition: 1s, var(--border-shadow-transition) !important;
 }
 
 .statinfo-container[toggled=true] {
-    opacity: 1;
+    transform: translate(50px, 0);
 }
 
 .statinfo-container .statinfo-row {

@@ -17,6 +17,8 @@ export const query = graphql`
   }
 `;
 
+
+//TODO dodać do tłumaczenia
 export default function NotFoundPage() {
   return (
     <Layout pageTitle={"Rafal Gulewski - Not found"}>
