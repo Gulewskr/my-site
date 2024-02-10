@@ -65,17 +65,18 @@ const NeonProjectWindow = (params) => {
   return (
     <Link to={params.link}>
       <div
-        className="prjct-container"
+        className="prjct-container border-neon"
         role="button"
         tabIndex="0"
         onMouseEnter={() => setF(true)}
         onMouseLeave={() => setF(false)}
       >
-          <div className="prjct-bg">
-            {/* TODO change this to component with - generated border + move content iside this (might be enough to just use neon-border class) */}
+          {/*<div className="prjct-bg">
+            // TODO change this to component with - generated border + move content iside this (might be enough to just use neon-border class)
             <FolderIcon />
           </div>
           <div className="prjct-cbg" />
+          */}
           <div className="prjct-cont">
             <div
               style={{ textAlign: "center" }}

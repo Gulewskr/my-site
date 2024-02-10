@@ -3,7 +3,7 @@
     height: 230px;
     position: relative;
     overflow: show;
-    border-radius: 20px;
+    border-radius: var(--default-border-radius);
 }
 
 .pic-border {
@@ -23,7 +23,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    border-radius: 20px;
+    border-radius: var(--default-border-radius);
     overflow: hidden;
 }
 

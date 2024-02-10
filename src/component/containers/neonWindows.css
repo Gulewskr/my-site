@@ -18,7 +18,7 @@
     width: 20px;
     height: 20px;
     border-width: 2px;
-    border-radius: 20px;
+    border-radius: var(--default-border-radius);
 
 }
 
@@ -256,12 +256,15 @@
 }
 
 .prjct-container {
+    background-color: var(--bg-primary-color);
+    border-radius: var(--);
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding-top: 20%;
+    padding: 0.5rem;
+    border-radius: var(--default-border-radius);
 }
 
 .prjct-cont {
