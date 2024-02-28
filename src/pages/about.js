@@ -6,7 +6,7 @@ import Layout from "../component/Layout";
 
 import "../styles/pageStyle.css";
 import "../styles/aboutStyle.css";
-import { Trans } from "gatsby-plugin-react-i18next";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 
 export const query = graphql`
   query ($language: String!) {
@@ -23,54 +23,135 @@ export const query = graphql`
 `;
 
 /*
-//TODO japierdole co tu się odjebało XDDD
-// utworzyć obiekt przechowujący klucze i daty
-// może dodać jakieś ikony odpowiadające tematyką
-// dodatkowy opis co się robiło w ramach danego timeline-u
-// REFACTOR KODU
+// TODO
+// hobby/timeline icons
+// additional timeline description
 */
+
+/**
+ *  @typedef {Object} TimeData
+ *  @property {boolean} isSingleDate
+ *  @property {Date} startDate
+ *  @property {Date} endDate
+ * 
+  * @typedef {Object} TimelineData
+  * @property {TimeData} time
+  * @property {string} headerKey
+  * @property {string} contentKey
+  * 
+  * @typedef {Object} HobbyData
+  * @property {string} headerKey
+  * @property {string} contentKey
+  * 
+*/
+
+/**
+ * @type {Array<TimelineData>}
+ */
+const timelineData = [
+  {
+    time: {
+      isSingleDate: false,
+      startDate: new Date('2007-01-01'),
+      endDate: new Date('2019-01-01'),
+    },
+    headerKey: '',
+    contentKey: 'about1'
+  },
+  {
+    time: {
+      isSingleDate: true,
+      startDate: new Date('2019-01-01'),
+      endDate: new Date(),
+    },
+    headerKey: '',
+    contentKey: 'about2'
+  },
+  {
+    time: {
+      isSingleDate: false,
+      startDate: new Date(),
+      endDate: new Date(),
+    },
+    headerKey: 'aboutE',
+    contentKey: 'about3'
+  },
+  {
+    time: {
+      isSingleDate: false,
+      startDate: new Date(),
+      endDate: new Date(),
+    },
+    headerKey: '',
+    contentKey: 'about4'
+  },
+  {
+    time: {
+      isSingleDate: false,
+      startDate: new Date('2022-01-02'),
+      endDate: new Date(),
+    },
+    headerKey: '',
+    contentKey: 'about5'
+  }
+]
+
+
+/**
+ * @type {Array<HobbyData>}
+ */
+const hoobyData = [
+  {
+    headerKey: 'aboutHob1',
+    contentKey: ''
+  },
+  {
+    headerKey: 'aboutHob2',
+    contentKey: ''
+  },
+  {
+    headerKey: 'aboutHob3',
+    contentKey: ''
+  },
+  {
+    headerKey: 'aboutHob4',
+    contentKey: ''
+  },
+  {
+    headerKey: 'aboutHob5',
+    contentKey: ''
+  },
+  {
+    headerKey: 'aboutHob6',
+    contentKey: ''
+  }
+]
+
 // markup
 export default function About({ pageTitle, children }) {
-  var t1 = (
-    <div className="content-window">
-      <span>
-        2007-2019
-        <br />
-        <br />
-        <Trans>about1</Trans>
-      </span>
-    </div>
-  );
-  var t2 = (
-    <div className="content-window">
-      <span>
-        2019 - <>matura</>
-        <br />
-        <br />
-        <Trans>about2</Trans>
-      </span>
-    </div>
-  );
-  var t3 = (
-    <div className="content-window">
-      <span>
-        2019 - <>aboutE</>
-        <br />
-        <br />
-        <>about3</>
-      </span>
-    </div>
-  );
-  var t4 = (
-    <div className="content-window">
-      <span>
-        2021
-        <br />
-        <br />
-        <>about4</>
-      </span>
-    </div>
-  );
+
+  const [translate] = useTranslation();
+  /**
+   * 
+   * @param {TimelineData} data
+   * @returns {Element} 
+   */
+  const renderTimeLineData = (data) => {
+    return (
+      <TLBlock>
+        <div className="content-window">
+          <span>
+            {data.time.isSingleDate ? `${data.time.startDate.toDateString()}` : `${data.time.startDate.toDateString()} - ${data.time.endDate.toDateString()}`}
+            {translate(data.headerKey)}
+            <br />
+            <br />
+            {/* TODO add text to html */}
+            {translate(data.contentKey, {interpolation: {escapeValue: false}})}
+          </span>
+        </div>
+      </TLBlock>
+    )
+  }
 
   class TLBlock extends React.Component {
     state = {
@@ -122,7 +203,7 @@ export default function About({ pageTitle, children }) {
                 : "tl-cont tl-r"
           }
         >
-          <NeonAppWindow>{this.state.content}</NeonAppWindow>
+          <NeonAppWindow>{this.props.children}</NeonAppWindow>
         </div>
       );
     }
@@ -132,39 +213,29 @@ export default function About({ pageTitle, children }) {
     <Layout pageTitle={"Rafal Gulewski - O mnie"}>
       <div className="timeline">
         <t1 className="text-neon-on-blink">
-          <>aboutH</>
+          {translate('aboutH')}    
         </t1>
         <div className="tl-main">
           <div className="tl-line border-neon" />
-          <TLBlock content={t1} left={false} />
-          <TLBlock content={t2} left={false} />
-          <TLBlock content={t3} left={true} />
-          <TLBlock content={t4} left={false} />
-        </div>
+          {
+            timelineData.map(data => renderTimeLineData(data))
+          }
+          </div>
         <t1 className="text-neon">
-          <>aboutE</>
+          {translate('aboutE')}    
         </t1>
       </div>
       <div className="hobby-sec">
         <t1 className="text-neon-on-blink">
-          <>aboutHob</>
+          {translate('aboutHob')}    
         </t1>
         <ul>
+          {hoobyData.map(data => (
           <li className="text-neon">
-            <>aboutHob1</>
+            {translate(data.headerKey)}
+            {translate(data.contentKey)}
           </li>
-          <li className="text-neon">
-            <>aboutHob2</>
-          </li>
-          <li className="text-neon">
-            <>aboutHob3</>
-          </li>
-          <li className="text-neon">
-            <>aboutHob4</>
-          </li>
-          <li className="text-neon">
-            <>aboutHob5</>
-          </li>
+          ))}
         </ul>
       </div>
     </Layout>
