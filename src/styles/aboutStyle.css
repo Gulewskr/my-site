@@ -1,26 +1,27 @@
-.hobby-sec li{
+.hobby-sec li {
     height: 60px;
     list-style: none;
     font-size: 20px;
     cursor: default;
 }
 
-.hobby-sec{
+.hobby-sec {
     text-align: center;
     margin-top: 30px;
 }
-.hobby-sec t1{
+
+.hobby-sec t1 {
     margin-right: 40%;
 }
 
-.timeline{
+.timeline {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.tl-main{
+.tl-main {
     width: 100%;
     position: relative;
     display: flex;
@@ -28,7 +29,7 @@
     align-items: center;
 }
 
-.tl-line{
+.tl-line {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -39,62 +40,52 @@
     transition: 1s;
 }
 
-.tl-cont{
+.tl-cont {
     width: 80%;
     margin-top: 15px;
     transition: transform 0.8s ease-in, opacity 400ms ease-in;
 }
 
-.tl-l{
+.tl-l {
     opacity: 0;
     transition: 1s;
-    transform: translateX(20%);
-}
-.tl-r{
-    opacity: 0;
-    transition: 1s;
-    transform: translateX(20%);
-}
-.tl-l.tl-active{
-    opacity: 1;
-    transform: translateX(0);
-}
-.tl-r.tl-active{
-    opacity: 1;
-    transform: translateX(0);
 }
 
-@media only screen and (min-width: 600px) {
+.tl-r {
+    opacity: 0;
+    transition: 1s;
 }
+
+.tl-l.tl-active {
+    opacity: 1;
+}
+
+.tl-r.tl-active {
+    opacity: 1;
+}
+
+@media only screen and (min-width: 600px) {}
 
 @media only screen and (min-width: 768px) {
-    .tl-line{
+    .tl-line {
         opacity: 1;
     }
 }
 
-@media only screen and (min-width: 992px) {
-}
- 
+@media only screen and (min-width: 992px) {}
+
 @media only screen and (min-width: 1200px) {
-    .tl-line{
-        left: 50%;
-    }
+    .tl-line {}
 
-    .tl-cont{
-        width: 30%;
-    }
+    .tl-l {}
 
-    .tl-l{
-        transform: translateX(-120%);
-    }
-    .tl-r{
-        transform: translateX(120%);
-    }
-    .tl-l.tl-active{
-        transform: translateX(-60%);
-    }
-    .tl-r.tl-active{
+    .tl-r {
         transform: translateX(60%);
+    }
+
+    .tl-l.tl-active {}
+
+    .tl-r.tl-active {
+        transform: translateX(0);
     }
 }

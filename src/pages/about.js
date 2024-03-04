@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
 import debounce from "lodash.debounce";
 import { NeonAppWindow } from "../component/";
 import Layout from "../component/Layout";
+import { EDUCATION_DATA, WORK_DATA, HOBBY_DATA } from "../data/about";
 
 import "../styles/pageStyle.css";
 import "../styles/aboutStyle.css";
 import { useTranslation } from "gatsby-plugin-react-i18next";
+import classcat from "classcat";
 
 export const query = graphql`
   query ($language: String!) {
@@ -29,106 +31,32 @@ export const query = graphql`
 */
 
 /**
- *  @typedef {Object} TimeData
- *  @property {boolean} isSingleDate
- *  @property {Date} startDate
- *  @property {Date} endDate
- * 
-  * @typedef {Object} TimelineData
-  * @property {TimeData} time
-  * @property {string} headerKey
-  * @property {string} contentKey
+  * @typedef {object} IVisibleSections
+  * @property {boolean} education
+  * @property {boolean} work
+  * @property {boolean} hobbys
   * 
-  * @typedef {Object} HobbyData
-  * @property {string} headerKey
-  * @property {string} contentKey
-  * 
-*/
-
-/**
- * @type {Array<TimelineData>}
  */
-const timelineData = [
-  {
-    time: {
-      isSingleDate: false,
-      startDate: new Date('2007-01-01'),
-      endDate: new Date('2019-01-01'),
-    },
-    headerKey: '',
-    contentKey: 'about1'
-  },
-  {
-    time: {
-      isSingleDate: true,
-      startDate: new Date('2019-01-01'),
-      endDate: new Date(),
-    },
-    headerKey: '',
-    contentKey: 'about2'
-  },
-  {
-    time: {
-      isSingleDate: false,
-      startDate: new Date(),
-      endDate: new Date(),
-    },
-    headerKey: 'aboutE',
-    contentKey: 'about3'
-  },
-  {
-    time: {
-      isSingleDate: false,
-      startDate: new Date(),
-      endDate: new Date(),
-    },
-    headerKey: '',
-    contentKey: 'about4'
-  },
-  {
-    time: {
-      isSingleDate: false,
-      startDate: new Date('2022-01-02'),
-      endDate: new Date(),
-    },
-    headerKey: '',
-    contentKey: 'about5'
-  }
-]
-
-
-/**
- * @type {Array<HobbyData>}
- */
-const hoobyData = [
-  {
-    headerKey: 'aboutHob1',
-    contentKey: ''
-  },
-  {
-    headerKey: 'aboutHob2',
-    contentKey: ''
-  },
-  {
-    headerKey: 'aboutHob3',
-    contentKey: ''
-  },
-  {
-    headerKey: 'aboutHob4',
-    contentKey: ''
-  },
-  {
-    headerKey: 'aboutHob5',
-    contentKey: ''
-  },
-  {
-    headerKey: 'aboutHob6',
-    contentKey: ''
-  }
-]
 
 // markup
 export default function About({ pageTitle, children }) {
+
+  const [visibleSections, setVisibleSections] = useState({
+    "education": true,
+    "work": true,
+    "hobbys": true
+  })
+
+  /**
+   * 
+   * @param {keyof IVisibleSections} sectionName 
+   */
+  const handleChangeSectionVisibility = (sectionName) => {
+     const newState = {...visibleSections}
+     newState[sectionName] = !visibleSections[sectionName];
+
+     setVisibleSections(newState);
+  }
 
   const [translate] = useTranslation();
   /**
@@ -156,8 +84,7 @@ export default function About({ pageTitle, children }) {
   class TLBlock extends React.Component {
     state = {
       visible: false,
-      content: "empty",
-      left: true,
+      content: "empty"
     };
 
     constructor(props) {
@@ -193,15 +120,10 @@ export default function About({ pageTitle, children }) {
       return (
         <div
           ref={(node) => (this.container = node)}
-          className={
-            this.state.left
-              ? this.state.visible
-                ? "tl-cont tl-l tl-active"
-                : "tl-cont tl-l"
-              : this.state.visible
-                ? "tl-cont tl-r tl-active"
-                : "tl-cont tl-r"
-          }
+          className={classcat({
+            "tl-cont tl-r": true,
+            "tl-active": this.state.visible
+          })}
         >
           <NeonAppWindow>{this.props.children}</NeonAppWindow>
         </div>
@@ -211,26 +133,44 @@ export default function About({ pageTitle, children }) {
 
   return (
     <Layout pageTitle={"Rafal Gulewski - O mnie"}>
-      <div className="timeline">
-        <t1 className="text-neon-on-blink">
-          {translate('aboutH')}    
-        </t1>
-        <div className="tl-main">
-          <div className="tl-line border-neon" />
+      <div className="">
+        <div>
+          <t1 className="text-neon-on-blink">
+            {translate('aboutH')}    
+          </t1>
+          <button onClick={() => handleChangeSectionVisibility("education")}>{visibleSections.education ? '-' : '+'}</button>
           {
-            timelineData.map(data => renderTimeLineData(data))
+            visibleSections.education &&
+            /* <div className="tl-line border-neon" /> */
+            EDUCATION_DATA.map(data => renderTimeLineData(data))
           }
-          </div>
+        </div>
+        <div>
+          <t1 className="text-neon-on-blink">
+            {translate('WORK LIFE')}    
+          </t1>
+          <button onClick={() => handleChangeSectionVisibility("work")}>{visibleSections.work ? '-' : '+'}</button>
+          {
+            visibleSections.work &&
+            /* <div className="tl-line border-neon" /> */
+            WORK_DATA.map(data => renderTimeLineData(data))
+          }
+        </div>
+        {/*
         <t1 className="text-neon">
           {translate('aboutE')}    
         </t1>
+        */}
       </div>
       <div className="hobby-sec">
         <t1 className="text-neon-on-blink">
           {translate('aboutHob')}    
         </t1>
+        <button onClick={() => handleChangeSectionVisibility("hobbys")}>{visibleSections.hobbys ? '-' : '+'}</button>
         <ul>
-          {hoobyData.map(data => (
+          {
+          visibleSections.hobbys &&
+          HOBBY_DATA.map(data => (
           <li className="text-neon">
             {translate(data.headerKey)}
             {translate(data.contentKey)}
