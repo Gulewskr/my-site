@@ -35,3 +35,8 @@
  #nav-toogle:hover {
      background-color: #201233;
  }
+
+ .navbar_controls {
+    display: flex;
+    gap: 20px;
+ }

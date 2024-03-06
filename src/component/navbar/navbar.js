@@ -109,10 +109,13 @@ const Navbar = () => {
         </li>
         <li className="flex mx-5">
           <a href="/contact">
-            <span className="cursor-pointer text-neon">
-              <Trans i18nKey="contact">contact</Trans>{" "}
-            </span>
+            <span className="cursor-pointer text-neon">{t("contact")}</span>
           </a>
+        </li>
+        <li className="navbar_controls">
+          {/*TODO add language selector + home button*/}
+            <span className="cursor-pointer text-neon">o</span>
+            <span className="cursor-pointer text-neon">o</span>
         </li>
       </ul>
       <ul className="grid md:hidden font-semibold font-heading mb-2 w-full text-center gap-2 pt-4">
@@ -135,10 +138,14 @@ const Navbar = () => {
         </li>
         <li style={{ ...navbarItemsStyle }}>
           <a href="/contact">
-            <span className="cursor-pointer text-neon">
-              <Trans i18nKey="contact">contact</Trans>{" "}
-            </span>
+            <span className="cursor-pointer text-neon">{t("contact")}</span>
           </a>
+        </li>
+        <li style={{ ...navbarItemsStyle }}>
+            <span className="cursor-pointer text-neon">o</span>
+        </li>
+        <li style={{ ...navbarItemsStyle }}>
+            <span className="cursor-pointer text-neon">o</span>
         </li>
       </ul>
     </nav>
