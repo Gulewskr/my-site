@@ -42,7 +42,6 @@
 
 .tl-cont {
     width: 80%;
-    margin-top: 15px;
     transition: transform 0.8s ease-in, opacity 400ms ease-in;
 }
 
@@ -80,12 +79,16 @@
     .tl-l {}
 
     .tl-r {
+        /*
         transform: translateX(60%);
+        */
     }
 
     .tl-l.tl-active {}
 
     .tl-r.tl-active {
+        /*
         transform: translateX(0);
+        */
     }
 }

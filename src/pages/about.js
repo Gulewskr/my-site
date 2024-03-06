@@ -7,6 +7,8 @@ import { EDUCATION_DATA, WORK_DATA, HOBBY_DATA } from "../data/about";
 
 import "../styles/pageStyle.css";
 import "../styles/aboutStyle.css";
+//TODO move as seperate component
+import "../styles/accordion.css";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import classcat from "classcat";
 
@@ -52,10 +54,10 @@ export default function About({ pageTitle, children }) {
    * @param {keyof IVisibleSections} sectionName 
    */
   const handleChangeSectionVisibility = (sectionName) => {
-     const newState = {...visibleSections}
-     newState[sectionName] = !visibleSections[sectionName];
+    const newState = { ...visibleSections }
+    newState[sectionName] = !visibleSections[sectionName];
 
-     setVisibleSections(newState);
+    setVisibleSections(newState);
   }
 
   const [translate] = useTranslation();
@@ -74,7 +76,7 @@ export default function About({ pageTitle, children }) {
             <br />
             <br />
             {/* TODO add text to html */}
-            {translate(data.contentKey, {interpolation: {escapeValue: false}})}
+            {translate(data.contentKey, { interpolation: { escapeValue: false } })}
           </span>
         </div>
       </TLBlock>
@@ -133,28 +135,44 @@ export default function About({ pageTitle, children }) {
 
   return (
     <Layout pageTitle={"Rafal Gulewski - O mnie"}>
-      <div className="">
-        <div>
-          <t1 className="text-neon-on-blink">
-            {translate('aboutH')}    
-          </t1>
-          <button onClick={() => handleChangeSectionVisibility("education")}>{visibleSections.education ? '-' : '+'}</button>
-          {
-            visibleSections.education &&
-            /* <div className="tl-line border-neon" /> */
-            EDUCATION_DATA.map(data => renderTimeLineData(data))
-          }
+      <div className="flex flex-col gap-12">
+        <div className="accordion">
+          <div className="accordion_header">
+            <div className="accordion_header_title">
+              <t1 className="text-neon">
+                {translate('aboutH')}
+              </t1>
+            </div>
+            <div className="accordion_header_control" onClick={() => handleChangeSectionVisibility("education")}>
+              <span>{visibleSections.education ? '-' : '+'}</span>
+            </div>
+          </div>
+          <div className="accordion_body">
+            {
+              visibleSections.education &&
+              /* <div className="tl-line border-neon" /> */
+              EDUCATION_DATA.map(data => renderTimeLineData(data))
+            }
+          </div>
         </div>
-        <div>
-          <t1 className="text-neon-on-blink">
-            {translate('WORK LIFE')}    
-          </t1>
-          <button onClick={() => handleChangeSectionVisibility("work")}>{visibleSections.work ? '-' : '+'}</button>
-          {
-            visibleSections.work &&
-            /* <div className="tl-line border-neon" /> */
-            WORK_DATA.map(data => renderTimeLineData(data))
-          }
+        <div className="accordion">
+          <div className="accordion_header">
+            <div className="accordion_header_title">
+              <t1 className="text-neon">
+                {translate('WORK LIFE')}
+              </t1>
+            </div>
+            <div className="accordion_header_control" onClick={() => handleChangeSectionVisibility("work")}>
+              <span>{visibleSections.work ? '-' : '+'}</span>
+            </div>
+          </div>
+          <div className="accordion_body">
+            {
+              visibleSections.work &&
+              /* <div className="tl-line border-neon" /> */
+              WORK_DATA.map(data => renderTimeLineData(data))
+            }
+          </div>
         </div>
         {/*
         <t1 className="text-neon">
@@ -162,21 +180,32 @@ export default function About({ pageTitle, children }) {
         </t1>
         */}
       </div>
+
       <div className="hobby-sec">
-        <t1 className="text-neon-on-blink">
-          {translate('aboutHob')}    
-        </t1>
-        <button onClick={() => handleChangeSectionVisibility("hobbys")}>{visibleSections.hobbys ? '-' : '+'}</button>
-        <ul>
-          {
-          visibleSections.hobbys &&
-          HOBBY_DATA.map(data => (
-          <li className="text-neon">
-            {translate(data.headerKey)}
-            {translate(data.contentKey)}
-          </li>
-          ))}
-        </ul>
+      <div className="accordion">
+        <div className="accordion_header">
+          <div className="accordion_header_title">
+              <t1 className="text-neon">
+                {translate('aboutHob')}
+              </t1>
+            </div>
+            <div className="accordion_header_control" onClick={() => handleChangeSectionVisibility("hobbys")}>
+              <span>{visibleSections.hobbys ? '-' : '+'}</span>
+            </div>
+          </div>
+          <div className="accordion_body">
+            <ul>
+              {
+                visibleSections.hobbys &&
+                HOBBY_DATA.map(data => (
+                  <li className="text-neon">
+                    {translate(data.headerKey)}
+                    {translate(data.contentKey)}
+                  </li>
+                ))}
+            </ul>
+          </div>
+          </div>
       </div>
     </Layout>
   );
