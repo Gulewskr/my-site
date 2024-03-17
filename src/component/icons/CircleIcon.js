@@ -1,10 +1,7 @@
 import * as React from "react";
 import "../../styles/neonStyle.css";
-//import './circleIcons.css'
-//import { Styles } from '../../styles/neonStyles'
+import './style.css'
 
-//import {div className='Link'} from 'react-dom';
-//import {, div className='Link'} from 'gatsby-plugin-react-i18next';
 import { NeonCircle } from "../index";
 
 const About = () => (

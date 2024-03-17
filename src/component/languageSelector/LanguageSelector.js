@@ -5,6 +5,8 @@ import React from "react";
 import fUSA from "../../images/flagUSA.png";
 import fPL from "../../images/flagPL.png";
 
+import './style.css';
+
 const flags = {
   pl: fPL,
   en: fUSA,
@@ -15,35 +17,26 @@ const LanguageSettings = () => {
   const language = "pl";
   //const {languages, language, changeLanguage} = useI18next();
   const changeLanguage = (v) => console.log(v);
-  const [menuV, setV] = React.useState(false);
 
   return (
     <div
       className="Lang"
       role="button"
       tabIndex="0"
-      onClick={() => setV(!menuV)}
-      onKeyDown={() => setV(!menuV)}
     >
       <div
-        className={
-          menuV ? "activeM border-neon border-rad" : "border-neon border-rad"
-        }
+        className="activeM border-neon border-rad"
       >
         <img src={flags[language]} alt={language}></img>
       </div>
-      {menuV && (
         <div
           className="fullscreen"
           role="button"
           tabIndex="0"
-          onClick={() => setV(false)}
-          onKeyDown={() => setV(false)}
         >
           {" "}
         </div>
-      )}
-      <div className={menuV ? "languages activeM" : "languages"}>
+      <div className="languages">
         <div className="menu-m border-neon">
           <span className="neon-text-on">
             <>SetLang</>
@@ -57,12 +50,10 @@ const LanguageSettings = () => {
                   onClick={(e) => {
                     e.preventDefault();
                     changeLanguage(lng);
-                    setV(false);
                   }}
                   onKeyDown={(e) => {
                     e.preventDefault();
                     changeLanguage(lng);
-                    setV(false);
                   }}
                 >
                   <img src={flags[lng]} alt={lng} />

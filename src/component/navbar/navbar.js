@@ -1,41 +1,64 @@
+import { Link } from "gatsby"
 import React, { useState } from "react";
-import { Trans, useTranslation } from "react-i18next";
-import cc from "classcat";
+import { useTranslation } from "react-i18next";
 
-import "./navbar.css";
-import "../../styles/icons.css";
-//import {div} from 'react-dom';
-//import {, div} from 'gatsby-plugin-react-i18next';
+import { LanguageSettings } from "../languageSelector/LanguageSelector";
+
+import "./style.css";
 
 const Navbar = () => {
   const [toogledNavbar, setTN] = useState(false);
+  const [isOpenLanguageSelection, setIsOpenLanguageSelection] = useState(false);
   const { t } = useTranslation();
+
+  const openLanguageSelection = () => {
+    setIsOpenLanguageSelection(true);
+  }
+
+  const closeLanguageSelection = () => {
+    setIsOpenLanguageSelection(true);
+  }
 
   const navbarItemsStyle = toogledNavbar ? { display: "none" } : {};
   /*
-        TODO - dodać chowanie paska na scrool
+    TODO - dodać chowanie paska na scrool
 
-        const [prevScrollpos, setPrevScrollpos] = useState(0);
-        useEffect(() => {
-                const navScript = () => {
-                        var currentScrollPos = window.pageYOffset;
-                        if (prevScrollpos < 200 || prevScrollpos > currentScrollPos) {
-                                document.getElementById("navbar").style.top = "-15px";
-                        } else {
-                                document.getElementById("navbar").style.top = "-400px";
-                        }
-                        setPrevScrollpos(currentScrollPos);
-                }
+    const [prevScrollpos, setPrevScrollpos] = useState(0);
+    useEffect(() => {
+            const navScript = () => {
+                    var currentScrollPos = window.pageYOffset;
+                    if (prevScrollpos < 200 || prevScrollpos > currentScrollPos) {
+                            document.getElementById("navbar").style.top = "-15px";
+                    } else {
+                            document.getElementById("navbar").style.top = "-400px";
+                    }
+                    setPrevScrollpos(currentScrollPos);
+            }
 
-                const colorChange = () => {
-                //        this.state.color = window.localStorage.getItem('color');
-                //}
+            const colorChange = () => {
+            //        this.state.color = window.localStorage.getItem('color');
+            //}
 
-                
-                document.addEventListener('scroll', navScript); 
-                //window.addEventListener(localStorage['color'], colorChange);
-        }, []);
-        */
+            
+            document.addEventListener('scroll', navScript); 
+            //window.addEventListener(localStorage['color'], colorChange);
+    }, []);
+    */
+
+  const Links = [
+    () => (<Link to="/skills">
+            <span className="cursor-pointer text-neon">{t("skills")}</span>
+          </Link>),
+    () => (<Link to="/projects">
+            <span className="cursor-pointer text-neon">{t("proj")}</span>
+          </Link>),
+    () => (<Link to="/about">
+            <span className="cursor-pointer text-neon">{t("about")}</span>
+          </Link>),
+    () => (<Link to="/contact">
+            <span className="cursor-pointer text-neon">{t("contact")}</span>
+          </Link>)
+  ];
 
   return (
     <nav
@@ -45,11 +68,11 @@ const Navbar = () => {
     >
       <ul className="relative flex w-full mt-2">
         <li className="font-bold font-heading">
-          <a href="/">
+          <Link to="/">
             <div id="nav-logo" className="text-neon-on">
               {"<RAFAŁ GULEWSKI/>"}
             </div>
-          </a>
+          </Link>
         </li>
         <div
           id="nav-toogle"
@@ -90,59 +113,27 @@ const Navbar = () => {
         </div>
       </ul>
       <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12 items-center justify-between whitespace-nowrap max-md:flex-col">
-        <li className="flex mx-5">
-          <a href="/skills">
-            <span className="cursor-pointer text-neon">
-              <Trans i18nKey="skills">skills</Trans>{" "}
-            </span>
-          </a>
-        </li>
-        <li className="flex mx-5">
-          <a href="/projects">
-            <span className="cursor-pointer text-neon">{t("proj")}</span>
-          </a>
-        </li>
-        <li className="flex mx-5">
-          <a href="/about">
-            <span className="cursor-pointer text-neon">{t("about")}</span>
-          </a>
-        </li>
-        <li className="flex mx-5">
-          <a href="/contact">
-            <span className="cursor-pointer text-neon">{t("contact")}</span>
-          </a>
-        </li>
-        <li className="navbar_controls">
+        {Links.map( LinkComponent => (
+          <li className="flex mx-5">
+            <LinkComponent />
+          </li>
+        ))}
+        <li className="navbar_controls" onClick={openLanguageSelection}>
           {/*TODO add language selector + home button*/}
             <span className="cursor-pointer text-neon">o</span>
+            {isOpenLanguageSelection && <LanguageSettings />}
             <span className="cursor-pointer text-neon">o</span>
         </li>
       </ul>
       <ul className="grid md:hidden font-semibold font-heading mb-2 w-full text-center gap-2 pt-4">
-        <li style={{ ...navbarItemsStyle }}>
-          <a href="/skills">
-            <span className="cursor-pointer text-neon">
-              <Trans i18nKey="skills">skills</Trans>{" "}
-            </span>
-          </a>
-        </li>
-        <li style={{ ...navbarItemsStyle }}>
-          <a href="/projects">
-            <span className="cursor-pointer text-neon">{t("proj")}</span>
-          </a>
-        </li>
-        <li style={{ ...navbarItemsStyle }}>
-          <a href="/about">
-            <span className="cursor-pointer text-neon">{t("about")}</span>
-          </a>
-        </li>
-        <li style={{ ...navbarItemsStyle }}>
-          <a href="/contact">
-            <span className="cursor-pointer text-neon">{t("contact")}</span>
-          </a>
-        </li>
-        <li style={{ ...navbarItemsStyle }}>
+        {Links.map( LinkComponent => (
+           <li style={{ ...navbarItemsStyle }}>
+            <LinkComponent />
+          </li>
+        ))}
+        <li style={{ ...navbarItemsStyle }} onClick={openLanguageSelection}>
             <span className="cursor-pointer text-neon">o</span>
+            {isOpenLanguageSelection && <LanguageSettings />}
         </li>
         <li style={{ ...navbarItemsStyle }}>
             <span className="cursor-pointer text-neon">o</span>

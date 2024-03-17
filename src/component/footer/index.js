@@ -1,7 +1,6 @@
 import React from "react";
 import "./style.css";
 
-import { LanguageSettings } from "./LanguageSelector";
 import { Trans } from "gatsby-plugin-react-i18next";
 
 const Footer = () => {

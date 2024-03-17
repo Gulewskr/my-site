@@ -5,11 +5,11 @@ import React, { useState } from "react";
  * @property 
  */
 
-const SingleOption = ({props: {value, label, handleOnClick}}) => <div className="singleOption" onClick={handleOnClick}>
+const SingleOption = ({props: {value, label, handleOnClick}}) => (<div className="singleOption" onClick={handleOnClick}>
         <span>{label}</span>
-    </div>
+    </div>);
 
-export default Dropdown = ({props: {options, placeholder}, children }) => {
+const Dropdown = ({props: {options, placeholder}, children }) => {
     const [selectedOption, setSelectedOption] = useState(undefined);
 
     return (
@@ -33,4 +33,6 @@ export default Dropdown = ({props: {options, placeholder}, children }) => {
             </div>
         </div>
     )
-}
+};
+
+export default Dropdown;

@@ -12,34 +12,38 @@ import {
 //import NeonTextON, { NeonTextSimple } from './neonText';
 import {
   NeonAppWindow,
-  NeonCircle,
   NeonSkillWindow,
   StarIconON,
   NeonProjectWindow,
-} from "./containers/NeonWindows";
+} from "./containers/index";
+import {
+  NeonCircle
+} from "./neonCircle/NeonCircle";
 import CircleIcons, { CircleIcon } from "./icons/CircleIcon";
 import ContactList from "./ContactList";
 import TechnologyIcons from "./TechnologyIcons";
-import { LanguageSettings /*, ColorSettings*/ } from "./Settings";
+import { LanguageSettings } from "./languageSelector/LanguageSelector";
+import Dropdown from "./dropdown/Dropdown";
 
 export {
-  Navbar,
-  Footer,
-  Menu,
-  Corner,
-  BLine,
-  VLine,
-  HLine,
   AppWindowIcon,
-  Square,
+  BLine,
+  CircleIcon,
+  CircleIcons,
+  Corner,
+  ContactList,
+  Dropdown,
+  Footer,
+  HLine,
+  LanguageSettings,
+  Menu,
+  Navbar,
   NeonAppWindow,
   NeonCircle,
   NeonSkillWindow,
-  StarIconON,
   NeonProjectWindow,
-  CircleIcons,
-  CircleIcon,
-  ContactList,
+  StarIconON,
+  Square,
   TechnologyIcons,
-  LanguageSettings,
+  VLine,
 };
