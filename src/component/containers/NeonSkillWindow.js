@@ -90,4 +90,5 @@ const NeonSkillWindow = (params) => {
 
 export {
   NeonSkillWindow,
+  StarIconON
 };
