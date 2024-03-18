@@ -1,9 +1,24 @@
 :root {
     --bg-primary-color: #18054a;
+    --bg-primary-color-hover: #110080;
     --color-white: #f2f2f2;
     --color-black: #010b13;
     --bg-dark-purple-start: #0c0127;
     --bg-dark-purple-end: #1500a0;
     --border-shadow-transition: box-shadow .25s;
     --default-border-radius: 20px;
+
+    --neon-box-shadow-outline: 0 0 0.25rem 0.25rem #3700ff;
+    --neon-box-shadow-hover-outline: 0 0 0.5rem 0.5rem #3700ff;
+    --neon-box-shadow-inset: inset 0 0 0.25rem 0.25rem #3700ff;
+    --neon-box-shadow-hover-inset: inset 0 0 0.4rem 0.4rem #3700ff;
+
+    --neon-box-shadow: var(--neon-box-shadow-outline),
+        var(--neon-box-shadow-inset);
+    --neon-box-shadow-hover: var(--neon-box-shadow-hover-outline),
+        var(--neon-box-shadow-hover-inset);
+
+    --navbar-height: 60px;
+    --icon-mid-size: 30px;
+    --icon-mid-size-hover: 33px;
 }

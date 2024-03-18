@@ -1,0 +1,9 @@
+.icon-wrapper {
+    height: var(--icon-mid-size);
+    width: var(--icon-mid-size);
+}
+
+.icon-wrapper svg {
+    height: 100%;
+    width: 100%;
+}

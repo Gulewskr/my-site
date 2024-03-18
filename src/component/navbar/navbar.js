@@ -3,21 +3,15 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { LanguageSettings } from "../languageSelector/LanguageSelector";
+import { Icon } from "../index";
 
 import "./style.css";
 
+import HomeIcon from "../../images/icons/house-blank.svg";
+
 const Navbar = () => {
   const [toogledNavbar, setTN] = useState(false);
-  const [isOpenLanguageSelection, setIsOpenLanguageSelection] = useState(false);
   const { t } = useTranslation();
-
-  const openLanguageSelection = () => {
-    setIsOpenLanguageSelection(true);
-  }
-
-  const closeLanguageSelection = () => {
-    setIsOpenLanguageSelection(true);
-  }
 
   const navbarItemsStyle = toogledNavbar ? { display: "none" } : {};
   /*
@@ -47,17 +41,27 @@ const Navbar = () => {
 
   const Links = [
     () => (<Link to="/skills">
-            <span className="cursor-pointer text-neon">{t("skills")}</span>
+            <span className="navbar-item-label cursor-pointer text-neon">{t("skills")}</span>
           </Link>),
     () => (<Link to="/projects">
-            <span className="cursor-pointer text-neon">{t("proj")}</span>
+            <span className="navbar-item-label cursor-pointer text-neon">{t("proj")}</span>
           </Link>),
     () => (<Link to="/about">
-            <span className="cursor-pointer text-neon">{t("about")}</span>
+            <span className="navbar-item-label cursor-pointer text-neon">{t("about")}</span>
           </Link>),
     () => (<Link to="/contact">
-            <span className="cursor-pointer text-neon">{t("contact")}</span>
-          </Link>)
+            <span className="navbar-item-label cursor-pointer text-neon">{t("contact")}</span>
+          </Link>),
+          () => (
+            <div className="navbar_controls">
+              <LanguageSettings />
+              <Link to="/">
+                <Icon>
+                  <HomeIcon />
+                </Icon>
+              </Link>
+            </div>
+          )
   ];
 
   return (
@@ -66,8 +70,8 @@ const Navbar = () => {
       className="flex min-h-10 md:min-h-24 h-auto pt-5 md:pt-15 px-10 w-19/20 items-center justify-self-center justify-between max-md:flex-col"
       id="navbar"
     >
-      <ul className="relative flex w-full mt-2">
-        <li className="font-bold font-heading">
+      <ul className="navbar-item-container flex w-full mt-2">
+        <li className="navbar-item font-bold font-heading">
           <Link to="/">
             <div id="nav-logo" className="text-neon-on">
               {"<RAFAŁ GULEWSKI/>"}
@@ -112,18 +116,12 @@ const Navbar = () => {
           )}
         </div>
       </ul>
-      <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12 items-center justify-between whitespace-nowrap max-md:flex-col">
+      <ul className="navbar-item-container hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12 items-center justify-between whitespace-nowrap max-md:flex-col">
         {Links.map( LinkComponent => (
-          <li className="flex mx-5">
+          <li className="navbar-item">
             <LinkComponent />
           </li>
         ))}
-        <li className="navbar_controls" onClick={openLanguageSelection}>
-          {/*TODO add language selector + home button*/}
-            <span className="cursor-pointer text-neon">o</span>
-            {isOpenLanguageSelection && <LanguageSettings />}
-            <span className="cursor-pointer text-neon">o</span>
-        </li>
       </ul>
       <ul className="grid md:hidden font-semibold font-heading mb-2 w-full text-center gap-2 pt-4">
         {Links.map( LinkComponent => (
@@ -131,13 +129,6 @@ const Navbar = () => {
             <LinkComponent />
           </li>
         ))}
-        <li style={{ ...navbarItemsStyle }} onClick={openLanguageSelection}>
-            <span className="cursor-pointer text-neon">o</span>
-            {isOpenLanguageSelection && <LanguageSettings />}
-        </li>
-        <li style={{ ...navbarItemsStyle }}>
-            <span className="cursor-pointer text-neon">o</span>
-        </li>
       </ul>
     </nav>
   );

@@ -14,6 +14,8 @@
      box-shadow: rgb(4, 0, 255) 0 0 15px 6px,
          inset rgb(4, 0, 255) 0 0 6px 6px;
 
+     height: var(--navbar-height);
+
      z-index: 10;
      transition: 1s;
  }
@@ -36,7 +38,31 @@
      background-color: #201233;
  }
 
+ .navbar-item-container {
+     position: relative;
+     display: flex;
+     height: var(--navbar-height);
+     align-items: center;
+     vertical-align: center;
+ }
+
+ .navbar-item {
+     display: flex;
+     margin-left: 1.25rem;
+     margin-right: 1.25rem;
+     align-items: center;
+     position: relative;
+     height: var(--navbar-height);
+ }
+
+ .navbar-item:hover .navbar-item-label {
+     font-size: 22px;
+ }
+
  .navbar_controls {
-    display: flex;
-    gap: 20px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100%;
+     gap: 20px;
  }

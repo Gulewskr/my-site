@@ -24,6 +24,7 @@ import ContactList from "./ContactList";
 import TechnologyIcons from "./TechnologyIcons";
 import { LanguageSettings } from "./languageSelector/LanguageSelector";
 import Dropdown from "./dropdown/Dropdown";
+import Icon from "./icon/Icon";
 
 export {
   AppWindowIcon,
@@ -33,6 +34,7 @@ export {
   Corner,
   ContactList,
   Dropdown,
+  Icon,
   Footer,
   HLine,
   LanguageSettings,
