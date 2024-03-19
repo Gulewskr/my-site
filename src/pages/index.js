@@ -24,12 +24,12 @@ export default function Home({ pageTitle, children }) {
     () => (
       <div className="content-window">
         <span className="info-h text-neon-on blink">
-          <Trans>info1</Trans>
+          <Trans>homepage.welcomeText</Trans>
         </span>
         <br />
         <br />
         <span className="info-t">
-          <Trans>info2</Trans>
+          <Trans>homepage.description</Trans>
         </span>
       </div>
     ),
@@ -40,7 +40,7 @@ export default function Home({ pageTitle, children }) {
     () => (
       <div className="content-window flex flex-col items-center w-full">
         <span className="info-t text-neon-on">
-          <Trans>info3</Trans>
+          <Trans>homepage.findme</Trans>
           <br />
           <br />
         </span>
