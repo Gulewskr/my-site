@@ -1,6 +1,27 @@
+.neonAppContainer-2 {
+    background-color: var(--bg-primary-color);
+    border-color: var(--neon-app-color-border);
+    border-width: 4px;
+    border-radius: 10px;
+}
+
+.neonAppContainer-2 .neonAppContainer-title {
+    align-items: center;
+    text-align: center;
+    border-bottom: 4px solid var(--neon-app-color-border);
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.neonAppContainer-2 .neonAppContainer-content {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+
 .neonAppContainer {
     background-color: var(--bg-primary-color);
-    color: white;
+    color: var(--color-white);
     border-width: 2px;
     border-radius: 10px;
 }
@@ -345,9 +366,12 @@
     box-shadow: var(--neon-box-shadow);
 }
 
+/*
+TODO add hover effect per main class
 .border-neon:hover {
     box-shadow: var(--neon-box-shadow-hover);
 }
+*/
 
 .border-neon .neonStarGlow {
     fill: none;

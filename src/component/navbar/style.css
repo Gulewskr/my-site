@@ -47,9 +47,9 @@
  }
 
  .navbar-item {
+     min-width: 50px;
      display: flex;
-     margin-left: 1.25rem;
-     margin-right: 1.25rem;
+     padding-left: 2rem;
      align-items: center;
      position: relative;
      height: var(--navbar-height);
@@ -65,4 +65,10 @@
      align-items: center;
      height: 100%;
      gap: 20px;
+     padding-left: 2rem;
+ }
+
+ .navbar .navbar-item .icon-wrapper:hover {
+     height: var(--icon-mid-size-hover);
+     width: var(--icon-mid-size-hover);
  }

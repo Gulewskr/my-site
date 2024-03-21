@@ -23,8 +23,8 @@ export const query = graphql`
   }
 `;
 
-const STAT_INFO_CONTENT_ID = 'statinfo';
-const STAT_INFO_BUTTON_ID = 'statinfo-toggle';
+const STAT_INFO_CONTENT_ID = "statinfo";
+const STAT_INFO_BUTTON_ID = "statinfo-toggle";
 
 /**
  * @type {Array<{
@@ -104,7 +104,7 @@ const LevelsInfoData = [
   {
     lvl: 3,
     transKey: "lvl3",
-    transform: (s) => s.replace('---', '<')
+    transform: (s) => s.replace("---", "<"),
   },
   {
     lvl: 4,
@@ -144,14 +144,14 @@ export default function Skills({ pageTitle, children }) {
   const [translate] = useTranslation();
 
   useEffect(() => {
-     const infoContentElement = document.getElementById(STAT_INFO_CONTENT_ID);
-     const infoButtonElement = document.getElementById(STAT_INFO_BUTTON_ID);
-     if(!!infoContentElement){
-        infoContentElement.setAttribute('toggled', toggled);
-     }
-     if(!!infoButtonElement){
-      infoButtonElement.setAttribute('collapsed', toggled);
-   }
+    const infoContentElement = document.getElementById(STAT_INFO_CONTENT_ID);
+    const infoButtonElement = document.getElementById(STAT_INFO_BUTTON_ID);
+    if (!!infoContentElement) {
+      infoContentElement.setAttribute("toggled", toggled);
+    }
+    if (!!infoButtonElement) {
+      infoButtonElement.setAttribute("collapsed", toggled);
+    }
   }, [toggled]);
 
   /**
@@ -190,23 +190,22 @@ export default function Skills({ pageTitle, children }) {
       <div
         id={STAT_INFO_CONTENT_ID}
         className={classcat({
-            "border-neon": true,
-            "statinfo-container": true
-          })}
+          "border-neon": true,
+          "statinfo-container": true,
+        })}
         onClick={() => setToggled(false)}
       >
         {LevelsInfoData.map((levelData) => (
-          <div className='statinfo-row'>
+          <div className="statinfo-row">
             {`${levelData.lvl} `}
             <div className="star">
               <StarIconON />
-            </div> 
-            {
-              levelData.transform ? 
-                <div>{levelData.transform(translate(levelData.transKey))}</div>
-                :
-                <Trans>{levelData.transKey}</Trans>
-            }
+            </div>
+            {levelData.transform ? (
+              <div>{levelData.transform(translate(levelData.transKey))}</div>
+            ) : (
+              <Trans>{levelData.transKey}</Trans>
+            )}
           </div>
         ))}
       </div>

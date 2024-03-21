@@ -1,6 +1,6 @@
-import { Link } from "gatsby"
+import { Link } from "gatsby";
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { getPrefixedTranslation } from "../../scripts/utils";
 
 import { LanguageSettings } from "../languageSelector/LanguageSelector";
 import { Icon } from "../index";
@@ -11,7 +11,7 @@ import HomeIcon from "../../images/icons/house-blank.svg";
 
 const Navbar = () => {
   const [toogledNavbar, setTN] = useState(false);
-  const { t } = useTranslation();
+  const translate = getPrefixedTranslation("navigate");
 
   const navbarItemsStyle = toogledNavbar ? { display: "none" } : {};
   /*
@@ -40,34 +40,50 @@ const Navbar = () => {
     */
 
   const Links = [
-    () => (<Link to="/skills">
-            <span className="navbar-item-label cursor-pointer text-neon">{t("skills")}</span>
-          </Link>),
-    () => (<Link to="/projects">
-            <span className="navbar-item-label cursor-pointer text-neon">{t("proj")}</span>
-          </Link>),
-    () => (<Link to="/about">
-            <span className="navbar-item-label cursor-pointer text-neon">{t("about")}</span>
-          </Link>),
-    () => (<Link to="/contact">
-            <span className="navbar-item-label cursor-pointer text-neon">{t("contact")}</span>
-          </Link>),
-          () => (
-            <div className="navbar_controls">
-              <LanguageSettings />
-              <Link to="/">
-                <Icon>
-                  <HomeIcon />
-                </Icon>
-              </Link>
-            </div>
-          )
+    ({ className }) => (
+      <Link className={className} to="/skills">
+        <span className="navbar-item-label cursor-pointer text-neon">
+          {translate("skills")}
+        </span>
+      </Link>
+    ),
+    ({ className }) => (
+      <Link className={className} to="/projects">
+        <span className="navbar-item-label cursor-pointer text-neon">
+          {translate("projects")}
+        </span>
+      </Link>
+    ),
+    ({ className }) => (
+      <Link className={className} to="/about">
+        <span className="navbar-item-label cursor-pointer text-neon">
+          {translate("about")}
+        </span>
+      </Link>
+    ),
+    ({ className }) => (
+      <Link className={className} to="/contact">
+        <span className="navbar-item-label cursor-pointer text-neon">
+          {translate("contact")}
+        </span>
+      </Link>
+    ),
+    ({ className }) => (
+      <div className={`navbar_controls ${className}`}>
+        <LanguageSettings />
+        <Link to="/">
+          <Icon>
+            <HomeIcon />
+          </Icon>
+        </Link>
+      </div>
+    ),
   ];
 
   return (
     <nav
       role="navigation"
-      className="flex min-h-10 md:min-h-24 h-auto pt-5 md:pt-15 px-10 w-19/20 items-center justify-self-center justify-between max-md:flex-col"
+      className="navbar flex min-h-10 md:min-h-24 h-auto pt-5 md:pt-15 px-10 w-19/20 items-center justify-self-center justify-between max-md:flex-col"
       id="navbar"
     >
       <ul className="navbar-item-container flex w-full mt-2">
@@ -116,16 +132,16 @@ const Navbar = () => {
           )}
         </div>
       </ul>
-      <ul className="navbar-item-container hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12 items-center justify-between whitespace-nowrap max-md:flex-col">
-        {Links.map( LinkComponent => (
-          <li className="navbar-item">
-            <LinkComponent />
+      <ul className="navbar-item-container hidden md:flex px-4 mx-auto font-semibold font-heading items-center justify-between whitespace-nowrap max-md:flex-col">
+        {Links.map((LinkComponent) => (
+          <li>
+            <LinkComponent className="navbar-item" />
           </li>
         ))}
       </ul>
       <ul className="grid md:hidden font-semibold font-heading mb-2 w-full text-center gap-2 pt-4">
-        {Links.map( LinkComponent => (
-           <li style={{ ...navbarItemsStyle }}>
+        {Links.map((LinkComponent) => (
+          <li style={{ ...navbarItemsStyle }}>
             <LinkComponent />
           </li>
         ))}

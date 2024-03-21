@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../../styles/neonStyle.css";
-import './style.css'
+import "./style.css";
 
 import { NeonCircle } from "../index";
 

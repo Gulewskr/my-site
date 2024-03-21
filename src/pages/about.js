@@ -33,60 +33,63 @@ export const query = graphql`
 */
 
 /**
-  * @typedef {object} IVisibleSections
-  * @property {boolean} education
-  * @property {boolean} work
-  * @property {boolean} hobbys
-  * 
+ * @typedef {object} IVisibleSections
+ * @property {boolean} education
+ * @property {boolean} work
+ * @property {boolean} hobbys
+ *
  */
 
 // markup
 export default function About({ pageTitle, children }) {
-
   const [visibleSections, setVisibleSections] = useState({
-    "education": true,
-    "work": true,
-    "hobbys": true
-  })
+    education: true,
+    work: true,
+    hobbys: true,
+  });
 
   /**
-   * 
-   * @param {keyof IVisibleSections} sectionName 
+   *
+   * @param {keyof IVisibleSections} sectionName
    */
   const handleChangeSectionVisibility = (sectionName) => {
-    const newState = { ...visibleSections }
+    const newState = { ...visibleSections };
     newState[sectionName] = !visibleSections[sectionName];
 
     setVisibleSections(newState);
-  }
+  };
 
   const [translate] = useTranslation();
   /**
-   * 
+   *
    * @param {TimelineData} data
-   * @returns {Element} 
+   * @returns {Element}
    */
   const renderTimeLineData = (data) => {
     return (
       <TLBlock>
         <div className="content-window">
           <span>
-            {data.time.isSingleDate ? `${data.time.startDate.toDateString()}` : `${data.time.startDate.toDateString()} - ${data.time.endDate.toDateString()}`}
+            {data.time.isSingleDate
+              ? `${data.time.startDate.toDateString()}`
+              : `${data.time.startDate.toDateString()} - ${data.time.endDate.toDateString()}`}
             {translate(data.headerKey)}
             <br />
             <br />
             {/* TODO add text to html */}
-            {translate(data.contentKey, { interpolation: { escapeValue: false } })}
+            {translate(data.contentKey, {
+              interpolation: { escapeValue: false },
+            })}
           </span>
         </div>
       </TLBlock>
-    )
-  }
+    );
+  };
 
   class TLBlock extends React.Component {
     state = {
       visible: false,
-      content: "empty"
+      content: "empty",
     };
 
     constructor(props) {
@@ -124,7 +127,7 @@ export default function About({ pageTitle, children }) {
           ref={(node) => (this.container = node)}
           className={classcat({
             "tl-cont tl-r": true,
-            "tl-active": this.state.visible
+            "tl-active": this.state.visible,
           })}
         >
           <NeonAppWindow>{this.props.children}</NeonAppWindow>
@@ -139,39 +142,37 @@ export default function About({ pageTitle, children }) {
         <div className="accordion">
           <div className="accordion_header">
             <div className="accordion_header_title">
-              <t1 className="text-neon">
-                {translate('aboutH')}
-              </t1>
+              <t1 className="text-neon">{translate("aboutH")}</t1>
             </div>
-            <div className="accordion_header_control" onClick={() => handleChangeSectionVisibility("education")}>
-              <span>{visibleSections.education ? '-' : '+'}</span>
+            <div
+              className="accordion_header_control"
+              onClick={() => handleChangeSectionVisibility("education")}
+            >
+              <span>{visibleSections.education ? "-" : "+"}</span>
             </div>
           </div>
           <div className="accordion_body">
-            {
-              visibleSections.education &&
+            {visibleSections.education &&
               /* <div className="tl-line border-neon" /> */
-              EDUCATION_DATA.map(data => renderTimeLineData(data))
-            }
+              EDUCATION_DATA.map((data) => renderTimeLineData(data))}
           </div>
         </div>
         <div className="accordion">
           <div className="accordion_header">
             <div className="accordion_header_title">
-              <t1 className="text-neon">
-                {translate('WORK LIFE')}
-              </t1>
+              <t1 className="text-neon">{translate("WORK LIFE")}</t1>
             </div>
-            <div className="accordion_header_control" onClick={() => handleChangeSectionVisibility("work")}>
-              <span>{visibleSections.work ? '-' : '+'}</span>
+            <div
+              className="accordion_header_control"
+              onClick={() => handleChangeSectionVisibility("work")}
+            >
+              <span>{visibleSections.work ? "-" : "+"}</span>
             </div>
           </div>
           <div className="accordion_body">
-            {
-              visibleSections.work &&
+            {visibleSections.work &&
               /* <div className="tl-line border-neon" /> */
-              WORK_DATA.map(data => renderTimeLineData(data))
-            }
+              WORK_DATA.map((data) => renderTimeLineData(data))}
           </div>
         </div>
         {/*
@@ -182,22 +183,22 @@ export default function About({ pageTitle, children }) {
       </div>
 
       <div className="hobby-sec">
-      <div className="accordion">
-        <div className="accordion_header">
-          <div className="accordion_header_title">
-              <t1 className="text-neon">
-                {translate('aboutHob')}
-              </t1>
+        <div className="accordion">
+          <div className="accordion_header">
+            <div className="accordion_header_title">
+              <t1 className="text-neon">{translate("aboutHob")}</t1>
             </div>
-            <div className="accordion_header_control" onClick={() => handleChangeSectionVisibility("hobbys")}>
-              <span>{visibleSections.hobbys ? '-' : '+'}</span>
+            <div
+              className="accordion_header_control"
+              onClick={() => handleChangeSectionVisibility("hobbys")}
+            >
+              <span>{visibleSections.hobbys ? "-" : "+"}</span>
             </div>
           </div>
           <div className="accordion_body">
             <ul>
-              {
-                visibleSections.hobbys &&
-                HOBBY_DATA.map(data => (
+              {visibleSections.hobbys &&
+                HOBBY_DATA.map((data) => (
                   <li className="text-neon">
                     {translate(data.headerKey)}
                     {translate(data.contentKey)}
@@ -205,7 +206,7 @@ export default function About({ pageTitle, children }) {
                 ))}
             </ul>
           </div>
-          </div>
+        </div>
       </div>
     </Layout>
   );

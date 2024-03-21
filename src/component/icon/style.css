@@ -1,4 +1,5 @@
 .icon-wrapper {
+    transition: var(--transition-fast);
     height: var(--icon-mid-size);
     width: var(--icon-mid-size);
 }

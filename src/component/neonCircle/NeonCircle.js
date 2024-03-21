@@ -6,6 +6,4 @@ const NeonCircle = ({ children }) => {
   return <div className="neonCircle border-neon">{children}</div>;
 };
 
-export {
-  NeonCircle
-};
+export { NeonCircle };

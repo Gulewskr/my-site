@@ -18,7 +18,12 @@
     --neon-box-shadow-hover: var(--neon-box-shadow-hover-outline),
         var(--neon-box-shadow-hover-inset);
 
+
+    --neon-app-color-border: var(--color-white);
+
     --navbar-height: 60px;
-    --icon-mid-size: 30px;
-    --icon-mid-size-hover: 33px;
+    --icon-mid-size: 25px;
+    --icon-mid-size-hover: 30px;
+
+    --transition-fast: 0.2s;
 }

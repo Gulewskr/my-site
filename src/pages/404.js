@@ -17,7 +17,6 @@ export const query = graphql`
   }
 `;
 
-
 //TODO dodać do tłumaczenia
 export default function NotFoundPage() {
   return (

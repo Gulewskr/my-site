@@ -42,8 +42,9 @@
     "skillspage.info.stars.5": "doświadczenie komercyjne - senior (7 lat+)",
     "languages.en": "angielski",
     "languages.pl": "polski",
-    "projectpage.header.notFinished": "projekty jeszcze niedokończone",
-    "projectpage.header.underDevelopement": "projects currently in progress",
+    "projectpage.header.projects": "Projekty",
+    "projectpage.header.notFinished": "Projekty jeszcze niedokończone",
+    "projectpage.header.underDevelopement": "Projekty aktualnie realizowane",
     "disabledsite.info": "Strona jest aktualnie tworzona na nowo. Niektóre ze starszych funkcjonalność nie będą działać poprawnie m. in. wysyłanie e-maili.",
     "disabledsite.info-mobile": "Strona jest tworzona na nowo. Niektóre funkcjonalność nie będą działać poprawnie."
 }

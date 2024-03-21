@@ -3,18 +3,17 @@
  *  @property {string} name
  *  @property {string[]} techs
  *  @property {string} link
- * 
-  * @typedef {Object} TimelineData
-  * @property {TimeData} time
-  * @property {string} headerKey
-  * @property {string} contentKey
-  * 
-  * @typedef {Object} HobbyData
-  * @property {string} headerKey
-  * @property {string} contentKey
-  * 
-*/
-
+ *
+ * @typedef {Object} TimelineData
+ * @property {TimeData} time
+ * @property {string} headerKey
+ * @property {string} contentKey
+ *
+ * @typedef {Object} HobbyData
+ * @property {string} headerKey
+ * @property {string} contentKey
+ *
+ */
 
 //TODO dodać opisy
 // + modal do wyświetlania

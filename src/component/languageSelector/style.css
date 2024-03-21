@@ -5,7 +5,7 @@
 .language-settings .language-icon {
     height: var(--icon-mid-size);
     width: var(--icon-mid-size);
-    transition: 0.2s;
+    transition: var(--transition-fast);
 }
 
 .language-settings .language-icon:hover {
@@ -37,7 +37,7 @@
     height: 45px;
     box-shadow: var(--neon-box-shadow-inset);
 
-    transition: 0.2s;
+    transition: var(--transition-fast);
 }
 
 .languages-selector .language-option:hover {

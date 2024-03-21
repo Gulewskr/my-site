@@ -12,13 +12,12 @@ import {
 //import NeonTextON, { NeonTextSimple } from './neonText';
 import {
   NeonAppWindow,
+  NeonAppWindowParameterized,
   NeonSkillWindow,
   StarIconON,
   NeonProjectWindow,
 } from "./containers/index";
-import {
-  NeonCircle
-} from "./neonCircle/NeonCircle";
+import { NeonCircle } from "./neonCircle/NeonCircle";
 import CircleIcons, { CircleIcon } from "./icons/CircleIcon";
 import ContactList from "./ContactList";
 import TechnologyIcons from "./TechnologyIcons";
@@ -43,6 +42,7 @@ export {
   NeonAppWindow,
   NeonCircle,
   NeonSkillWindow,
+  NeonAppWindowParameterized,
   NeonProjectWindow,
   StarIconON,
   Square,

@@ -39,7 +39,7 @@ const NeonProjectWindow = (params) => {
   //    </g>
   //  </svg>
   //);
-  
+
   const techUsed = (techs) =>
     techs.map((v, i) => (i > 5 ? <></> : <div>{TechnologyIcons[v]()}</div>));
 
@@ -52,27 +52,24 @@ const NeonProjectWindow = (params) => {
         onMouseEnter={() => setF(true)}
         onMouseLeave={() => setF(false)}
       >
-          {/*<div className="prjct-bg">
+        {/*<div className="prjct-bg">
             // TODO change this to component with - generated border + move content iside this (might be enough to just use neon-border class)
             <FolderIcon />
           </div>
           <div className="prjct-cbg" />
           */}
-          <div className="prjct-cont">
-            <div
-              style={{ textAlign: "center" }}
-              className={f ? "text-neon-on" : "text-neon"}
-            >
-              {params.name}
-            </div>
-            <div className="prjct-techs">{techUsed(params.techs)}</div>
+        <div className="prjct-cont">
+          <div
+            style={{ textAlign: "center" }}
+            className={f ? "text-neon-on" : "text-neon"}
+          >
+            {params.name}
           </div>
+          <div className="prjct-techs">{techUsed(params.techs)}</div>
+        </div>
       </div>
     </Link>
   );
 };
 
-
-export {
-  NeonProjectWindow
-};
+export { NeonProjectWindow };

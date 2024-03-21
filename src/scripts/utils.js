@@ -1,10 +1,11 @@
+import { useTranslation } from "react-i18next";
+
 /**
  * @type { (input: string) => string }
  * @description get all uppercase characters and numbers from input to create a shortcut string
  * if input does not contain characters or numbers or shortcut has less than 3 chars
  * then return 5 first characters
  */
-
 export const createShourtcut = (inputString) => {
   const matches = inputString.match(/[A-Z0-9]/g);
   if (matches) {
@@ -12,4 +13,12 @@ export const createShourtcut = (inputString) => {
     if (res.length > 3) return res;
   }
   return inputString.substring(0, 5);
+};
+
+export const getPrefixedTranslation = (prefix) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { t } = useTranslation("translation", {
+    keyPrefix: prefix,
+  });
+  return t;
 };

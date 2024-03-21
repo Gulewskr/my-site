@@ -1,23 +1,23 @@
-.projects-ctl{
+.projects-ctl {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.ctl-m{
+.ctl-m {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
-    margin-top: 1.5rem;
 }
 
-.container-folder{
+.container-folder {
     width: 300px;
     height: auto;
     display: flex;
 }
+
 /*.container-folder+.container-folder{
     margin-left: 100px;
 }*/
