@@ -1,6 +1,6 @@
 {
     "homepage.welcomeText": "Witaj na mojej stronie.",
-    "homepage.description": "Nazywam się <strong>Rafał</strong> i jestem studentem <strong>Informatyki Stosowanej</strong> na wydziale elektrycznym <strong>Politechniki Warszawskiej</strong>. Moja przygoda z szeroko pojętą informatyką jest stosunkowo krótka, ale jeśli chcesz się o mnie więcej dowiedzieć, wybierz jeden z nagłówków powyżej lub kliknij w odpowiadającą mu ikonę poniżej.",
+    "homepage.description": "Nazywam się <strong>Rafał</strong> i jestem ciągle młodym adeptem programowania. W przeszłości studiowałem <strong>Informatyke Stosowaną na Politechnice Warszawskiej</strong>, a teraz programuje na codzień zawodowo jak i hobbystycznie. Moja kariera zawodowa dalej nie jest duga, ale codzienie rozwijam się działąjąc nad stawianymi przede mną problemami. Oczywiście programowanie to nie wszystko co się dla mnie liczy, a jeśli chcesz się o mnie więcej dowiedzieć lub na temat moich projektów sprawdź pozostałe zakładki :D",
     "homepage.findme": "Możesz mnie znaleźć na:",
     "navigate.contact": "Kontakt",
     "navigate.about": "O mnie",
@@ -21,7 +21,7 @@
     "aboutpage.hobbys.videoGames": "Gry komputerowe i ich tworzenie",
     "aboutpage.hobbys.music": "Muzyka",
     "aboutpage.hobbys.tennis": "Tennis",
-    "aboutpage.hobbys.cycling": "Jazda rowerem",
+    "aboutpage.hobbys.cycling": "Kolarstwo",
     "aboutpage.hobbys.chess": "Szachy",
     "contactpage.contact.label": "Skontaktuj się ze mną przez",
     "contactpage.disabledInfo": "WYSYŁANIE EMAILI TYMCZASOWO WYŁĄCZONE",

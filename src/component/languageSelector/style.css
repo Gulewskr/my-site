@@ -19,7 +19,7 @@
 
 .languages-selector {
     position: absolute;
-    top: 55px;
+    top: calc(50% + 40px);
     width: 150px;
     right: -20px;
     z-index: 99;

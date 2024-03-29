@@ -1,11 +1,13 @@
-import { NeonAppWindow } from "./NeonAppWindow";
+import { NeonAppWindow } from "./NeonAppWindow/NeonAppWindow";
 import { NeonSkillWindow, StarIconON } from "./NeonSkillWindow";
 import { NeonProjectWindow } from "./NeonProjectWindow";
-import { NeonAppWindowParameterized } from "./NeonAppWindow2";
+import { TitledBox } from "./TitledBox/TitledBox";
+import { Tile } from "./Tile/Tile";
 export {
   NeonAppWindow,
   NeonSkillWindow,
   NeonProjectWindow,
-  NeonAppWindowParameterized,
+  Tile,
+  TitledBox as NeonAppWindowParameterized,
   StarIconON,
 };

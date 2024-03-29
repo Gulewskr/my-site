@@ -131,7 +131,7 @@
     box-sizing: border-box;
     padding: 25px;
     margin: 10px;
-    border-radius: var(--default-border-radius);
+    border-radius: var(--border-radius);
     display: inline-flex;
     width: max-content;
     flex-direction: column;

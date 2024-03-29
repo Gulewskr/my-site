@@ -41,6 +41,8 @@
 }
 
 .tl-cont {
+    backdrop-filter: blur(9.5px);
+    -webkit-backdrop-filter: blur(9.5px);
     width: 80%;
     transition: transform 0.8s ease-in, opacity 400ms ease-in;
 }

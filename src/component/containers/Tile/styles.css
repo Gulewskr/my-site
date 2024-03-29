@@ -1,0 +1,8 @@
+.Tile {
+    border-radius: var(--border-radius);
+    background-color: var(--tile-bg-color);
+    /*
+    background-color: var(--bg-primary-color-transparent-header);
+    */
+    padding: 0.5rem 1rem;
+}

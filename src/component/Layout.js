@@ -4,9 +4,10 @@ import { Navbar, Footer } from ".";
 export default function Layout({ children, pageTitle }) {
   return (
     <>
-      <title className="bg-gradient-to-br from-dark-purple-start to-dark-purple-end from-50%">
+      <title className="">
         {pageTitle}
       </title>
+      <div class="bg-image"></div>
       <main className="mx-auto max-w-full">
         <header className="grid">
           <Navbar />

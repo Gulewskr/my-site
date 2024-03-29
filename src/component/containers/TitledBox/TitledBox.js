@@ -1,8 +1,8 @@
 import React from "react";
-import "../../styles/neonStyle.css";
+import "../../../styles/neonStyle.css";
 import "./styles.css";
 
-const NeonAppWindow = ({ title, content }) => {
+const TitledBox = ({ title, content }) => {
   return (
     <div className="neonAppContainer-2 relative">
       <div className="neonAppContainer-title">
@@ -13,4 +13,4 @@ const NeonAppWindow = ({ title, content }) => {
   );
 };
 
-export { NeonAppWindow as NeonAppWindowParameterized };
+export { TitledBox };

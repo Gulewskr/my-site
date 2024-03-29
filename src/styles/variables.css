@@ -1,14 +1,32 @@
 :root {
     --bg-primary-color: #18054a;
+    --bg-primary-color-transparent: rgba(9, 2, 28, 0.6);
+    --bg-primary-color-transparent-header: rgba(9, 2, 28, 1);
+    --color-circle-1: #ab1212;
+    --color-circle-2: #c97208;
+    --color-circle-3: #12b622;
+    /*
+    --bg-primary-color-transparent: rgba(51, 25, 116, 0.4);
+    --bg-primary-color-transparent-header: rgba(9, 2, 28, 0.7);
+    */
+    /*
+    --bg-primary-color-transparent: rgb(24, 5, 72, 0.4);
+    --bg-primary-color-transparent-header: rgb(24, 5, 72, 0.8);
+    */
     --bg-primary-color-hover: #110080;
     --color-white: #f2f2f2;
     --color-black: #010b13;
     --bg-dark-purple-start: #0c0127;
     --bg-dark-purple-end: #1500a0;
     --border-shadow-transition: box-shadow .25s;
-    --default-border-radius: 20px;
+    --border-radius: 20px;
 
-    --neon-box-shadow-outline: 0 0 0.25rem 0.25rem #3700ff;
+    /*
+    --border-color-container: #3700ff;
+    */
+    --border-color-container:  var(--bg-primary-color-transparent-header);
+    
+    --neon-box-shadow-outline: 0 0 0.2rem 0.2rem #9275fa;
     --neon-box-shadow-hover-outline: 0 0 0.5rem 0.5rem #3700ff;
     --neon-box-shadow-inset: inset 0 0 0.25rem 0.25rem #3700ff;
     --neon-box-shadow-hover-inset: inset 0 0 0.4rem 0.4rem #3700ff;
@@ -21,9 +39,12 @@
 
     --neon-app-color-border: var(--color-white);
 
+    --navbar-bg-color: var(--bg-primary-color-transparent-header);
     --navbar-height: 60px;
     --icon-mid-size: 25px;
     --icon-mid-size-hover: 30px;
+
+    --tile-bg-color: rgba(145, 124, 221, 0.1);
 
     --transition-fast: 0.2s;
 }

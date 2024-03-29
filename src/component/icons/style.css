@@ -51,9 +51,17 @@
 }
 
 @keyframes circleAnimation {
-    0% {padding-top: 0;}
+    0% {
+        padding-top: 0;
+        backdrop-filter: blur(9.5px);
+        -webkit-backdrop-filter: blur(9.5px);
+    }
     50% {padding-top: 50px;}
-    100% {padding-top: 0;}
+    100% {
+        backdrop-filter: blur(9.5px);
+        -webkit-backdrop-filter: blur(9.5px);
+        padding-top: 0;
+    }
 }
 
 .circle-float{

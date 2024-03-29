@@ -33,6 +33,8 @@
 
 @keyframes animate {
     0% {
+        backdrop-filter: blur(9.5px);
+        -webkit-backdrop-filter: blur(9.5px);
         opacity: 0;
         left: 0;
     }
@@ -42,6 +44,8 @@
     }
 
     100% {
+        backdrop-filter: blur(9.5px);
+        -webkit-backdrop-filter: blur(9.5px);
         opacity: 0;
         left: 100%;
     }
