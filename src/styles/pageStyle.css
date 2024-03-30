@@ -6,8 +6,7 @@ html {
     overscroll-behavior: none;
 }
 
-body {
-}
+body {}
 
 .bg-image {
     background-image: url('../images/bg_3.jpg');
@@ -15,6 +14,7 @@ body {
     background-size: cover;
     width: 100vw;
     height: 100vh;
+    z-index: -1;
 }
 
 .content {
@@ -141,9 +141,10 @@ svg:hover .neon-line {
 .questionmark-icon {
     position: absolute;
     display: flex;
+    z-index: 99;
     right: 0;
     top: 0;
-    transform: translate(50%, -50%);
+    transform: translate(-100%, -100%);
     cursor: pointer;
     width: 2rem;
     height: 2rem;

@@ -1,31 +1,46 @@
 :root {
     --bg-primary-color: #18054a;
+    /*
     --bg-primary-color-transparent: rgba(9, 2, 28, 0.6);
+    */
+    /*    
+    --bg-primary-color-transparent: rgba(51, 25, 116, 0.4);
+    --bg-primary-color-transparent-header: rgb(24, 5, 72, 0.8);
     --bg-primary-color-transparent-header: rgba(9, 2, 28, 1);
     --color-circle-1: #ab1212;
     --color-circle-2: #c97208;
     --color-circle-3: #12b622;
-    /*
-    --bg-primary-color-transparent: rgba(51, 25, 116, 0.4);
-    --bg-primary-color-transparent-header: rgba(9, 2, 28, 0.7);
+    --bg-primary-color-transparent: rgb(24, 5, 72, 0.35);
     */
+    --bg-primary-color-transparent-header: rgba(9, 2, 28, 0.8);
     /*
-    --bg-primary-color-transparent: rgb(24, 5, 72, 0.4);
-    --bg-primary-color-transparent-header: rgb(24, 5, 72, 0.8);
+    --bg-primary-color-transparent: linear-gradient(-50deg, rgba(10, 83, 209, 0.6) 0%, rgba(2, 7, 17, 0.3) 50%);
     */
+    --gradient-color1: rgba(24, 56, 196, 0.75);
+    --gradient-color2: rgba(9, 2, 28, 0.4);
+    --gradient-color1-s: #1838c4;
+    --gradient-color2-s: #09021c;
+
+
+    /*
+        --bg-test: linear-gradient(#2a0d73, #060113 30%);
+    --bg-test: linear-gradient(0deg, #290e8e -20%, #060113 50%);
+    */
+    --bg-test: var(--gradient-color2);
+    --bg-primary-color-transparent: radial-gradient(circle at 70% 140%, var(--gradient-color1) 0%, var(--gradient-color2) 350px),
+        radial-gradient(circle at 3rem 0, var(--gradient-color1) 0%, var(--gradient-color2) 300px);
+    --color-circle-1: transparent;
+    --color-circle-2: transparent;
+    --color-circle-3: transparent;
     --bg-primary-color-hover: #110080;
     --color-white: #f2f2f2;
     --color-black: #010b13;
     --bg-dark-purple-start: #0c0127;
     --bg-dark-purple-end: #1500a0;
-    --border-shadow-transition: box-shadow .25s;
-    --border-radius: 20px;
 
-    /*
-    --border-color-container: #3700ff;
-    */
-    --border-color-container:  var(--bg-primary-color-transparent-header);
-    
+    --border-radius: 20px;
+    --border-color-container: var(--bg-primary-color-transparent-header);
+
     --neon-box-shadow-outline: 0 0 0.2rem 0.2rem #9275fa;
     --neon-box-shadow-hover-outline: 0 0 0.5rem 0.5rem #3700ff;
     --neon-box-shadow-inset: inset 0 0 0.25rem 0.25rem #3700ff;
@@ -43,8 +58,17 @@
     --navbar-height: 60px;
     --icon-mid-size: 25px;
     --icon-mid-size-hover: 30px;
+    --icon-lg-size: 70px;
+    --icon-xl-size: 100px;
 
-    --tile-bg-color: rgba(145, 124, 221, 0.1);
+    --tile-bg: radial-gradient(circle at 50% 190%, var(--gradient-color1-s) 0%, var(--gradient-color2-s) 70%);
+    --tile-bg-hover: radial-gradient(circle at 50% 190%, var(--gradient-color1-s) 0%, var(--gradient-color2-s) 90%);
+    --tile-border-width: 2px;
+    --tile-border-color: var(--gradient-color2-s);
+
 
     --transition-fast: 0.2s;
+    --transition-mid: 0.5s;
+    --transition-slow: 1s;
+    --border-shadow-transition: box-shadow .25s;
 }

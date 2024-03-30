@@ -57,14 +57,13 @@ t1 {
     position: fixed;
     top: 100px;
     right: -8px;
-    background-color: var(--bg-primary-color);
+    background: var(--bg-primary-color-transparent-header);
     cursor: pointer;
     color: white;
     display: flex;
     flex-direction: column;
     padding: 10px;
     border-radius: 10px;
-    border-width: 1px;
     opacity: 1;
     transition: 0.5s;
 }
@@ -116,7 +115,7 @@ t1 {
     position: fixed;
     top: 100px;
     width: 450px;
-    background-color: var(--bg-primary-color);
+    background: var(--bg-primary-color-transparent-header);
     cursor: pointer;
     display: flex;
     flex-direction: column;

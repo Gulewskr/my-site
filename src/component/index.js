@@ -9,13 +9,11 @@ import {
   AppWindowIcon,
   Square,
 } from "./SvgIcons";
-//import NeonTextON, { NeonTextSimple } from './neonText';
 import {
   NeonAppWindow,
   NeonAppWindowParameterized,
-  NeonSkillWindow,
-  StarIconON,
-  NeonProjectWindow,
+  SkillTile,
+  ProjectTile,
 } from "./containers/index";
 import { NeonCircle } from "./neonCircle/NeonCircle";
 import CircleIcons, { CircleIcon } from "./icons/CircleIcon";
@@ -41,10 +39,9 @@ export {
   Navbar,
   NeonAppWindow,
   NeonCircle,
-  NeonSkillWindow,
+  SkillTile,
   NeonAppWindowParameterized,
-  NeonProjectWindow,
-  StarIconON,
+  ProjectTile,
   Square,
   TechnologyIcons,
   VLine,

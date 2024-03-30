@@ -2,6 +2,27 @@
     transition: var(--transition-fast);
     height: var(--icon-mid-size);
     width: var(--icon-mid-size);
+    position: relative;
+}
+
+.icon-wrapper-sm {
+    height: var(--icon-sm-size);
+    width: var(--icon-sm-size);
+}
+
+.icon-wrapper-mid {
+    height: var(--icon-mid-size);
+    width: var(--icon-mid-size);
+}
+
+.icon-wrapper-lg {
+    height: var(--icon-lg-size);
+    width: var(--icon-lg-size);
+}
+
+.icon-wrapper-xl {
+    height: var(--icon-xl-size);
+    width: var(--icon-xl-size);
 }
 
 .icon-wrapper svg {

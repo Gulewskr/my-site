@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { graphql } from "gatsby";
 import "../styles/skillsPage.css";
 import "../styles/arrow.css";
-import { TechnologyIcons, StarIconON, NeonSkillWindow } from "../component/";
+import { TechnologyIcons, SkillTile, Icon } from "../component/";
 import { Link } from "gatsby";
 import { Trans, useTranslation } from "gatsby-plugin-react-i18next";
+
+import StarIconBlue from "../images/icons/star_blue.svg";
 
 import Layout from "../component/Layout";
 import classcat from "classcat";
@@ -163,7 +165,7 @@ export default function Skills({ pageTitle, children }) {
   const renderSkillList = (t) =>
     t.map((v, i) => (
       <div>
-        <NeonSkillWindow
+        <SkillTile
           id={`${i}-${v["name"]}`}
           icon={v["icon"]}
           name={v["name"]}
@@ -179,18 +181,18 @@ export default function Skills({ pageTitle, children }) {
         role="button"
         tabIndex={1}
         id={STAT_INFO_BUTTON_ID}
-        className="border-neon"
         onClick={() => setToggled(!toggled)}
       >
-        Info{" "}
+        More info{" "}
         <div className="star">
-          <StarIconON />
+          <Icon>
+            <StarIconBlue />
+          </Icon>
         </div>
       </div>
       <div
         id={STAT_INFO_CONTENT_ID}
         className={classcat({
-          "border-neon": true,
           "statinfo-container": true,
         })}
         onClick={() => setToggled(false)}
@@ -199,7 +201,9 @@ export default function Skills({ pageTitle, children }) {
           <div className="statinfo-row">
             {`${levelData.lvl} `}
             <div className="star">
-              <StarIconON />
+              <Icon>
+                <StarIconBlue />
+              </Icon>
             </div>
             {levelData.transform ? (
               <div>{levelData.transform(translate(levelData.transKey))}</div>

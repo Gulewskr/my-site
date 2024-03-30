@@ -1,8 +1,16 @@
 .Tile {
     border-radius: var(--border-radius);
-    background-color: var(--tile-bg-color);
+    border-width: var(--tile-border-width);
+    border-color: var(--tile-border-color);
+    background: var(--tile-bg);
     /*
     background-color: var(--bg-primary-color-transparent-header);
     */
     padding: 0.5rem 1rem;
+
+    transition: all var(--transition-fast) ease-out;
+}
+
+.Tile:hover {
+    background: var(--tile-bg-hover);
 }

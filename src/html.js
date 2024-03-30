@@ -3,10 +3,7 @@ import PropTypes from "prop-types";
 
 export default function HTML(props) {
   return (
-    <html
-      className=""
-      {...props.htmlAttributes}
-    >
+    <html className="" {...props.htmlAttributes}>
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />

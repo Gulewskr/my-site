@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import "../../styles/neonStyle.css";
+import "../../../styles/neonStyle.css";
 import "./styles.css";
 import { Link } from "gatsby";
-import { TechnologyIcons } from "..";
-import { createShourtcut } from "../../scripts/utils";
-import { Tile } from '.';
-//import { Styles } from '../../styles/neonStyles'
+import { Icon, TechnologyIcons } from "../..";
+import { Tile } from "..";
 
-const NeonProjectWindow = (params) => {
+const ProjectTile = (params) => {
   const [f, setF] = useState(false);
 
   const techUsed = (techs) =>
-    techs.map((v, i) => (i > 5 ? <></> : <div>{TechnologyIcons[v]()}</div>));
+    techs.map((v, i) =>
+      i > 5 ? <></> : <Icon iconSize="lg">{TechnologyIcons[v]}</Icon>,
+    );
 
   return (
     <Link to={params.link}>
@@ -28,4 +28,4 @@ const NeonProjectWindow = (params) => {
   );
 };
 
-export { NeonProjectWindow };
+export { ProjectTile };

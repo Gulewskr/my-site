@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import {
   NeonAppWindow,
-  NeonProjectWindow,
+  ProjectTile,
   NeonAppWindowParameterized,
 } from "../component/";
 import Layout from "../component/Layout";
@@ -36,11 +36,7 @@ const renderProjectList = (t) =>
   t.length > 0 ? (
     t.map((v) => (
       <div className="container-folder">
-        <NeonProjectWindow
-          name={v["name"]}
-          techs={v["techs"]}
-          link={v["link"]}
-        />
+        <ProjectTile name={v["name"]} techs={v["techs"]} link={v["link"]} />
       </div>
     ))
   ) : (

@@ -4,9 +4,7 @@ import { Navbar, Footer } from ".";
 export default function Layout({ children, pageTitle }) {
   return (
     <>
-      <title className="">
-        {pageTitle}
-      </title>
+      <title className="">{pageTitle}</title>
       <div class="bg-image"></div>
       <main className="mx-auto max-w-full">
         <header className="grid">
