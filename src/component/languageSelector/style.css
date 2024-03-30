@@ -23,7 +23,7 @@
     width: 150px;
     right: -20px;
     z-index: 99;
-    background-color: var(--bg-primary-color);
+    background-color: var(--bg-primary-color-transparent-header);
     border: none !important;
     box-shadow: var(--neon-box-shadow-outline);
 }
@@ -41,7 +41,7 @@
 }
 
 .languages-selector .language-option:hover {
-    background-color: var(--bg-primary-color-hover);
+    background-color: var(--bg-primary-color-transparent-header-hover);
     border: 2px solid white;
     box-shadow: var(--neon-box-shadow-hover-inset);
     font-size: 20px;

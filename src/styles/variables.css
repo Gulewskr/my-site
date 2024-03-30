@@ -13,6 +13,7 @@
     --bg-primary-color-transparent: rgb(24, 5, 72, 0.35);
     */
     --bg-primary-color-transparent-header: rgba(9, 2, 28, 0.8);
+    --bg-primary-color-transparent-header-hover: #09021c;
     /*
     --bg-primary-color-transparent: linear-gradient(-50deg, rgba(10, 83, 209, 0.6) 0%, rgba(2, 7, 17, 0.3) 50%);
     */
