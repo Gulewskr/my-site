@@ -115,7 +115,7 @@ t1 {
     position: fixed;
     top: 100px;
     width: 450px;
-    background: var(--bg-primary-color-transparent-header);
+    background: var(--bg-primary-color-transparent-header-hover);
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -126,6 +126,7 @@ t1 {
     opacity: 1;
     transform: translate(120%, 0);
     transition: 1s, var(--border-shadow-transition) !important;
+    z-index: 99;
 }
 
 .statinfo-container[toggled=true] {

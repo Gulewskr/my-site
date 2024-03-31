@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { graphql } from "gatsby";
-import "../styles/skillsPage.css";
-import "../styles/arrow.css";
-import { TechnologyIcons, SkillTile, Icon } from "../component/";
-import { Link } from "gatsby";
-import { Trans, useTranslation } from "gatsby-plugin-react-i18next";
-
-import StarIconBlue from "../images/icons/star_blue.svg";
-
-import Layout from "../component/Layout";
+import { graphql, Link } from "gatsby";
 import classcat from "classcat";
+
+import { TechnologyIcons, SkillTile, Icon } from "@components/";
+import Layout from "@components/Layout";
+
+import "@styles/skillsPage.css";
+import "@styles/arrow.css";
+
+import StarIconBlue from "@icons/star_blue.svg";
+import { getPrefixedTranslation } from "@scripts/utils"; 
+
 
 export const query = graphql`
   query ($language: String!) {
@@ -92,58 +93,35 @@ const GE = [
  * @type {Array<{
  * lvl: number,
  * transKey: string,
- * transform: (s: string) => string | undefined
+ * formatTranslation: (s: string) => string | undefined
  * }>} */
 const LevelsInfoData = [
   {
     lvl: 1,
-    transKey: "lvl1",
+    transKey: "info.stars.1",
   },
   {
     lvl: 2,
-    transKey: "lvl2",
+    transKey: "info.stars.2",
   },
   {
     lvl: 3,
-    transKey: "lvl3",
-    transform: (s) => s.replace("---", "<"),
+    transKey: "info.stars.3",
+    formatTranslation: (s) => s.replace("---", "<"),
   },
   {
     lvl: 4,
-    transKey: "lvl4",
+    transKey: "info.stars.4",
   },
   {
     lvl: 5,
-    transKey: "lvl5",
+    transKey: "info.stars.5",
   },
 ];
 
-const normalStyle = {
-  position: "fixed",
-  top: "100px",
-  width: "450px",
-  "background-color": "var(--bg-primary-color)",
-  cursor: "pointer",
-  display: "flex",
-  "flex-direction": "column",
-  gap: "0.5rem",
-  padding: "1rem",
-  "border-radius": "1rem",
-  right: "0",
-  opacity: "1",
-  //transform: 'translate(500px, 0)',
-  transform: "translate(50px, 0)",
-  transition: "2s",
-};
-
-const toggledStyle = {
-  ...normalStyle,
-  opacity: "0",
-};
-
 export default function Skills({ pageTitle, children }) {
   const [toggled, setToggled] = useState(false);
-  const [translate] = useTranslation();
+  const translate = getPrefixedTranslation('skillspage');
 
   useEffect(() => {
     const infoContentElement = document.getElementById(STAT_INFO_CONTENT_ID);
@@ -179,9 +157,10 @@ export default function Skills({ pageTitle, children }) {
     <Layout pageTitle={"Rafal Gulewski - Umiejętności"}>
       <div
         role="button"
-        tabIndex={1}
+        tabIndex={0}
         id={STAT_INFO_BUTTON_ID}
         onClick={() => setToggled(!toggled)}
+        onKeyDown={() => setToggled(!toggled)}
       >
         More info{" "}
         <div className="star">
@@ -196,19 +175,22 @@ export default function Skills({ pageTitle, children }) {
           "statinfo-container": true,
         })}
         onClick={() => setToggled(false)}
+        onKeyDown={() => setToggled(false)}
+        tabIndex="0"
+        role="button"
       >
-        {LevelsInfoData.map((levelData) => (
+        {LevelsInfoData.map(({lvl, formatTranslation, transKey}) => (
           <div className="statinfo-row">
-            {`${levelData.lvl} `}
+            {`${lvl} `}
             <div className="star">
               <Icon>
                 <StarIconBlue />
               </Icon>
             </div>
-            {levelData.transform ? (
-              <div>{levelData.transform(translate(levelData.transKey))}</div>
+            {formatTranslation ? (
+              <div>{formatTranslation(translate(transKey))}</div>
             ) : (
-              <Trans>{levelData.transKey}</Trans>
+              translate(transKey)
             )}
           </div>
         ))}
@@ -216,7 +198,7 @@ export default function Skills({ pageTitle, children }) {
       <div className="cont">
         <div className="sec sec1">
           <t1 className="text-neon-on-blink">
-            <Trans>skills1</Trans>
+            {translate('header.programmingLanguages')}
           </t1>
           <div className="container">
             <div className="neon-skills-grid">{renderSkillList(progL)}</div>
@@ -224,7 +206,7 @@ export default function Skills({ pageTitle, children }) {
         </div>
         <div className="sec sec1">
           <t1 className="text-neon-on-blink">
-            <Trans>skills2</Trans>
+            {translate('header.frameworks')}
           </t1>
           <div className="container">
             <div className="neon-skills-grid">{renderSkillList(TiF)}</div>
@@ -232,7 +214,7 @@ export default function Skills({ pageTitle, children }) {
         </div>
         <div className="sec sec1">
           <t1 className="text-neon-on-blink">
-            <Trans>skills3</Trans>
+            {translate('header.gameEngines')}
           </t1>
           <div className="container">
             <div className="neon-skills-grid">{renderSkillList(GE)}</div>
@@ -243,7 +225,7 @@ export default function Skills({ pageTitle, children }) {
             <Link to="/projects">
               <div className="flex flex-row gap-1">
                 <span>
-                  <Trans>skills4</Trans>
+                  {translate('checkMyKnowledge')}
                 </span>
                 <div className="animatedArrow">
                   <div class="arrow">

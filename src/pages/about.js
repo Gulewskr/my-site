@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
-import debounce from "lodash.debounce";
-import { NeonAppWindow } from "../component/";
-import Layout from "../component/Layout";
-import { EDUCATION_DATA, WORK_DATA, HOBBY_DATA } from "../data/about";
-
-import "../styles/pageStyle.css";
-import "../styles/aboutStyle.css";
-//TODO move as seperate component
-import "../styles/accordion.css";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import classcat from "classcat";
+import debounce from "lodash.debounce";
+
+import { NeonAppWindow } from "@components";
+import Layout from "@components/Layout";
+import { EDUCATION_DATA, WORK_DATA, HOBBY_DATA } from "@data/about";
+
+import "@styles/pageStyle.css";
+import "@styles/aboutStyle.css";
+//TODO move as seperate component
+import "@styles/accordion.css";
 
 export const query = graphql`
   query ($language: String!) {
@@ -144,12 +145,12 @@ export default function About({ pageTitle, children }) {
             <div className="accordion_header_title">
               <t1 className="text-neon">{translate("aboutH")}</t1>
             </div>
-            <div
+            <button
               className="accordion_header_control"
               onClick={() => handleChangeSectionVisibility("education")}
-            >
-              <span>{visibleSections.education ? "-" : "+"}</span>
-            </div>
+              >
+                {visibleSections.education ? "-" : "+"}
+            </button>
           </div>
           <div className="accordion_body">
             {visibleSections.education &&
@@ -162,12 +163,12 @@ export default function About({ pageTitle, children }) {
             <div className="accordion_header_title">
               <t1 className="text-neon">{translate("WORK LIFE")}</t1>
             </div>
-            <div
+            <button
               className="accordion_header_control"
               onClick={() => handleChangeSectionVisibility("work")}
-            >
-              <span>{visibleSections.work ? "-" : "+"}</span>
-            </div>
+              >
+                {visibleSections.work ? "-" : "+"}
+            </button>
           </div>
           <div className="accordion_body">
             {visibleSections.work &&
@@ -188,12 +189,12 @@ export default function About({ pageTitle, children }) {
             <div className="accordion_header_title">
               <t1 className="text-neon">{translate("aboutHob")}</t1>
             </div>
-            <div
+            <button
               className="accordion_header_control"
               onClick={() => handleChangeSectionVisibility("hobbys")}
-            >
-              <span>{visibleSections.hobbys ? "-" : "+"}</span>
-            </div>
+              >
+                {visibleSections.hobbys ? "-" : "+"}
+            </button>
           </div>
           <div className="accordion_body">
             <ul>

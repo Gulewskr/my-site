@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
-import { Trans } from "gatsby-plugin-react-i18next";
 
-import { NeonAppWindow, ContactList } from "../component/";
-import Layout from "../component/Layout";
+import { NeonAppWindow, ContactList } from "@components";
+import Layout from "@components/Layout";
 
-import "../styles/pageStyle.css";
-import "../styles/contactForm.css";
+import "@styles/pageStyle.css";
+import "@styles/contactForm.css";
 
-import "../scripts/email.js";
-import sendToMe from "../scripts/email.js";
+import sendToMe from "@scripts/email.js";
+import { getPrefixedTranslation } from "@scripts/utils.js";
 
 export const query = graphql`
   query ($language: String!) {
@@ -26,16 +25,12 @@ export const query = graphql`
 `;
 
 export default function Contact({ pageTitle, children }) {
-  //const {language} = useI18next();
-  const sendButton = {
-    pl: "wyślij",
-    en: "send",
-  };
+  const translate = getPrefixedTranslation();
 
   const contact = (
     <div className="content-window">
       <span className="info-t text-neon-on">
-        <Trans>cont</Trans>
+        {translate('contactpage.contact.label')}
         <br />
         <br />
       </span>
@@ -44,6 +39,7 @@ export default function Contact({ pageTitle, children }) {
   );
 
   const ContactForm = () => {
+    const translateForm = getPrefixedTranslation('contactpage.form');
     const c = "rgb(34, 0, 156)";
 
     //focus
@@ -121,9 +117,11 @@ export default function Contact({ pageTitle, children }) {
       }
     }
 
+    const tmpDisabled = true;
     return (
-      <>
-        <div className="form-msg" style={{ top: e ? "50%" : "120%" }}>
+      <div className="formContainer">
+        <div className="additionalInfoText">{translateForm('disabledInfo')}</div>
+        <div className="formMessage" style={{ top: e ? "50%" : "120%" }}>
           <NeonAppWindow>
             <div className="content-window">
               <div
@@ -139,20 +137,18 @@ export default function Contact({ pageTitle, children }) {
             </div>
           </NeonAppWindow>
         </div>
-        <form className="formCont" onSubmit={sendEmail}>
-          <div className="form-sec text-neon-on-blink">
-            <Trans>contH</Trans>
-          </div>
-          <div className="form-sec">
+        <form className="contactForm" onSubmit={sendEmail}>
+          <div className="contactForm-section">
             <div>
               <label htmlFor="sender" className={sf ? "text-neon-on" : ""}>
-                <Trans>contN</Trans>
+                {translateForm('sender')}
               </label>
               <input
                 id="sender"
                 type="text"
                 onBlur={() => setSF(false)}
                 onFocus={() => setSF(true)}
+                disabled={tmpDisabled}
                 style={
                   badN
                     ? sf
@@ -165,19 +161,20 @@ export default function Contact({ pageTitle, children }) {
               />
               {badN && (
                 <div className="form-bad">
-                  <Trans>BadN</Trans>
+                {translateForm('error.name')}
                 </div>
               )}
             </div>
             <div>
               <label htmlFor="email" className={ef ? "text-neon-on" : ""}>
-                <Trans>contK</Trans>
+                {translateForm('eMail')}
               </label>
               <input
                 id="email"
                 type="email"
                 onBlur={() => setEF(false)}
                 onFocus={() => setEF(true)}
+                disabled={tmpDisabled}
                 style={
                   badK
                     ? ef
@@ -190,20 +187,21 @@ export default function Contact({ pageTitle, children }) {
               />
               {badK && (
                 <div className="form-bad">
-                  <Trans>BadK</Trans>
+                {translateForm('error.email')}
                 </div>
               )}
             </div>
           </div>
-          <div className="form-sec form-b">
+          <div className="contactForm-section">
             <label htmlFor="message" className={mf ? "text-neon-on" : ""}>
-              <Trans>contW</Trans>
+                {translate('message')}
             </label>
             <textarea
               id="message"
               name="message"
               onBlur={() => setMF(false)}
               onFocus={() => setMF(true)}
+              disabled={tmpDisabled}
               style={
                 badW
                   ? mf
@@ -216,13 +214,13 @@ export default function Contact({ pageTitle, children }) {
             />
             {badW && (
               <div className="form-bad">
-                <Trans>BadW</Trans>
+                {translateForm('error.message')}
               </div>
             )}
           </div>
-          <input type="submit" id="submitButton" value={sendButton["en"]} />
+          <input type="submit" disabled id="submitButton" value={translateForm('button')} />
         </form>
-      </>
+      </div>
     );
   };
 

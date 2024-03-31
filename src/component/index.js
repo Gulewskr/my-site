@@ -1,15 +1,6 @@
 import Navbar from "./navbar/navbar";
 import Footer from "./footer/.";
 import {
-  Menu,
-  Corner,
-  BLine,
-  VLine,
-  HLine,
-  AppWindowIcon,
-  Square,
-} from "./SvgIcons";
-import {
   NeonAppWindow,
   NeonAppWindowParameterized,
   SkillTile,
@@ -24,25 +15,18 @@ import Dropdown from "./dropdown/Dropdown";
 import Icon from "./icon/Icon";
 
 export {
-  AppWindowIcon,
-  BLine,
   CircleIcon,
   CircleIcons,
-  Corner,
   ContactList,
   Dropdown,
   Icon,
   Footer,
-  HLine,
   LanguageSettings,
-  Menu,
   Navbar,
   NeonAppWindow,
   NeonCircle,
   SkillTile,
   NeonAppWindowParameterized,
   ProjectTile,
-  Square,
   TechnologyIcons,
-  VLine,
 };

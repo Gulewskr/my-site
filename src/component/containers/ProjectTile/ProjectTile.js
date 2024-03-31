@@ -1,13 +1,12 @@
-import React, { useState } from "react";
-import "../../../styles/neonStyle.css";
+import React from "react";
+import "@styles/neonStyle.css";
 import "./styles.css";
 import { Link } from "gatsby";
 import { Icon, TechnologyIcons } from "../..";
 import { Tile } from "..";
+import classcat from "classcat";
 
 const ProjectTile = (params) => {
-  const [f, setF] = useState(false);
-
   const techUsed = (techs) =>
     techs.map((v, i) =>
       i > 5 ? <></> : <Icon iconSize="lg">{TechnologyIcons[v]}</Icon>,
@@ -16,13 +15,17 @@ const ProjectTile = (params) => {
   return (
     <Link to={params.link}>
       <Tile>
-        <div
-          style={{ textAlign: "center" }}
-          className={f ? "text-neon-on" : "text-neon"}
-        >
-          {params.name}
+        <div className="project-tile">
+          <div
+            style={{ textAlign: "center" }}
+            className={classcat({
+              "project-name": true
+            })}
+          >
+            {params.name}
+          </div>
+          <div className="project-technologies">{techUsed(params.techs)}</div>
         </div>
-        <div className="prjct-techs">{techUsed(params.techs)}</div>
       </Tile>
     </Link>
   );

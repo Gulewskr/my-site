@@ -1,274 +1,28 @@
-.w-bg {
-    position: absolute;
-    background-color: var(--bg-primary-color);
-    z-index: -1;
-    right: 5px;
-    left: 5px;
-}
-
-.w-t .w-bg {
-    top: 5px;
-    bottom: 0;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
-
-.w-mid .w-bg {
-    top: 0;
-    bottom: 0;
-}
-
-.w-b .w-bg {
-    top: 0;
-    bottom: 10px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-.w-t,
-.w-b {
-    height: 75px;
-    width: 100%;
-    position: relative;
-
-}
-
-.w-t {
-    top: 0;
-}
-
-.rightc,
-.leftc {
-    position: absolute;
-    width: 75px;
-    height: 75px;
-    top: 0px;
-
-}
-
-.rightc {
-    right: 0px;
-    transform: rotate(90deg);
-}
-
-.w-b {
-    width: 100%;
-    bottom: 0;
-}
-
-.w-b .leftc {
-    transform: rotate(-90deg);
-}
-
-.w-b .rightc {
-    transform: rotate(180deg);
-}
-
-.t-l,
-.b-l {
-    position: absolute;
-    width: calc(100% - 150px);
-    left: 75px;
-    height: 75px;
-}
-
-.b-l {
-    transform: rotate(180deg);
-}
-
-.t-lb {
-    position: absolute;
-    height: 75px;
-    top: -15px;
-    left: 6px;
-    width: calc(100% - 12px);
-    transform: rotate(180deg);
-}
-
-.t-c {
-    position: absolute;
-    width: 120px;
-    height: 40px;
-    top: 12px;
-    right: 10px;
-}
-
-.t-c div {
-    height: 35px;
-    width: 35px;
-    margin: 1.25px;
-    display: inline-block;
-}
-
-.w-mid {
-    width: 100%;
+.project-tile {
+    min-width: 250px;
+    min-height: 150px;
     display: flex;
     position: relative;
+    flex-direction: column;
+    padding-bottom: 15px;
+}
+
+.project-tile .project-name {
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    height: 60px;
     justify-content: center;
     align-items: center;
-    text-align: center;
 }
 
-.w-ml,
-.w-mr {
-    position: absolute;
-    height: 100%;
-    width: 75px;
-    top: 0;
-}
-
-.w-ml {
-    left: 0;
-}
-
-.w-mr {
-    right: 0;
-
-    transform: rotate(180deg);
-}
-
-.b-m {
-    display: block;
-    flex-direction: column;
-    height: fit-content;
-    width: 80%;
-    animation-name: changeOVF;
-    animation-iteration-count: initial;
-    animation-duration: 1s;
-}
-
-.b-m2 {
-    display: block;
-    flex-direction: column;
-    height: fit-content;
-    width: 80%;
-}
-
-.b-m>div {
-    animation-name: slideUP;
-    animation-iteration-count: initial;
-    animation-duration: 1s;
-}
-
-.sk-w {
-    height: 300px;
-    width: 300px;
-    border-radius: 25px;
-    margin: 30px;
-    animation-name: slideUP-OP;
-    animation-iteration-count: initial;
-    animation-duration: 1s;
-}
-
-.sk-bg {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    top: -22px;
-    left: -22px;
-}
-
-.prjct-bg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.prjct-cbg {
-    position: absolute;
-    background-color: var(--bg-primary-color);
-    width: 100%;
-    height: 100%;
-    display: block;
-    z-index: -1;
-}
-
-.prjct-container {
-    background-color: var(--bg-primary-color);
-    border-radius: var(--);
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.5rem;
-    border-radius: var(--border-radius);
-}
-
-.prjct-cont {
-    display: flex;
-    position: relative;
-    align-items: center;
-    flex-direction: column;
-}
-
-.prjct-techs {
+.project-tile .project-technologies {
     width: 100%;
     height: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
-}
-
-
-.line {
-    width: 100%;
-    left: 0px;
-    border: 1px solid rgb(248, 248, 248);
-}
-
-.line-neon {
-    left: 4px;
-    width: calc(100% - 10px);
-}
-
-.border-neon {
-    border: solid var(--color-white);
-    border-width: 1px;
-    background: var(--bg-primary-color-transparent-header);
-    backdrop-filter: blur(9.5px);
-    -webkit-backdrop-filter: blur(9.5px);
-    /*
-    transition: var(--border-shadow-transition);
-    box-shadow: var(--neon-box-shadow);
-    */
-}
-
-/*
-TODO add hover effect per main class
-.border-neon:hover {
-    box-shadow: var(--neon-box-shadow-hover);
-}
-*/
-
-.border-neon .neonStarGlow {
-    fill: none;
-    stroke: #3700ff;
-    stroke-width: 5px;
-    filter: drop-shadow(0px 0px 2px #3700ff);
-}
-
-.border-neon:hover .neonStarGlow {
-    stroke-width: 8px;
-    filter: drop-shadow(0px 0px 8px #3700ff);
-}
-
-.border-neon .neonStarLine {
-    fill: none;
-    stroke: var(--color-white);
-    stroke-width: 3px;
-}
-
-.border-neon:hover .neonIconGlow {
-    stroke-width: 8px;
-    filter: drop-shadow(0px 0px 8px #3700ff);
-}
-
-.border-neon .neonIconLine {
-    fill: none;
-    stroke: var(--color-white);
-    stroke-width: 2px;
-    filter: drop-shadow(0px 0px 8px #3700ff);
+    gap: 10px;
+    margin-top: auto;
 }

@@ -69,7 +69,7 @@ body {}
 
 .neon-blur {
     transition: var(--transition-fast);
-    stroke-width: 2px;
+    stroke-width: 5px;
     stroke: #22009c;
     fill: none;
     filter: blur(1.25px);

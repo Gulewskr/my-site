@@ -1,9 +1,9 @@
 import React, { useMemo } from "react";
 import { graphql } from "gatsby";
-
-import { NeonAppWindow, ContactList } from "../component/";
 import { Trans } from "gatsby-plugin-react-i18next";
-import Layout from "../component/Layout";
+
+import { NeonAppWindow, ContactList } from "@components";
+import Layout from "@components/Layout";
 
 export const query = graphql`
   query ($language: String!) {

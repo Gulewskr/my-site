@@ -19,6 +19,7 @@
   "dependencies": {
     "classcat": "^5.0.4",
     "gatsby": "5.8.1",
+    "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-image": "3.10.0",
     "gatsby-plugin-react-i18next": "3.0.1",
     "gatsby-plugin-react-svg": "^3.3.0",

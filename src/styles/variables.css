@@ -59,7 +59,7 @@
     --navbar-height: 60px;
     --icon-mid-size: 25px;
     --icon-mid-size-hover: 30px;
-    --icon-lg-size: 70px;
+    --icon-lg-size: 60px;
     --icon-xl-size: 100px;
 
     --tile-bg: radial-gradient(circle at 50% 190%, var(--gradient-color1-s) 0%, var(--gradient-color2-s) 70%);
