@@ -154,7 +154,7 @@ export default function Skills({ pageTitle, children }) {
     ));
 
   return (
-    <Layout pageTitle={"Rafal Gulewski - Umiejętności"}>
+    <Layout className="skillPage" pageTitle={"Rafal Gulewski - Umiejętności"}>
       <div
         role="button"
         tabIndex={0}

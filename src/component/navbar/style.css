@@ -11,9 +11,9 @@
 
      color: white;
      background-color: var(--navbar-bg-color);
-  
-   box-shadow: rgb(4, 0, 255) 0 0 15px 6px,
-         inset rgb(4, 0, 255) 0 0 6px 6px;
+
+     box-shadow: var(--navbar-neon-box-shadow),
+         var(--navbar-neon-box-shadow-inset);
 
      height: var(--navbar-height);
 
@@ -57,6 +57,7 @@
  }
 
  .navbar-item:hover .navbar-item-label {
+     color: var(--color-text-hover);
      font-size: 22px;
  }
 
@@ -72,4 +73,17 @@
  .navbar .navbar-item .icon-wrapper:hover {
      height: var(--icon-mid-size-hover);
      width: var(--icon-mid-size-hover);
+ }
+
+ .navbar .navbar-item.activeLink .navbar-item-label {
+     color: var(--color-active-link);
+     font-size: 20px;
+ }
+
+ .navbar .navbar-item-container:hover .navbar-item.activeLink .navbar-item-label {
+     font-size: 18px;
+ }
+
+ .navbar .navbar-item-container:hover .navbar-item.activeLink:hover .navbar-item-label {
+     font-size: 20px;
  }

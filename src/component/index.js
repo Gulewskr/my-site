@@ -1,32 +1,34 @@
-import Navbar from "./navbar/navbar";
+import Accordion from "./accordion/Accordion";
+import ContactList from "./ContactList";
+import CircleIcons, { CircleIcon } from "./icons/CircleIcon";
+import Dropdown from "./dropdown/Dropdown";
 import Footer from "./footer/.";
+import Icon from "./icon/Icon";
+import { LanguageSettings } from "./languageSelector/LanguageSelector";
+import Navbar from "./navbar/navbar";
+import { NeonCircle } from "./neonCircle/NeonCircle";
 import {
   NeonAppWindow,
   NeonAppWindowParameterized,
   SkillTile,
   ProjectTile,
 } from "./containers/index";
-import { NeonCircle } from "./neonCircle/NeonCircle";
-import CircleIcons, { CircleIcon } from "./icons/CircleIcon";
-import ContactList from "./ContactList";
 import TechnologyIcons from "./TechnologyIcons";
-import { LanguageSettings } from "./languageSelector/LanguageSelector";
-import Dropdown from "./dropdown/Dropdown";
-import Icon from "./icon/Icon";
 
 export {
+  Accordion,
   CircleIcon,
   CircleIcons,
   ContactList,
   Dropdown,
-  Icon,
   Footer,
+  Icon,
   LanguageSettings,
   Navbar,
   NeonAppWindow,
   NeonCircle,
-  SkillTile,
   NeonAppWindowParameterized,
   ProjectTile,
+  SkillTile,
   TechnologyIcons,
 };

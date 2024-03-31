@@ -8,77 +8,52 @@ import { Icon } from "../index";
 import "./style.css";
 
 import HomeIcon from "../../images/icons/house-blank.svg";
+import classcat from "classcat";
+
+const LINKS = [
+  'skills',
+  'projects',
+  'about',
+  'contact'
+]
 
 const Navbar = () => {
   const [toogledNavbar, setTN] = useState(false);
   const translate = getPrefixedTranslation("navigate");
 
   const navbarItemsStyle = toogledNavbar ? { display: "none" } : {};
-  /*
-    TODO - dodać chowanie paska na scrool
 
-    const [prevScrollpos, setPrevScrollpos] = useState(0);
-    useEffect(() => {
-            const navScript = () => {
-                    var currentScrollPos = window.pageYOffset;
-                    if (prevScrollpos < 200 || prevScrollpos > currentScrollPos) {
-                            document.getElementById("navbar").style.top = "-15px";
-                    } else {
-                            document.getElementById("navbar").style.top = "-400px";
-                    }
-                    setPrevScrollpos(currentScrollPos);
-            }
+  const renderLinks = (listClassStyles) => (
+    <>
+    {LINKS.map((link) => {
+        const currentUrl = window.location.href;
+        const activeLink = currentUrl.includes(link);
 
-            const colorChange = () => {
-            //        this.state.color = window.localStorage.getItem('color');
-            //}
-
-            
-            document.addEventListener('scroll', navScript); 
-            //window.addEventListener(localStorage['color'], colorChange);
-    }, []);
-    */
-
-  const Links = [
-    ({ className }) => (
-      <Link className={className} to="/skills">
-        <span className="navbar-item-label cursor-pointer text-neon">
-          {translate("skills")}
-        </span>
-      </Link>
-    ),
-    ({ className }) => (
-      <Link className={className} to="/projects">
-        <span className="navbar-item-label cursor-pointer text-neon">
-          {translate("projects")}
-        </span>
-      </Link>
-    ),
-    ({ className }) => (
-      <Link className={className} to="/about">
-        <span className="navbar-item-label cursor-pointer text-neon">
-          {translate("about")}
-        </span>
-      </Link>
-    ),
-    ({ className }) => (
-      <Link className={className} to="/contact">
-        <span className="navbar-item-label cursor-pointer text-neon">
-          {translate("contact")}
-        </span>
-      </Link>
-    ),
-    ({ className }) => (
-      <div className={`navbar_controls ${className}`}>
-        <LanguageSettings />
-        <Link to="/">
-          <Icon>
-            <HomeIcon />
-          </Icon>
-        </Link>
-      </div>
-    ),
-  ];
+        return (
+          <li style={{ ...listClassStyles }}>
+            <Link className={classcat({
+              "navbar-item": true,
+              "activeLink": activeLink
+            })} to={`/${link}`}>
+              <span className="navbar-item-label cursor-pointer text-neon">
+                {translate(link)}
+              </span>
+            </Link>
+          </li>
+        );
+        })}
+        <li style={{ ...listClassStyles }}>
+          <div className="navbar_controls navbar-item">
+            <LanguageSettings />
+            <Link to="/">
+              <Icon>
+                <HomeIcon />
+              </Icon>
+            </Link>
+          </div>
+        </li>
+    </>
+  )
 
   return (
     <nav
@@ -97,7 +72,10 @@ const Navbar = () => {
         <div
           id="nav-toogle"
           className="grid md:hidden border-neon items-center justify-items-center"
+          role="button"
+          tabIndex="0"
           onClick={() => setTN(!toogledNavbar)}
+          onKeyDown={() => setTN(!toogledNavbar)}
         >
           {toogledNavbar ? (
             <svg
@@ -133,18 +111,10 @@ const Navbar = () => {
         </div>
       </ul>
       <ul className="navbar-item-container hidden md:flex px-4 mx-auto font-semibold font-heading items-center justify-between whitespace-nowrap max-md:flex-col">
-        {Links.map((LinkComponent) => (
-          <li>
-            <LinkComponent className="navbar-item" />
-          </li>
-        ))}
+        {renderLinks()}
       </ul>
       <ul className="grid md:hidden font-semibold font-heading mb-2 w-full text-center gap-2 pt-4">
-        {Links.map((LinkComponent) => (
-          <li style={{ ...navbarItemsStyle }}>
-            <LinkComponent />
-          </li>
-        ))}
+        {renderLinks(navbarItemsStyle)}
       </ul>
     </nav>
   );

@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .accordion .accordion_header {
@@ -10,6 +11,8 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+
+    background: var(--bg-primary-color-transparent-header);
 }
 
 .accordion .accordion_header .accordion_header_title {
@@ -21,9 +24,23 @@
     width: 40px;
     height: 40px;
     text-align: center;
-    border: 1px solid #fff;
     cursor: pointer;
-    /* TODO add proper icon*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border-radius: 20px;
+
+    transform: rotate(0deg);
+    transition: var(--transition-slow);
+}
+
+.accordion .accordion_header .accordion_header_control:hover {
+    background: var(--gradient-color1-transparent);
+}
+
+.accordion .accordion_header .accordion_header_control.open {
+    transform: rotate(900deg);
 }
 
 .accordion .accordion_body {
@@ -31,6 +48,17 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 1rem;
     gap: 1rem;
+
+    background: var(--gradient-color2);
+    max-height: 0px;
+    overflow: hidden;
+    padding: 0rem;
+    transition: padding var(--transition-slow), max-height var(--transition-slow);
+}
+
+.accordion .accordion_body.open {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    max-height: 1000px;
 }

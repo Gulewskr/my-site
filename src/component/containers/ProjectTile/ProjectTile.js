@@ -13,7 +13,7 @@ const ProjectTile = (params) => {
     );
 
   return (
-    <Link to={params.link}>
+    <Link to={params.link} target="_blank">
       <Tile>
         <div className="project-tile">
           <div

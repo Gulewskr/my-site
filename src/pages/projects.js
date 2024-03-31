@@ -13,7 +13,6 @@ import {
   PORJECT_UNDER_DEVELOPEMENT,
 } from "@data/projects";
 
-import "@styles/pageStyle.css";
 import "@styles/projectStyle.css";
 
 import { getPrefixedTranslation } from "@scripts/utils";

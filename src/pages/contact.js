@@ -4,7 +4,6 @@ import { graphql } from "gatsby";
 import { NeonAppWindow, ContactList } from "@components";
 import Layout from "@components/Layout";
 
-import "@styles/pageStyle.css";
 import "@styles/contactForm.css";
 
 import sendToMe from "@scripts/email.js";

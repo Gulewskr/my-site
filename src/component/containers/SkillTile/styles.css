@@ -28,7 +28,7 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     cursor: help;
-    background: var(--bg-test);
+    background: var(--skillTile-bg-color);
     padding: 5px 10px;
     border-radius: 30px;
     border-color: var(--gradient-color2-s);

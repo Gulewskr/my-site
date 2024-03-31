@@ -1,6 +1,8 @@
 import React from "react";
 import { Navbar, Footer } from ".";
 
+import "@styles/pageStyle.css";
+
 export default function Layout({ children, pageTitle }) {
   return (
     <>

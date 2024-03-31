@@ -25,7 +25,7 @@
     z-index: 99;
     background-color: var(--bg-primary-color-transparent-header);
     border: none !important;
-    box-shadow: var(--neon-box-shadow-outline);
+    box-shadow: var(--navbar-neon-box-shadow);
 }
 
 .languages-selector .language-option {
@@ -35,7 +35,7 @@
     align-items: center;
     border: 2px solid white;
     height: 45px;
-    box-shadow: var(--neon-box-shadow-inset);
+    box-shadow: var(--navbar-neon-box-shadow-inset);
 
     transition: var(--transition-fast);
 }
@@ -43,7 +43,7 @@
 .languages-selector .language-option:hover {
     background-color: var(--bg-primary-color-transparent-header-hover);
     border: 2px solid white;
-    box-shadow: var(--neon-box-shadow-hover-inset);
+    box-shadow: var(--navbar-neon-box-shadow-inset);
     font-size: 20px;
 }
 

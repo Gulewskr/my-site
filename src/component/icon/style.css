@@ -15,9 +15,19 @@
     width: var(--icon-mid-size);
 }
 
+.icon-wrapper-mid-hover {
+    height: var(--icon-mid-size-hover);
+    width: var(--icon-mid-size-hover);
+}
+
 .icon-wrapper-lg {
     height: var(--icon-lg-size);
     width: var(--icon-lg-size);
+}
+
+.icon-wrapper-lg-hover {
+    height: var(--icon-lg-size-hover);
+    width: var(--icon-lg-size-hover);
 }
 
 .icon-wrapper-xl {
