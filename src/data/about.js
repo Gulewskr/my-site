@@ -37,8 +37,8 @@ export const EDUCATION_DATA = [
     {
         time: {
             isSingleDate: false,
-            startDate: new Date('2007-01-01'),
-            endDate: new Date('2019-01-01'),
+            startDate: new Date('2007-09-01'),
+            endDate: new Date('2019-06-01'),
         },
         key: 'primarySchool',
         icon: <PrimarySchoolIcon />,
@@ -46,7 +46,7 @@ export const EDUCATION_DATA = [
     {
         time: {
             isSingleDate: true,
-            startDate: new Date('2019-01-01'),
+            startDate: new Date('2019-05-01'),
             endDate: new Date(),
         },
         key: 'matura',
@@ -55,16 +55,16 @@ export const EDUCATION_DATA = [
     {
         time: {
             isSingleDate: false,
-            startDate: new Date(),
-            endDate: new Date(),
+            startDate: new Date('2019-10-01'),
+            endDate: new Date('2023-6-01'),
         },
         key: 'uni',
         icon: <UniIcon />,
     },
     {
         time: {
-            isSingleDate: false,
-            startDate: new Date(),
+            isSingleDate: true,
+            startDate: new Date('2022-01-01'),
             endDate: new Date(),
         },
         key: 'uniExam',
@@ -79,8 +79,8 @@ export const WORK_DATA = [
     {
         time: {
             isSingleDate: false,
-            startDate: new Date('2022-01-02'),
-            endDate: new Date(),
+            startDate: new Date('2022-03-01'),
+            endDate: new Date('2024-02-01'),
         },
         key: 'job1',
         icon: <InternshipIcon />,
@@ -88,8 +88,8 @@ export const WORK_DATA = [
     {
         time: {
             isSingleDate: false,
-            startDate: new Date('2022-01-02'),
-            endDate: new Date(),
+            startDate: new Date('2024-02-01'),
+            endDate: 'TODAY',
         },
         key: 'job2',
         icon: <DeveloperIcon />,

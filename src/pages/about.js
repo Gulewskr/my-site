@@ -6,7 +6,7 @@ import Layout from '@components/Layout';
 import { EDUCATION_DATA, WORK_DATA, HOBBY_DATA } from '@data/about';
 
 import '@styles/aboutStyle.css';
-import { getPrefixedTranslation } from '../scripts/utils';
+import { dateFormat, getPrefixedTranslation } from '../scripts/utils';
 
 import NeonArrowDownIcon from '@icons/neon-arrow.svg';
 import SocialIcon from '@icons/social.svg';
@@ -33,9 +33,10 @@ export const query = graphql`
 const renderTimeLineData = (data, section) => {
     const translate = getPrefixedTranslation('aboutpage');
 
-    const formatedData = data.time.isSingleDate
-        ? `${data.time.startDate.toDateString()}`
-        : `${data.time.startDate.toDateString()} - ${data.time.endDate.toDateString()}`;
+    const formatedData =
+        data.time && data.time.isSingleDate
+            ? data.time.startDate && dateFormat(data.time.startDate, 'MMM YYYY')
+            : `${data.time.startDate && dateFormat(data.time.startDate, 'MMM YYYY')} - ${data.time.endDate === 'TODAY' ? translate('today') : data.time.endDate && dateFormat(data.time.endDate, 'MMM YYYY')}`;
 
     return (
         <div className="timeLineDataItem">
@@ -45,7 +46,7 @@ const renderTimeLineData = (data, section) => {
                         <Icon iconSize={'xl'}>
                             {data.icon || <SocialIcon />}
                         </Icon>
-                        <span>{formatedData}</span>
+                        <span className="date">{formatedData}</span>
                     </div>
                     <div className="contextText">
                         <span className="title">
@@ -53,10 +54,15 @@ const renderTimeLineData = (data, section) => {
                         </span>
                         {/* TODO add text to html */}
                         <span className="text">
-                            &nbsp;&nbsp;
-                            {translate(`${section}.${data.key}.body`, {
-                                interpolation: { escapeValue: false },
-                            })}
+                            <div
+                                dangerouslySetInnerHTML={{
+                                    __html: `
+                                    &nbsp;&nbsp;
+                                    ${translate(`${section}.${data.key}.body`, {
+                                        interpolation: { escapeValue: false },
+                                    })}`,
+                                }}
+                            />
                         </span>
                     </div>
                 </div>

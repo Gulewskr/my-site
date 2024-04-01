@@ -251,7 +251,7 @@ export default function Contact({ pageTitle, children }) {
                 <div className="wdg-c">
                     <NeonAppWindow>{contact}</NeonAppWindow>
                 </div>
-                <div className="wdg-contactForm">
+                <div className="widgetContactForm">
                     <NeonAppWindow>
                         <div className="content-window">
                             <ContactForm />

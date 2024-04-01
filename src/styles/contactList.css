@@ -1,17 +1,11 @@
-.list {
-    display: block;
-    position: relative;
-    height: 100%;
-}
-
-.list-link {
+.SingleLinkRow {
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.list-link+.list-link {
+.SingleLinkRow+.SingleLinkRow {
     margin-left: 10px;
 }
 

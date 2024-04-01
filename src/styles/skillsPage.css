@@ -22,27 +22,11 @@
     width: 100%;
 }
 
-.secIco {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
 .s {
     display: block;
     position: relative;
     text-align: center;
 }
-
-/*
-@keyframes left-right {
-    0% {right: 0;}
-    50% {right: -50px;}
-    100% {right: 0;}
-}
-*/
 
 .animatedArrow {
     position: relative;

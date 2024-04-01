@@ -1,6 +1,5 @@
 import Accordion from './accordion/Accordion';
 import ContactList from './ContactList';
-import CircleIcons, { CircleIcon } from './icons/CircleIcon';
 import Dropdown from './dropdown/Dropdown';
 import Footer from './footer/.';
 import Icon from './icon/Icon';
@@ -18,8 +17,6 @@ import TechnologyIcons from './TechnologyIcons';
 
 export {
     Accordion,
-    CircleIcon,
-    CircleIcons,
     ContactList,
     Dropdown,
     Footer,

@@ -1,23 +1,9 @@
-.wdg-contactForm {
+.widgetContactForm {
     margin-top: 40px;
     display: flex;
     width: 100%;
     justify-content: center;
 }
-
-
-@media only screen and (min-width: 768px) {
-    .form-sec {
-        flex-wrap: nowrap;
-    }
-}
-
-@media only screen and (min-width: 1000px) {
-    .formCont {
-        width: 1000px;
-    }
-}
-
 
 .formContainer {
     display: flex;

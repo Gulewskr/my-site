@@ -33,41 +33,46 @@
     --neon-box-shadow-inset: inset 0 0 0.25rem 0.25rem #3700ff;
     --neon-box-shadow-hover-inset: inset 0 0 0.4rem 0.4rem #3700ff;
 
-
+    /* BOX SHADOW */
+    --neon-box-shadow: var(--neon-box-shadow-outline),
+        var(--neon-box-shadow-inset);
+    --neon-box-shadow-hover: var(--neon-box-shadow-hover-outline),
+        var(--neon-box-shadow-hover-inset);
 
     /* FONTS */
     --font-weight: 300;
     --font-bold: 500;
     --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-    --navbar-neon-box-shadow: rgb(4, 0, 255) 0 0 15px 6px;
-    --navbar-neon-box-shadow-inset: inset rgb(4, 0, 255) 0 0 6px 6px;
-
-    --neon-box-shadow: var(--neon-box-shadow-outline),
-        var(--neon-box-shadow-inset);
-    --neon-box-shadow-hover: var(--neon-box-shadow-hover-outline),
-        var(--neon-box-shadow-hover-inset);
-
-
-    --neon-app-color-border: var(--color-white);
-
-    --navbar-bg-color: var(--bg-primary-color-transparent-header-hover);
-    --navbar-height: 60px;
+    /* ICONS */
     --icon-mid-size: 25px;
     --icon-mid-size-hover: 30px;
     --icon-lg-size: 60px;
     --icon-lg-size-hover: 70px;
     --icon-xl-size: 100px;
 
-    --skillTile-bg-color: var(--gradient-color2);
+    /* BORDERS */
+    --neon-app-color-border: var(--color-white);
 
+    /* TRANSITIONS */
+    --transition-fast: 0.2s;
+    --transition-mid: 0.5s;
+    --transition-slow: 1s;
+    --border-shadow-transition: box-shadow .25s;
+
+    /* COMPONENT NAVBAR */
+    --navbar-neon-box-shadow: rgb(4, 0, 255) 0 0 15px 6px;
+    --navbar-neon-box-shadow-inset: inset rgb(4, 0, 255) 0 0 6px 6px;
+    --navbar-bg-color: var(--bg-primary-color-transparent-header-hover);
+    --navbar-height: 60px;
+
+
+    /* COMPONENT TILE - default */
     --tile-bg: radial-gradient(circle at 50% 190%, var(--gradient-color1-s) 0%, var(--gradient-color2-s) 70%);
     --tile-bg-hover: radial-gradient(circle at 50% 190%, var(--gradient-color1-s) 0%, var(--gradient-color2-s) 90%);
     --tile-border-width: 2px;
     --tile-border-color: var(--gradient-color2-s);
 
-    --transition-fast: 0.2s;
-    --transition-mid: 0.5s;
-    --transition-slow: 1s;
-    --border-shadow-transition: box-shadow .25s;
+    /* COMPONENT TILE - skill */
+    --skillTile-bg-color: var(--gradient-color2);
 }

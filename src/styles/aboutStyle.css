@@ -1,80 +1,14 @@
-.timeline {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.tl-main {
-    width: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.tl-line {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 5%;
-    width: 1px;
-    border-width: 1px;
-    opacity: 0;
-    transition: 1s;
-}
-
-
-.tl-l {
-    opacity: 0;
-    transition: 1s;
-}
-
-.tl-r {
-    opacity: 0;
-    transition: 1s;
-}
-
-.tl-l.tl-active {
-    opacity: 1;
-}
-
-.tl-r.tl-active {
-    opacity: 1;
-}
-
-@media only screen and (min-width: 600px) {}
-
-@media only screen and (min-width: 768px) {
-    .tl-line {
-        opacity: 1;
-    }
-}
-
-@media only screen and (min-width: 992px) {}
-
-@media only screen and (min-width: 1200px) {
-    .tl-line {}
-
-    .tl-l {}
-
-    .tl-r {
-        /*
-        transform: translateX(60%);
-        */
-    }
-
-    .tl-l.tl-active {}
-
-    .tl-r.tl-active {
-        /*
-        transform: translateX(0);
-        */
-    }
-}
-
 .timeLineDataItem {
     width: 80%;
+}
+
+.timeLineDataItem a {
+    color: var(--color-text-hover);
+    transition: var(--transition-fast);
+}
+
+.timeLineDataItem a:hover {
+    color: var(--color-active-link);
 }
 
 .timeLineDataItem .content {
@@ -88,6 +22,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
+}
+
+.timeLineDataItem .content .contentIconDate .date {
+    font-size: 20px;
+    font-weight: var(--font-bold);
 }
 
 .timeLineDataItem .content .contextText {
@@ -134,8 +74,10 @@
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: var(--font-bold);
 }
 
-.hobbyTile .body {}
+.hobbyTile .body {
+    font-size: 18px;
+}
