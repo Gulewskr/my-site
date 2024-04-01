@@ -6,8 +6,8 @@ import './accordion.css';
 import ArrowIcon from "@icons/down-arrow.svg";  
 import classcat from "classcat";
 
-const Accordion = ({data, title, isOpen: open}) => {
-    const [isOpen, setIsOpen] = useState(!!open);
+const Accordion = ({data, title, isInitiallyOpen}) => {
+    const [isOpen, setIsOpen] = useState(!!isInitiallyOpen);
 
     return (<div className="accordion">
           <div className="accordion_header">

@@ -32,6 +32,14 @@
     --neon-box-shadow-hover-outline: 0 0 0.5rem 0.5rem #3700ff;
     --neon-box-shadow-inset: inset 0 0 0.25rem 0.25rem #3700ff;
     --neon-box-shadow-hover-inset: inset 0 0 0.4rem 0.4rem #3700ff;
+
+
+
+    /* FONTS */
+    --font-weight: 300;
+    --font-bold: 500;
+    --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
     --navbar-neon-box-shadow: rgb(4, 0, 255) 0 0 15px 6px;
     --navbar-neon-box-shadow-inset: inset rgb(4, 0, 255) 0 0 6px 6px;
 

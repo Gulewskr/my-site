@@ -11,12 +11,15 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    padding: 5px;
 
     background: var(--bg-primary-color-transparent-header);
 }
 
 .accordion .accordion_header .accordion_header_title {
     margin-left: 0.5rem;
+    font-size: 22px;
+    font-weight: var(--font-bold);
 }
 
 .accordion .accordion_header .accordion_header_control {
@@ -60,5 +63,5 @@
 .accordion .accordion_body.open {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    max-height: 1000px;
+    max-height: 1500px;
 }

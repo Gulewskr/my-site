@@ -1,3 +1,4 @@
+import React from 'react';
 /**
  *  @typedef {Object} TimeData
  *  @property {boolean} isSingleDate
@@ -6,98 +7,117 @@
  *
  * @typedef {Object} TimelineData
  * @property {TimeData} time
- * @property {string} headerKey
- * @property {string} contentKey
+ * @property {Element} icon
+ * @property {string} key
  *
  * @typedef {Object} HobbyData
- * @property {string} headerKey
- * @property {string} contentKey
+ * @property {string} key
+ * @property {Element} icon
  *
  */
+
+import PrimarySchoolIcon from '@icons/primarySchool.svg';
+import UniIcon from '@icons/university.svg';
+import ExamIcon from '@icons/exam.svg';
+import Exam1Icon from '@icons/exam_1.svg';
+
+import InternshipIcon from '@icons/internship.svg';
+import DeveloperIcon from '@icons/developer.svg';
+
+import GamesIcon from '@icons/videogames.svg';
+import MusicIcon from '@icons/music.svg';
+import TennisIcon from '@icons/tennis.svg';
+import ChessIcon from '@icons/chess.svg';
+import CyclingIcon from '@icons/cycling.svg';
 
 /**
  * @type {Array<TimelineData>}
  */
 export const EDUCATION_DATA = [
-  {
-    time: {
-      isSingleDate: false,
-      startDate: new Date("2007-01-01"),
-      endDate: new Date("2019-01-01"),
+    {
+        time: {
+            isSingleDate: false,
+            startDate: new Date('2007-01-01'),
+            endDate: new Date('2019-01-01'),
+        },
+        key: 'primarySchool',
+        icon: <PrimarySchoolIcon />,
     },
-    headerKey: "",
-    contentKey: "about1",
-  },
-  {
-    time: {
-      isSingleDate: true,
-      startDate: new Date("2019-01-01"),
-      endDate: new Date(),
+    {
+        time: {
+            isSingleDate: true,
+            startDate: new Date('2019-01-01'),
+            endDate: new Date(),
+        },
+        key: 'matura',
+        icon: <Exam1Icon />,
     },
-    headerKey: "",
-    contentKey: "about2",
-  },
-  {
-    time: {
-      isSingleDate: false,
-      startDate: new Date(),
-      endDate: new Date(),
+    {
+        time: {
+            isSingleDate: false,
+            startDate: new Date(),
+            endDate: new Date(),
+        },
+        key: 'uni',
+        icon: <UniIcon />,
     },
-    headerKey: "aboutE",
-    contentKey: "about3",
-  },
-  {
-    time: {
-      isSingleDate: false,
-      startDate: new Date(),
-      endDate: new Date(),
+    {
+        time: {
+            isSingleDate: false,
+            startDate: new Date(),
+            endDate: new Date(),
+        },
+        key: 'uniExam',
+        icon: <ExamIcon />,
     },
-    headerKey: "",
-    contentKey: "about4",
-  },
 ];
 
 /**
  * @type {Array<TimelineData>}
  */
 export const WORK_DATA = [
-  {
-    time: {
-      isSingleDate: false,
-      startDate: new Date("2022-01-02"),
-      endDate: new Date(),
+    {
+        time: {
+            isSingleDate: false,
+            startDate: new Date('2022-01-02'),
+            endDate: new Date(),
+        },
+        key: 'job1',
+        icon: <InternshipIcon />,
     },
-    headerKey: "",
-    contentKey: "about5",
-  },
+    {
+        time: {
+            isSingleDate: false,
+            startDate: new Date('2022-01-02'),
+            endDate: new Date(),
+        },
+        key: 'job2',
+        icon: <DeveloperIcon />,
+    },
 ];
 
 /**
  * @type {Array<HobbyData>}
  */
 export const HOBBY_DATA = [
-  {
-    headerKey: "aboutHob1",
-    contentKey: "",
-  },
-  {
-    headerKey: "aboutHob2",
-    contentKey: "",
-  },
-  {
-    headerKey: "aboutHob3",
-    contentKey: "",
-  },
-  {
-    headerKey: "aboutHob4",
-    contentKey: "",
-  },
-  {
-    headerKey: "aboutHob5",
-    contentKey: "",
-  },
-  {
-    headerKey: "aboutHob6",
-    contentKey: "",
-  },
+    {
+        key: 'videoGames',
+        icon: <GamesIcon />,
+    },
+    {
+        key: 'music',
+        icon: <MusicIcon />,
+    },
+    {
+        key: 'tennis',
+        icon: <TennisIcon />,
+    },
+    {
+        key: 'cycling',
+        icon: <CyclingIcon />,
+    },
+    {
+        key: 'chess',
+        icon: <ChessIcon />,
+    },
 ];
