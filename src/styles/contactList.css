@@ -1,33 +1,24 @@
-.list{
-    display: block;
-    position: relative;
-    height: 100%;
-}
-
-.list-link{
+.SingleLinkRow {
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.list-link+.list-link{
+.SingleLinkRow+.SingleLinkRow {
     margin-left: 10px;
 }
 
-.list-ic{
-    display: block;
+
+.SingleLink {
+    height: 100px;
     width: 70px;
-    height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.list-split{
-    height: 15px;
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    .list-split{
-        display: none;
-    }
+.SingleLink .SingleLink-text {
+    color: var(--color-white);
+    font-weight: 500;
 }

@@ -1,92 +1,149 @@
-t1{
-    font-size: 28px;
+.skillPage {
+    margin-top: 0;
+    margin-bottom: 100px;
+}
+
+.skillPage t1 {
     margin-top: 30px;
+    text-align: center;
 }
 
 .s span {
     color: white;
     font-size: 28px;
 }
-.cont{
+
+.cont {
     display: flex;
     width: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.sec1{
+
+.sec1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
+    overflow-x: hidden;
 }
-.secIco{
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-.s{
+
+.s {
     display: block;
     position: relative;
     text-align: center;
 }
 
-@keyframes left-right {
-    0% {right: 0;}
-    50% {right: -50px;}
-    100% {right: 0;}
-}
-.animatedArrow{
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate(150%, -50%);
-    border-style: solid;
-    border-width: 20px 0 20px 30px;
-    border-color: transparent transparent transparent rgb(159, 193, 255);
-    animation-name: left-right;
-    animation-iteration-count: infinite;
-    animation-duration: 8s;
+.animatedArrow {
+    position: relative;
+    width: 2rem;
+    height: 1.5rem;
+    margin-left: 1rem;
+    cursor: pointer;
 }
 
-#statinfo-toggle{
+#statinfo-toggle {
     position: fixed;
     top: 100px;
     right: -8px;
-    background-color: #150627;
+    background: var(--bg-primary-color-transparent-header);
     cursor: pointer;
     color: white;
     display: flex;
     flex-direction: column;
     padding: 10px;
     border-radius: 10px;
-    border-width: 1px;
+    opacity: 1;
+    transition: 0.5s;
 }
 
-#statinfo{
+#statinfo-toggle[collapsed=true] {
+    opacity: 0;
+}
+
+.statinfo {
     position: fixed;
     top: 100px;
-    left: calc(100% + 8px);
-    background-color: #150627;
+    width: 450px;
+    background-color: var(--bg-primary-color);
     cursor: pointer;
-    color: white;
-    white-space: nowrap;
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    border-radius: 10px;
-    border-width: 1px;
-    transition: .5s;
-}
-#statinfo div{
-    display: flex;
-    align-items: center;
-    margin: 5px;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    right: 0;
+    transform: translate(500px, 0);
+    transition: transform 1s;
 }
 
-.star{
+.statinfo.toggled {
+    transform: translate(50px, 0);
+}
+
+.statinfo div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.star {
     width: 20px;
     height: 20px;
+}
+
+.neon-skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    padding: 2rem;
+}
+
+.statinfo-container {
+    position: fixed;
+    top: 100px;
+    width: 450px;
+    background: var(--bg-primary-color-transparent-header-hover);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    right: 0;
+    opacity: 1;
+    transform: translate(120%, 0);
+    transition: 1s, var(--border-shadow-transition) !important;
+    z-index: 99;
+}
+
+.statinfo-container[toggled=true] {
+    transform: translate(50px, 0);
+}
+
+.statinfo-container .statinfo-row {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .neon-skills-grid {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+        padding: 10px 0px;
+    }
+
+    .animatedArrow {
+        position: relative;
+        width: 20px;
+        height: 1rem;
+        margin-left: 1rem;
+        cursor: pointer;
+    }
 }

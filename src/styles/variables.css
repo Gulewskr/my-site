@@ -1,0 +1,79 @@
+:root {
+    --bg-primary-color: #18054a;
+    --bg-primary-color-transparent-header: rgba(9, 2, 28, 0.8);
+    --bg-primary-color-transparent-header-hover: #09021c;
+
+    --gradient-color1-transparent: rgba(24, 56, 196, 0.2);
+    --gradient-color1: rgba(24, 56, 196, 0.75);
+    --gradient-color2: rgba(9, 2, 28, 0.4);
+    --gradient-color1-s: #1838c4;
+    --gradient-color2-s: #09021c;
+
+    --bg-light: radial-gradient(circle at center, var(--gradient-color1) 0%, var(--gradient-color2) 100%);
+
+    --bg-primary-color-transparent: radial-gradient(circle at 70% 140%, var(--gradient-color1) 0%, var(--gradient-color2) 350px),
+        radial-gradient(circle at 3rem 0, var(--gradient-color1) 0%, var(--gradient-color2) 300px);
+    --color-circle-1: transparent;
+    --color-circle-2: transparent;
+    --color-circle-3: transparent;
+    --bg-primary-color-hover: #110080;
+    --color-white: #f2f2f2;
+    --color-black: #010b13;
+    --bg-dark-purple-start: #0c0127;
+    --bg-dark-purple-end: #1500a0;
+
+    --color-text-hover: #aac5ff;
+    --color-active-link: #1761ff;
+
+    --border-radius: 20px;
+    --border-color-container: var(--bg-primary-color-transparent-header);
+
+    --neon-box-shadow-outline: 0 0 0.2rem 0.2rem #9275fa;
+    --neon-box-shadow-hover-outline: 0 0 0.5rem 0.5rem #3700ff;
+    --neon-box-shadow-inset: inset 0 0 0.25rem 0.25rem #3700ff;
+    --neon-box-shadow-hover-inset: inset 0 0 0.4rem 0.4rem #3700ff;
+
+    /* BOX SHADOW */
+    --neon-box-shadow: var(--neon-box-shadow-outline),
+        var(--neon-box-shadow-inset);
+    --neon-box-shadow-hover: var(--neon-box-shadow-hover-outline),
+        var(--neon-box-shadow-hover-inset);
+
+    /* FONTS */
+    --font-weight: 300;
+    --font-bold: 500;
+    --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    /* ICONS */
+    --icon-mid-size: 25px;
+    --icon-mid-size-hover: 30px;
+    --icon-lg-size: 60px;
+    --icon-lg-size-hover: 70px;
+    --icon-xl-size: 100px;
+
+    /* BORDERS */
+    --neon-app-color-border: var(--color-white);
+
+    /* TRANSITIONS */
+    --transition-fast: 0.2s;
+    --transition-mid: 0.5s;
+    --transition-slow: 1s;
+    --border-shadow-transition: box-shadow .25s;
+
+    /* COMPONENT NAVBAR */
+    --navbar-neon-box-shadow: rgb(4, 0, 255) 0 0 15px 6px;
+    --navbar-neon-box-shadow-inset: inset rgb(4, 0, 255) 0 0 6px 6px;
+    --navbar-bg-color: var(--bg-primary-color-transparent-header-hover);
+    --navbar-height: 60px;
+    --navbar-height--mobile: 50px;
+
+
+    /* COMPONENT TILE - default */
+    --tile-bg: radial-gradient(circle at 50% 190%, var(--gradient-color1-s) 0%, var(--gradient-color2-s) 70%);
+    --tile-bg-hover: radial-gradient(circle at 50% 190%, var(--gradient-color1-s) 0%, var(--gradient-color2-s) 90%);
+    --tile-border-width: 2px;
+    --tile-border-color: var(--gradient-color2-s);
+
+    /* COMPONENT TILE - skill */
+    --skillTile-bg-color: var(--gradient-color2);
+}

@@ -1,0 +1,41 @@
+.icon-wrapper {
+    transition: var(--transition-fast);
+    height: var(--icon-mid-size);
+    width: var(--icon-mid-size);
+    position: relative;
+}
+
+.icon-wrapper-sm {
+    height: var(--icon-sm-size);
+    width: var(--icon-sm-size);
+}
+
+.icon-wrapper-mid {
+    height: var(--icon-mid-size);
+    width: var(--icon-mid-size);
+}
+
+.icon-wrapper-mid-hover {
+    height: var(--icon-mid-size-hover);
+    width: var(--icon-mid-size-hover);
+}
+
+.icon-wrapper-lg {
+    height: var(--icon-lg-size);
+    width: var(--icon-lg-size);
+}
+
+.icon-wrapper-lg-hover {
+    height: var(--icon-lg-size-hover);
+    width: var(--icon-lg-size-hover);
+}
+
+.icon-wrapper-xl {
+    height: var(--icon-xl-size);
+    width: var(--icon-xl-size);
+}
+
+.icon-wrapper svg {
+    height: 100%;
+    width: 100%;
+}

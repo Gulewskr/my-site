@@ -1,0 +1,14 @@
+ #footer {
+     position: fixed;
+
+     box-sizing: border-box;
+     bottom: 0;
+     border-bottom: none;
+     border-top-right-radius: 10px;
+     border-top-left-radius: 10px;
+     justify-content: center;
+     background-color: var(--navbar-bg-color);
+
+     z-index: 10;
+     transition: 1s;
+ }

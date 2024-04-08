@@ -1,0 +1,24 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "./variables.css";
+
+html {
+    overflow-x: hidden;
+    min-height: 100%;
+    height: auto;
+}
+
+body {
+    height: auto;
+    cursor: default;
+}
+
+span {
+    cursor: default;
+}
+
+t1 {
+    font-size: 28px;
+}

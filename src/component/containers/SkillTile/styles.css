@@ -1,0 +1,62 @@
+.neonSkillCont {
+    height: 200px;
+    width: 200px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    animation-name: slideUP-OP;
+    animation-iteration-count: initial;
+    animation-duration: 1s;
+}
+
+.neonSkillCont .skilltile-icon {
+    height: 5rem;
+    width: 5rem;
+}
+
+.neonSkillCont .skilltile-title {
+    color: var(--color-white);
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+.neonSkillCont .skilltile-stars-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    cursor: help;
+    background: var(--skillTile-bg-color);
+    padding: 5px 10px;
+    border-radius: 30px;
+    border-color: var(--gradient-color2-s);
+    border-width: 2px;
+    gap: 0.3rem;
+}
+
+.neonSkillCont .skilltile-stars-container .skilltile-star {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .neonSkillCont {
+        height: auto;
+        min-height: 170px;
+        width: 150px;
+        gap: 5px;
+    }
+
+    .neonSkillCont .skilltile-icon {
+        height: 2rem;
+        width: 2rem;
+    }
+
+    .neonSkillCont .skilltile-title {
+        color: var(--color-white);
+        font-size: 1rem;
+        padding: 10px;
+    }
+}

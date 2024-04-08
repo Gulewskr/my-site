@@ -1,0 +1,15 @@
+.Tile {
+    border-radius: var(--border-radius);
+    border-width: var(--tile-border-width);
+    border-color: var(--tile-border-color);
+    background: var(--tile-bg);
+    padding: 0.5rem 1rem;
+    height: 100%;
+    width: 100%;
+
+    transition: all var(--transition-fast) ease-out;
+}
+
+.Tile:hover {
+    background: var(--tile-bg-hover);
+}

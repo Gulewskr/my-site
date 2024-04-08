@@ -1,19 +1,33 @@
-import Navbar from './navbar/navbar';
-import { Menu, Corner, BLine,  VLine, HLine, AppWindowIcon, Square } from './SvgIcons';
-//import NeonTextON, { NeonTextSimple } from './neonText';
-import {NeonAppWindow, NeonCircle, NeonSkillWindow, StarIconON, NeonProjectWindow} from './containers/NeonWindows';
-import CircleIcons, { CircleIcon } from './icons/CircleIcon';
+import Accordion from './accordion/Accordion';
 import ContactList from './ContactList';
+import Dropdown from './dropdown/Dropdown';
+import Footer from './footer/.';
+import Icon from './icon/Icon';
+import { LanguageSettings } from './languageSelector/LanguageSelector';
+import Navbar from './navbar/navbar';
+import { NeonCircle } from './neonCircle/NeonCircle';
+import {
+    NeonAppWindow,
+    NeonAppWindowParameterized,
+    ProjectTile,
+    SkillTile,
+    Tile,
+} from './containers/index';
 import TechnologyIcons from './TechnologyIcons';
-import { LanguageSettings /*, ColorSettings*/ } from './Settings';
 
-export { 
-    Navbar,
-    Menu, Corner, BLine,  VLine, HLine, AppWindowIcon, Square,
-    //NeonTextON, NeonTextSimple,
-    NeonAppWindow, NeonCircle, NeonSkillWindow, StarIconON, NeonProjectWindow,
-    CircleIcons, CircleIcon,
+export {
+    Accordion,
     ContactList,
+    Dropdown,
+    Footer,
+    Icon,
+    LanguageSettings,
+    Navbar,
+    NeonAppWindow,
+    NeonCircle,
+    NeonAppWindowParameterized,
+    ProjectTile,
+    SkillTile,
     TechnologyIcons,
-    LanguageSettings//, ColorSettings 
+    Tile,
 };

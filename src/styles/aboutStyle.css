@@ -1,100 +1,127 @@
-.hobby-sec li{
-    height: 60px;
-    list-style: none;
-    font-size: 20px;
-    cursor: default;
+.timeLineDataItem {
+    width: 80%;
 }
 
-.hobby-sec{
+.timeLineDataItem a {
+    color: var(--color-text-hover);
+    transition: var(--transition-fast);
+}
+
+.timeLineDataItem a:hover {
+    color: var(--color-active-link);
+}
+
+.timeLineDataItem .content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.timeLineDataItem .content .title-mobile {
+    display: none;
+}
+
+.timeLineDataItem .content .contentIconDate {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.timeLineDataItem .content .contentIconDate .date {
+    font-size: 20px;
+    font-weight: var(--font-bold);
+}
+
+.timeLineDataItem .content .contextText {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 1rem;
+    gap: 15px;
+}
+
+.timeLineDataItem .content .contextText .title {
+    font-size: 22px;
+    font-weight: var(--font-bold);
+}
+
+.timeLineDataItem .content .contextText .text {
+    font-size: 16px;
+    text-align: start;
+}
+
+.hobbySection {
     text-align: center;
     margin-top: 30px;
 }
-.hobby-sec t1{
-    margin-right: 40%;
-}
 
-.timeline{
+.hobbySection .hobbyList {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    width: 100%;
+    gap: 10px;
 }
 
-.tl-main{
-    width: 100%;
-    position: relative;
+.hobbyTile {
+    display: flex;
+    width: 400px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hobbyTile .title {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 5px;
+    font-size: 22px;
+    font-weight: var(--font-bold);
 }
 
-.tl-line{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 5%;
-    width: 1px;
-    border-width: 1px;
-    opacity: 0;
-    transition: 1s;
+.hobbyTile .body {
+    font-size: 18px;
 }
 
-.tl-cont{
-    width: 80%;
-    margin-top: 15px;
-    transition: transform 0.8s ease-in, opacity 400ms ease-in;
-}
-
-.tl-l{
-    opacity: 0;
-    transition: 1s;
-    transform: translateX(20%);
-}
-.tl-r{
-    opacity: 0;
-    transition: 1s;
-    transform: translateX(20%);
-}
-.tl-l.tl-active{
-    opacity: 1;
-    transform: translateX(0);
-}
-.tl-r.tl-active{
-    opacity: 1;
-    transform: translateX(0);
-}
-
-@media only screen and (min-width: 600px) {
-}
-
-@media only screen and (min-width: 768px) {
-    .tl-line{
-        opacity: 1;
-    }
-}
-
-@media only screen and (min-width: 992px) {
-}
- 
-@media only screen and (min-width: 1200px) {
-    .tl-line{
-        left: 50%;
+@media screen and (max-width: 768px) {
+    .timeLineDataItem {
+        width: 90%;
     }
 
-    .tl-cont{
-        width: 30%;
+    .timeLineDataItem .content {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .tl-l{
-        transform: translateX(-120%);
+    .timeLineDataItem .content .contentIconDate {
+        width: 100%;
+        flex-direction: row;
     }
-    .tl-r{
-        transform: translateX(120%);
+
+    .timeLineDataItem .content .title-mobile {
+        display: flex;
+        text-align: center;
+        font-size: 26px;
+        font-weight: var(--font-bold);
+        margin-bottom: 10px;
     }
-    .tl-l.tl-active{
-        transform: translateX(-60%);
+
+    .timeLineDataItem .content .title {
+        display: none;
     }
-    .tl-r.tl-active{
-        transform: translateX(60%);
+
+    .timeLineDataItem .content .contextText {
+        margin-top: 10px;
+    }
+
+    .hobbySection .hobbyList {
+        width: 90%;
+    }
+
+    .hobbyTile {
+        width: min(70vw, 300px);
     }
 }

@@ -1,0 +1,74 @@
+.neonAppContainer {
+    background: var(--bg-primary-color-transparent);
+    backdrop-filter: blur(9.5px);
+    -webkit-backdrop-filter: blur(9.5px);
+
+    color: var(--color-white);
+
+    border-color: var(--border-color-container);
+    border-width: 2px;
+    border-radius: var(--border-radius);
+}
+
+.neonAppContainer .line-neon,
+.neonAppContainer .line {
+    position: absolute;
+    top: 50px;
+    border-width: 0px;
+    border-color: var(--border-color-container);
+}
+
+.neonAppContainer .cirle {
+    position: absolute;
+    top: 0px;
+    width: 22px;
+    height: 50px;
+    border: 1px;
+    /*
+    background: radial-gradient(circle at center 25px, var(--bg-primary-color-transparent), var(--bg-primary-color-transparent) 10px, var(--bg-primary-color-transparent-header) 0px);  
+    background: var(--bg-primary-color-transparent);
+    */
+}
+
+.cirle.right_1 {
+    width: 42px;
+    left: 0px;
+    border-top-left-radius: 18px;
+    background: radial-gradient(circle at 30px center, var(--color-circle-1), var(--color-circle-1) 8px, var(--bg-primary-color-transparent-header) 0px);
+}
+
+.cirle.right_2 {
+    left: 42px;
+    background: radial-gradient(circle at center center, var(--color-circle-2), var(--color-circle-2) 8px, var(--bg-primary-color-transparent-header) 0px);
+}
+
+.cirle.right_3 {
+    left: 64px;
+    background: radial-gradient(circle at center center, var(--color-circle-3), var(--color-circle-3) 8px, var(--bg-primary-color-transparent-header) 0px);
+}
+
+.neonAppContainer .bar-container {
+    height: 50px;
+}
+
+.neonAppContainer .neonAppContainer-header {
+    height: 50px;
+    width: calc(100% - 85px);
+    top: 0;
+    right: 0;
+    border-radius: 0 10px 0 0;
+    position: absolute;
+    background:
+        radial-gradient(circle at 0 center, var(--color-circle-3), var(--color-circle-3) 8px),
+        radial-gradient(circle at 10px center, var(--color-circle-3), var(--color-circle-3) 8px),
+        var(--bg-primary-color-transparent-header);
+    /*
+    background: var(--bg-primary-color-transparent-header);
+    */
+}
+
+@media screen and (max-width: 768px) {
+    .neonAppContainer .bar-container {
+        height: 25px;
+    }
+}

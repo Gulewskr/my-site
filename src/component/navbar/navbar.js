@@ -1,63 +1,127 @@
-import React, {useState} from 'react'
-import { Trans, useTranslation } from "react-i18next"
+import { Link } from 'gatsby';
+import React, { useState } from 'react';
+import { getPrefixedTranslation } from '../../scripts/utils';
+import { useLocation } from '@reach/router';
 
-import './navbar.css'
-import '../../styles/icons.css'
-//import {div} from 'react-dom';
-//import {, div} from 'gatsby-plugin-react-i18next';
+import { LanguageSettings } from '../languageSelector/LanguageSelector';
+import { Icon } from '../index';
 
-const Navbar = () => {
-        const [toogledNavbar, setTN] = useState(false);
-        const { t } = useTranslation();
+import './style.css';
 
-        /*
-        TODO - dodać chowanie paska na scrool
+import HomeIcon from '../../images/icons/house-blank.svg';
+import classcat from 'classcat';
 
-        const [prevScrollpos, setPrevScrollpos] = useState(0);
-        useEffect(() => {
-                const navScript = () => {
-                        var currentScrollPos = window.pageYOffset;
-                        if (prevScrollpos < 200 || prevScrollpos > currentScrollPos) {
-                                document.getElementById("navbar").style.top = "-15px";
-                        } else {
-                                document.getElementById("navbar").style.top = "-400px";
-                        }
-                        setPrevScrollpos(currentScrollPos);
-                }
+import CloseIcon from '@icons/close.svg';
+import MenuIcon from '@icons/menu.svg';
 
-                const colorChange = () => {
-                //        this.state.color = window.localStorage.getItem('color');
-                //}
+const LINKS = ['skills', 'projects', 'about', 'contact'];
 
-                
-                document.addEventListener('scroll', navScript); 
-                //window.addEventListener(localStorage['color'], colorChange);
-        }, []);
-        */
+const Navbar = ({ location }) => {
+    const [isNavigationOpen, setIsNavigationOpen] = useState(false);
+    const translate = getPrefixedTranslation('navigate');
+    const { pathname: currentUrl } = useLocation();
 
-        return (
-                <nav role="navigation" className="navMain" id="navbar">
-                        <ul>
-                                <li>
-                                        <div to="/">
-                                                <div id="nav-logo" className='text-neon-on'>{"<RAFAŁ GULEWSKI/>"}</div>
-                                        </div>
-                                </li>
-                                        <button id='nav-toogle' className='border-neon' onClick={() => setTN(!toogledNavbar)} >
-                                                <svg xmlns="http://www.w3.org/2000/svg" style={toogledNavbar ?  {'rotate': '90deg'} : {} } width="100%" height="100%" viewBox="0 0 50 50" overflow="visible">
-                                                        <line x1="20%" y1="25%" x2="80%" y2="25%" />
-                                                        <line x1="20%" y1="50%" x2="80%" y2="50%" />
-                                                        <line x1="20%" y1="75%" x2="80%" y2="75%" />
-                                                </svg>
-                                        </button>
-                                <li />
-                                <li className='nav-item' style={toogledNavbar ? {display: 'block'} : {}}><div to="/skills"><span className='text-neon'><Trans i18nKey="skills">skills</Trans> </span></ div></li>
-                                <li className='nav-item' style={toogledNavbar ? {display: 'block'} : {}}><div to="/projects"><span className='text-neon'>{t('proj')}</span></ div></li>
-                                <li className='nav-item' style={toogledNavbar ? {display: 'block'} : {}}><div to="/about"><span className='text-neon'>{t('about')}</span></ div></li>
-                                <li className='nav-item' style={toogledNavbar ? {display: 'block'} : {}}><div to="/contact"><span className='text-neon'><Trans i18nKey="contact">contact</Trans> </span></ div></li>
-                        </ul>
-                </nav>
-          );
-}
+    const navbarItemsStyle = isNavigationOpen ? {} : { display: 'none' };
 
-export default Navbar
+    const renderLinks = listClassStyles => (
+        <>
+            {LINKS.map(link => {
+                const activeLink = currentUrl.includes(link);
+
+                return (
+                    <li style={{ ...listClassStyles }}>
+                        <Link
+                            className={classcat({
+                                'navbar-item': true,
+                                activeLink: activeLink,
+                            })}
+                            to={`/${link}`}
+                        >
+                            <span className="navbar-item-label cursor-pointer text-neon">
+                                {translate(link)}
+                            </span>
+                        </Link>
+                    </li>
+                );
+            })}
+            <li style={{ ...listClassStyles }}>
+                <div className="navbar_controls navbar-item">
+                    <LanguageSettings />
+                    <Link to="/">
+                        <Icon>
+                            <HomeIcon />
+                        </Icon>
+                    </Link>
+                </div>
+            </li>
+        </>
+    );
+
+    const renderLogo = () => (
+        <li className="navbar-item font-bold font-heading">
+            <Link to="/">
+                <div id="nav-logo" className="text-neon-on">
+                    {'<RAFAŁ GULEWSKI/>'}
+                </div>
+            </Link>
+        </li>
+    );
+
+    return (
+        <>
+            <nav
+                role="navigation"
+                className="navbar hidden md:flex min-h-10 md:min-h-24 h-auto pt-5 md:pt-15 px-10 w-19/20 items-center justify-self-center justify-between max-md:flex-col"
+                id="navbar"
+            >
+                <ul className="navbar-item-container flex w-full mt-2">
+                    {renderLogo()}
+                </ul>
+                <ul className="navbar-item-container hidden md:flex px-4 mx-auto font-semibold font-heading items-center justify-between whitespace-nowrap max-md:flex-col">
+                    {renderLinks()}
+                </ul>
+            </nav>
+            <nav
+                role="navigation"
+                className={classcat({
+                    'navbar navbar-mobile md:hidden  w-19/20 items-center justify-self-center': true,
+                    isOpen: isNavigationOpen,
+                })}
+                id="navbar-mobile"
+            >
+                <div className="items-container">
+                    <ul className="navbar-item-container flex w-full">
+                        {renderLogo()}
+                        <LanguageSettings />
+                        <div
+                            id="nav-toogle"
+                            role="button"
+                            tabIndex="0"
+                            onClick={() =>
+                                setIsNavigationOpen(!isNavigationOpen)
+                            }
+                            onKeyDown={() =>
+                                setIsNavigationOpen(!isNavigationOpen)
+                            }
+                        >
+                            {isNavigationOpen ? (
+                                <Icon iconSize={'sm'}>
+                                    <CloseIcon />
+                                </Icon>
+                            ) : (
+                                <Icon iconSize={'sm'}>
+                                    <MenuIcon />
+                                </Icon>
+                            )}
+                        </div>
+                    </ul>
+                    <ul className="links grid md:hidden font-semibold font-heading w-full text-center gap-2">
+                        {renderLinks(navbarItemsStyle)}
+                    </ul>
+                </div>
+            </nav>
+        </>
+    );
+};
+
+export default Navbar;

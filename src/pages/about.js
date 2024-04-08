@@ -1,126 +1,174 @@
-import React from 'react'
-//import {graphql} from 'gatsby';
-import '../styles/pageStyle.css'
-import '../styles/aboutStyle.css'
-import {NeonAppWindow} from '../component/'
+import React from 'react';
+import { graphql } from 'gatsby';
 
+import { Accordion, NeonAppWindow, Tile, Icon } from '@components';
+import Layout from '@components/Layout';
+import { EDUCATION_DATA, WORK_DATA, HOBBY_DATA } from '@data/about';
 
-import debounce from "lodash.debounce";
+import '@styles/aboutStyle.css';
+import { dateFormat, getPrefixedTranslation, isMobile } from '../scripts/utils';
 
-import Layout from '../component/Layout';
-
-// markup
-export default function About ({ pageTitle, children }){
-  var t1 = <div className='content-window'>
-            <span>2007-2019<br /><br />
-            <>about1</></span>
-          </div>
-  var t2 = <div className='content-window'>
-            <span>2019 - <>matura</><br /><br />
-            <>about2</></span>
-          </div>
-  var t3 = <div className='content-window'>
-            <span>2019 - <>aboutE</><br /><br />
-            <>about3</></span>
-          </div>
-  var t4 = <div className='content-window'>
-            <span>2021<br /><br />
-            <>about4</></span>
-          </div>
-
-class TLBlock extends React.Component {
-    state = {
-      visible: false,
-      content: "empty",
-      left: true
-    };
-
-    constructor(props){
-      super(props);
-      this.state.content = props.content;
-      this.state.left = props.left;
-    }
-
-    componentDidMount() {
-      if (typeof window.IntersectionObserver === `function`) {
-        this.observer = new window.IntersectionObserver(
-          debounce(entries => {
-          const entry = entries.slice(0).shift();
-          this.setState({
-            visible: entry.isIntersecting
-          });
-        }, 100), 
-        {
-          rootMargin: "0px 0px 0px 0px",
-          threshold: 0.75
-        });
-
-        this.observer.observe(this.container);
-      }
-    }
-
-    componentWillUnmount() {
-      this.observer.unobserve(this.container);
-    }
-
-    render() {
-      return (
-        <div ref={node => (this.container = node)} className={
-          this.state.left ? (this.state.visible ? "tl-cont tl-l tl-active" : "tl-cont tl-l") 
-                      : (this.state.visible ? "tl-cont tl-r tl-active" : "tl-cont tl-r")
-          } >
-          <NeonAppWindow>
-            {this.state.content}
-          </NeonAppWindow>
-        </div>
-      );
-    }
-  }
-
-  return (
-      <Layout>
-        <title>Rafal Gulewski - O mnie</title>
-        <main>
-          <div className="timeline">
-            <t1 className="text-neon-on-blink"><>aboutH</></t1>
-            <div className="tl-main">
-              <div className="tl-line border-neon" />
-              <TLBlock content={t1} left={false}/>
-              <TLBlock content={t2} left={false}/>
-              <TLBlock content={t3} left={true}/>
-              <TLBlock content={t4} left={false}/>
-            </div>
-            <t1 className="text-neon"><>aboutE</></t1>
-          </div>
-          <div className="hobby-sec">
-            <t1 className="text-neon-on-blink"><>aboutHob</></t1>
-            <ul>
-              <li className="text-neon"><>aboutHob1</></li>
-              <li className="text-neon"><>aboutHob2</></li>
-              <li className="text-neon"><>aboutHob3</></li>
-              <li className="text-neon"><>aboutHob4</></li>
-              <li className="text-neon"><>aboutHob5</></li>
-            </ul>
-          </div>
-      </main>
-      </Layout>
-  );
-}
-
-/*
+import NeonArrowDownIcon from '@icons/neon-arrow.svg';
+import SocialIcon from '@icons/social.svg';
 
 export const query = graphql`
-  query($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
-      edges {
-        node {
-          ns
-          data
-          language
+    query ($language: String!) {
+        locales: allLocale(filter: { language: { eq: $language } }) {
+            edges {
+                node {
+                    ns
+                    data
+                    language
+                }
+            }
         }
-      }
     }
-  }
 `;
 
-*/
+/**
+ *
+ * @param {TimelineData} data
+ * @returns {Element}
+ */
+const renderTimeLineData = (data, section) => {
+    const translate = getPrefixedTranslation('aboutpage');
+
+    const renderDate = data => {
+        if (!data.time) return '';
+        if (data.time.isSingleDate) {
+            return (
+                data.time.startDate &&
+                dateFormat(data.time.startDate, 'MMM YYYY')
+            );
+        }
+        if (isMobile()) {
+            return (
+                <div>
+                    <span>
+                        {data.time.startDate &&
+                            dateFormat(data.time.startDate, 'MMM YYYY')}
+                    </span>
+                    <br />
+                    <span>
+                        &emsp;&emsp;-
+                        {data.time.endDate === 'TODAY'
+                            ? ` ${translate('today')}`
+                            : data.time.endDate &&
+                              dateFormat(data.time.endDate, ' MMM YYYY')}
+                    </span>
+                </div>
+            );
+        }
+        return `${data.time.startDate && dateFormat(data.time.startDate, 'MMM YYYY')} - ${data.time.endDate === 'TODAY' ? translate('today') : data.time.endDate && dateFormat(data.time.endDate, 'MMM YYYY')}`;
+    };
+
+    return (
+        <div className="timeLineDataItem">
+            <NeonAppWindow>
+                <div className="content">
+                    <span className="title-mobile">
+                        {translate(`${section}.${data.key}.title`)}
+                    </span>
+                    <div className="contentIconDate">
+                        <Icon iconSize={'xl'}>
+                            {data.icon || <SocialIcon />}
+                        </Icon>
+                        <span className="date">{renderDate(data)}</span>
+                    </div>
+                    <div className="contextText">
+                        <span className="title">
+                            {translate(`${section}.${data.key}.title`)}
+                        </span>
+                        <span className="text">
+                            <div
+                                dangerouslySetInnerHTML={{
+                                    __html: `
+                                    &nbsp;&nbsp;
+                                    ${translate(`${section}.${data.key}.body`, {
+                                        interpolation: { escapeValue: false },
+                                    })}`,
+                                }}
+                            />
+                        </span>
+                    </div>
+                </div>
+            </NeonAppWindow>
+        </div>
+    );
+};
+
+const HobbyTile = ({ translationKey, icon }) => {
+    const translate = getPrefixedTranslation('aboutpage.hobbys');
+
+    return (
+        <div className="hobbyTile-container">
+            <Tile>
+                <div className="hobbyTile">
+                    <div className="title">
+                        <Icon iconSize="lg">{icon || <SocialIcon />}</Icon>
+                        <span>{translate(`${translationKey}.title`)}</span>
+                    </div>
+                    <div className="body">
+                        {translate(`${translationKey}.body`)}
+                    </div>
+                </div>
+            </Tile>
+        </div>
+    );
+};
+
+const renderArrow = () => (
+    <div style={{ rotate: '180deg' }}>
+        <Icon iconSize={'mid-h'}>
+            <NeonArrowDownIcon />
+        </Icon>
+    </div>
+);
+
+export default function About({ pageTitle, children }) {
+    const translate = getPrefixedTranslation('aboutpage');
+
+    return (
+        <Layout pageTitle={'Rafal Gulewski - O mnie'}>
+            <div className="flex flex-col gap-4 text-center items-center">
+                <t1 className="text-neon">{translate('today')}</t1>
+                {renderArrow()}
+                <Accordion
+                    data={WORK_DATA.map(data =>
+                        renderTimeLineData(data, 'worklife'),
+                    )}
+                    title={translate('worklife.header')}
+                    isInitiallyOpen={true}
+                />
+                {renderArrow()}
+                <Accordion
+                    data={EDUCATION_DATA.map(data =>
+                        renderTimeLineData(data, 'education'),
+                    )}
+                    title={translate('education.header')}
+                    isInitiallyOpen={false}
+                />
+                {renderArrow()}
+                <t1 className="text-neon">{translate('start')}</t1>
+            </div>
+
+            <div className="hobbySection">
+                <Accordion
+                    data={
+                        <div className="hobbyList">
+                            {HOBBY_DATA.map(({ key, icon }) => (
+                                <HobbyTile
+                                    key={key}
+                                    translationKey={key}
+                                    icon={icon}
+                                />
+                            ))}
+                        </div>
+                    }
+                    title={translate('hobbys.header')}
+                    isInitiallyOpen={false}
+                />
+            </div>
+        </Layout>
+    );
+}
