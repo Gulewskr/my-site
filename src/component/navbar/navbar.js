@@ -1,6 +1,7 @@
 import { Link } from 'gatsby';
 import React, { useState } from 'react';
 import { getPrefixedTranslation } from '../../scripts/utils';
+import { useLocation } from '@reach/router';
 
 import { LanguageSettings } from '../languageSelector/LanguageSelector';
 import { Icon } from '../index';
@@ -15,16 +16,16 @@ import MenuIcon from '@icons/menu.svg';
 
 const LINKS = ['skills', 'projects', 'about', 'contact'];
 
-const Navbar = () => {
+const Navbar = ({ location }) => {
     const [isNavigationOpen, setIsNavigationOpen] = useState(false);
     const translate = getPrefixedTranslation('navigate');
+    const { pathname: currentUrl } = useLocation();
 
     const navbarItemsStyle = isNavigationOpen ? {} : { display: 'none' };
 
     const renderLinks = listClassStyles => (
         <>
             {LINKS.map(link => {
-                const currentUrl = window.location.href;
                 const activeLink = currentUrl.includes(link);
 
                 return (
