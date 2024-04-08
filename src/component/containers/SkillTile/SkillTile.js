@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.css';
-import { createShourtcut } from '../../../scripts/utils';
+import { createShourtcut, isMobile } from '../../../scripts/utils';
 import { Tile } from '..';
 import { Icon } from '../..';
 
@@ -43,7 +43,9 @@ const SkillTile = params => {
         <div>
             <Tile>
                 <div className="neonSkillCont">
-                    <Icon iconSize="xl">{params.icon}</Icon>
+                    <Icon iconSize={isMobile() ? 'lg' : 'xl'}>
+                        {params.icon}
+                    </Icon>
                     <div className="skilltile-title tooltip">
                         {longName && (
                             <span className="tooltip-text">{params.name}</span>

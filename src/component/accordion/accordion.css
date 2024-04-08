@@ -63,5 +63,5 @@
 .accordion .accordion_body.open {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    max-height: 1500px;
+    max-height: 5000px;
 }

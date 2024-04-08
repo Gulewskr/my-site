@@ -1,13 +1,21 @@
 import * as React from 'react';
 import '@styles/neonStyle.css';
 
-import GitIcon from '@icons/git.svg';
+import CppIcon from '@icons/cpp.svg';
+import CssIcon from '@icons/css.svg';
 import CSharpIcon from '@icons/c-sharp.svg';
+import DockerIcon from '@icons/docker.svg';
+import GitIcon from '@icons/git.svg';
 import JavaScriptIcon from '@icons/java-script.svg';
 import JavaIcon from '@icons/java.svg';
-import UnityIcon from '@icons/unity.svg';
-import ReactIcon from '@icons/atom.svg';
+import JiraIcon from '@icons/jira.svg';
+import LuaIcon from '@icons/lua.svg';
 import NodeIcon from '@icons/nodejs.svg';
+import UnityIcon from '@icons/unity.svg';
+import ReactIcon from '@icons/reacticon.svg';
+import SassIcon from '@icons/sass.svg';
+import SpringIcon from '@icons/spring.svg';
+import SQLIcon from '@icons/sql.svg';
 
 const GameMakerStudio2 = () => (
     <svg
@@ -33,14 +41,22 @@ const GameMakerStudio2 = () => (
 );
 
 const TechnologyIcons = {
-    JavaScript: <JavaScriptIcon />,
-    Java: <JavaIcon />,
+    css: <CssIcon />,
     'C Sharp': <CSharpIcon />,
-    React: <ReactIcon />,
-    'Node.js': <NodeIcon />,
-    Git: <GitIcon />,
-    Unity: <UnityIcon />,
+    cpp: <CppIcon />,
+    docker: <DockerIcon />,
     GameMakerStudio2: <GameMakerStudio2 />,
+    Git: <GitIcon />,
+    Java: <JavaIcon />,
+    JavaScript: <JavaScriptIcon />,
+    jira: <JiraIcon />,
+    lua: <LuaIcon />,
+    'Node.js': <NodeIcon />,
+    React: <ReactIcon />,
+    sql: <SQLIcon />,
+    sass: <SassIcon />,
+    spring: <SpringIcon />,
+    Unity: <UnityIcon />,
 };
 
 export default TechnologyIcons;

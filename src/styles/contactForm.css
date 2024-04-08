@@ -15,6 +15,7 @@
     color: red;
     font-size: 20px;
     font-weight: bold;
+    text-align: center;
 }
 
 .formContainer .formMessage {
@@ -50,8 +51,7 @@
     padding: 5px 0;
     gap: 10px;
     font-size: 20px;
-    width: 800px;
-
+    width: min(75vw, 800px);
 }
 
 .contactForm-section>div {
@@ -104,4 +104,17 @@
 
 .form-bad {
     color: red;
+}
+
+
+@media screen and (max-width: 768px) {
+    .contactForm-section {
+        width: 100%;
+    }
+
+    .contactForm-section>div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
 }

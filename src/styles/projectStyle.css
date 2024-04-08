@@ -1,13 +1,14 @@
 .ctl-m {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    align-items: stretch;
+    justify-content: flex-end;
     gap: 1.5rem;
+    padding: 0rem 2rem;
 }
 
 .container-folder {
-    width: 300px;
-    height: auto;
+    width: 400px;
     display: flex;
+    flex-grow: 1;
 }

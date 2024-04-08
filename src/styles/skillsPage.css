@@ -1,5 +1,11 @@
+.skillPage {
+    margin-top: 0;
+    margin-bottom: 100px;
+}
+
 .skillPage t1 {
     margin-top: 30px;
+    text-align: center;
 }
 
 .s span {
@@ -20,6 +26,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    overflow-x: hidden;
 }
 
 .s {
@@ -87,10 +94,11 @@
 }
 
 .neon-skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, max-content));
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    grid-gap: 5rem;
+    align-items: center;
+    gap: 5rem;
     padding: 2rem;
 }
 
@@ -120,4 +128,22 @@
     display: flex;
     flex-direction: row;
     gap: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .neon-skills-grid {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+        padding: 10px 0px;
+    }
+
+    .animatedArrow {
+        position: relative;
+        width: 20px;
+        height: 1rem;
+        margin-left: 1rem;
+        cursor: pointer;
+    }
 }

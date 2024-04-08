@@ -35,3 +35,5 @@ export const dateFormat = (date, format) => {
     const lang = getCurrentLanguage();
     return moment(date).locale(lang).format(format);
 };
+
+export const isMobile = () => window.innerWidth <= 768;

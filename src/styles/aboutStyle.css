@@ -17,6 +17,10 @@
     width: 100%;
 }
 
+.timeLineDataItem .content .title-mobile {
+    display: none;
+}
+
 .timeLineDataItem .content .contentIconDate {
     width: 25%;
     display: flex;
@@ -80,4 +84,44 @@
 
 .hobbyTile .body {
     font-size: 18px;
+}
+
+@media screen and (max-width: 768px) {
+    .timeLineDataItem {
+        width: 90%;
+    }
+
+    .timeLineDataItem .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .timeLineDataItem .content .contentIconDate {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .timeLineDataItem .content .title-mobile {
+        display: flex;
+        text-align: center;
+        font-size: 26px;
+        font-weight: var(--font-bold);
+        margin-bottom: 10px;
+    }
+
+    .timeLineDataItem .content .title {
+        display: none;
+    }
+
+    .timeLineDataItem .content .contextText {
+        margin-top: 10px;
+    }
+
+    .hobbySection .hobbyList {
+        width: 90%;
+    }
+
+    .hobbyTile {
+        width: min(70vw, 300px);
+    }
 }

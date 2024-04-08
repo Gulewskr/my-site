@@ -67,34 +67,8 @@
     */
 }
 
-@media (max-width: 768px) {
-
-    .neonAppContainer .line-neon,
-    .neonAppContainer .line {
-        top: 25px;
-    }
-
-    .neonAppContainer .cirle {
-        position: absolute;
-        top: 6px;
-        width: 10px;
-        height: 10px;
-        border-radius: 10px;
-    }
-
+@media screen and (max-width: 768px) {
     .neonAppContainer .bar-container {
         height: 25px;
-    }
-
-    .cirle.right_1 {
-        right: 6px
-    }
-
-    .cirle.right_2 {
-        right: 24px
-    }
-
-    .cirle.right_3 {
-        right: 42px
     }
 }

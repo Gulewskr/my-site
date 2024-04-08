@@ -40,3 +40,23 @@
     width: 1.5rem;
     height: 1.5rem;
 }
+
+@media screen and (max-width: 768px) {
+    .neonSkillCont {
+        height: auto;
+        min-height: 170px;
+        width: 150px;
+        gap: 5px;
+    }
+
+    .neonSkillCont .skilltile-icon {
+        height: 2rem;
+        width: 2rem;
+    }
+
+    .neonSkillCont .skilltile-title {
+        color: var(--color-white);
+        font-size: 1rem;
+        padding: 10px;
+    }
+}

@@ -65,6 +65,7 @@
     --navbar-neon-box-shadow-inset: inset rgb(4, 0, 255) 0 0 6px 6px;
     --navbar-bg-color: var(--bg-primary-color-transparent-header-hover);
     --navbar-height: 60px;
+    --navbar-height--mobile: 50px;
 
 
     /* COMPONENT TILE - default */
